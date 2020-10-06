@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="PDFtk,批处理,PDF,Double Commander,">
+        <meta name="description" content="自用的 PDFtk 批处理脚本">
+        <meta name="author" content="">
+        <title>自用的 PDFtk 批处理脚本</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">自用的 PDFtk 批处理脚本</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1590232800"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/PDFtk/index.html">PDFtk</a><a class="tag" href="/tag/%e6%89%b9%e5%a4%84%e7%90%86/index.html">批处理</a><a class="tag" href="/tag/PDF/index.html">PDF</a><a class="tag" href="/tag/Double%20Commander/index.html">Double Commander</a></span>
+                </section>
+                <article class="content"><h3>自用的 PDFtk 批处理脚本</h3>
+
+<p>最初在 2017 年在 <a href="pdftk.html">PDF 处理工具 PDFTK 介绍</a> 中提到过 PDFtk 这个命令行的 PDF 处理工具，以及 <a href="http://www.angusj.com/pdftkb/">PDF Builder</a> 这个第三方的 GUI，但是今年年初办公用的电脑抽风，每次运行 PDF Builder，在添加需要处理的文件的时候必定奔溃，只能改用 IrfanView 或是批处理调用 PDFtk 处理，干脆就自己写了一个简单的批处理脚本。</p>
+
+<pre><code>@echo off
+
+set PDFPath=%~1
+
+set PDFtkPath=%~dp0
+set PDFtk=%PDFtkPath%\pdftk.exe
+set PDFtkSourcePath=%PDFtkPath%\PDFtkSource
+set PDFtkTargetPath=%PDFtkPath%\PDFtkTarget
+
+echo PDFtk List
+echo.
+echo 1. 截取 PDF
+echo 2. 分拆 PDF
+echo 3. 合并 PDF
+echo 4. 压缩 PDF
+echo 5. 旋转 PDF
+echo.
+set /p choose=请选择处理方式：
+if &quot;%choose%&quot;==&quot;1&quot; Goto PDFtkCAT
+if &quot;%choose%&quot;==&quot;2&quot; Goto PDFtkBRUST
+if &quot;%choose%&quot;==&quot;3&quot; Goto PDFtkCOMBINE
+if &quot;%choose%&quot;==&quot;4&quot; Goto PDFtkCOMPRESS
+if &quot;%choose%&quot;==&quot;5&quot; Goto PDFtkROTATE
+exit
+
+:PDFtkCAT
+if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFPath=请输入需要处理的 PDF 文件并回车:
+set /p PDFtkCAT=请输入需要截取的页数（支持 1 2 或 1-3 或 2-end）：
+cd %PDFtkTargetPath%
+echo 正在处理 %PDFPath%
+%PDFtk% &quot;%PDFPath%&quot; cat %PDFtkCAT% output &quot;%PDFPath%-CAT.pdf&quot;
+exit
+
+:PDFtkBRUST
+if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFPath=请输入需要处理的 PDF 文件并回车:
+echo 正在处理 %PDFPath%
+%PDFtk% &quot;%PDFPath%&quot; burst output %PDFtkTargetPath%/page_%%04d.pdf
+del doc_data.txt
+exit
+
+:PDFtkCOMBINE
+echo 请确认所有需要合并的文件已按顺序命名并放入 %PDFtkSourcePath% 内。
+pause.
+cd %PDFtkTargetPath%
+%PDFtk% %PDFtkSourcePath%\*.pdf cat output %date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%-COMBINED.pdf
+echo 正在处理 %PDFPath%
+exit
+
+:PDFtkCOMPRESS
+if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFPath=请输入需要处理的 PDF 文件并回车:
+cd %PDFtkTargetPath%
+echo 正在处理 %PDFPath%
+%PDFtk% &quot;%PDFPath%&quot; output &quot;%PDFPath%-COMPRESS.pdf&quot; compress
+exit
+
+:PDFtkROTATE
+echo 实例：
+echo 1east 2-end：第一页顺时针旋转 90 度。
+echo 1-endsouth：整个文件旋转 180 度。
+if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFPath=请输入需要处理的 PDF 文件并回车:
+set /p PDFtkROTATECAT=请输入旋转参数：
+cd %PDFtkTargetPath%
+echo 正在处理 %PDFPath%
+%PDFtk% &quot;%PDFPath%&quot; cat %PDFtkROTATECAT% output &quot;%PDFPath%-ROTATE.pdf&quot;
+exit
+</code></pre>
+
+<p>实际上我自己用得并不多，毕竟遇到要处理 PDF 的情景也不多……</p>
+
+<p>和 PDF Builder 不同，批处理可以通过 %1 传入参数，所以可以在 Double Commander 或是 Sumatra PDF 中调用。</p>
+
+<h4>Double Commander 工具栏按钮</h4>
+
+<p>需要根据实际位置调整路径。</p>
+
+<ul>
+<li><p>Tooktips：PDFtk 处理(&amp;P)</p></li>
+
+<li><p>Command：%COMMANDER_PATH%..\0-CommandLineTools\PDFtk\PDFtk.bat</p></li>
+
+<li><p>Parameters：%ps</p></li>
+
+<li><p>StartPath：%COMMANDER_PATH%..\0-CommandLineTools\PDFtk</p></li>
+</ul>
+
+<h4>Sumatra PDF Setting</h4>
+
+<p>在 Setting 中加入以下内容 CommandLine 是批处理文件的路径，Name 是文件名，Filter 是当 Sumatra PDF 打开什么类型的文件时会出现：</p>
+
+<pre><code>ExternalViewers [
+    [
+        CommandLine = D:\1-Program\0-CommandLineTools\PDFtk\PDFtk.bat
+        Name = PDFtk
+        Filter = *.pdf
+    ]
+</code></pre>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/lenovobatterychargethreshold.html">无需 Lenovo Vantage，配置 Lenovo 设备的充电阙值</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/vim-quickfix.html">自定义 Vim 中 QuickFix 列表的格式</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

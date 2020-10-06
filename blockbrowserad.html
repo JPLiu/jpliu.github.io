@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Firefox,扩展,油猴,uBlock Origin,Header Editor,去广告,视频广告,">
+        <meta name="description" content="Firefox 目前可用的去广告方案（2020-03-03 更新）">
+        <meta name="author" content="">
+        <title>Firefox 目前可用的去广告方案（2020-03-03 更新）</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">Firefox 目前可用的去广告方案（2020-03-03 更新）</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1583233200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Firefox/index.html">Firefox</a><a class="tag" href="/tag/%e6%89%a9%e5%b1%95/index.html">扩展</a><a class="tag" href="/tag/%e6%b2%b9%e7%8c%b4/index.html">油猴</a><a class="tag" href="/tag/uBlock%20Origin/index.html">uBlock Origin</a><a class="tag" href="/tag/Header%20Editor/index.html">Header Editor</a><a class="tag" href="/tag/%e5%8e%bb%e5%b9%bf%e5%91%8a/index.html">去广告</a><a class="tag" href="/tag/%e8%a7%86%e9%a2%91%e5%b9%bf%e5%91%8a/index.html">视频广告</a></span>
+                </section>
+                <article class="content"><h3>Firefox 目前可用的去广告方案（2020-03-03 更新）</h3>
+
+<blockquote>
+<p>此处的方案适用于 Firefox，所使用的扩展可能有 Chrome 版，Chrome 可参考，但不保证效果一致。</p>
+
+<p>此处的方案所指的视频广告过滤，通常只针对优酷，爱奇艺，腾讯视频，其他视频站不一定有效。</p>
+
+<p>此处的方案不一定是最好的方案。</p>
+</blockquote>
+
+<p>200303 更新方案：uBlock Origin + Header Editor</p>
+
+<table>
+<thead>
+<tr>
+<th>扩展</th>
+<th>是否必需</th>
+<th>备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</a></td>
+<td>是</td>
+<td>基础的广告过滤扩展，需要订阅扩展自带的 uBlock filters 和 <a href="https://gitee.com/xinggsf/Adblock-Rule/raw/master/mv.txt">乘风视频规则</a></td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/header-editor/">Header Editor</a></td>
+<td>否</td>
+<td>参考卡饭的贴子设置优酷重定向：<a href="https://bbs.kafan.cn/thread-2142935-1-1.html">重定向规则1</a>、<a href="https://bbs.kafan.cn/forum.php?mod=viewthread&amp;tid=2171691&amp;page=1#pid45734014">重定向规则2</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>注：</p>
+
+<ol>
+<li><p>不使用 Header Editor 重定向的话，uBlock Origin 会自动加速优酷的广告的速度。</p></li>
+
+<li><p>Header Editor 的重定向规则二选一即可。</p>
+
+<ul>
+<li>重定向规则1 会导致优酷的页面强制为网页全屏，不能显示评论和切换视频。</li>
+<li>重定向规则2 仅限 Firefox 57+ &amp; 最新版的 Header Editor，优酷视频页面时会有一个短暂的重载，页面评论弹幕等功能均正常。</li>
+</ul></li>
+</ol>
+
+<hr />
+
+<p>200118 更新方案： Nano Adblocker + Nano Defender + Header Editor，此方案 200303 仍然可用</p>
+
+<table>
+<thead>
+<tr>
+<th>扩展</th>
+<th>是否必需</th>
+<th>备注</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/nano-adblocker-firefox/">Nano Adblocker</a></td>
+<td>是</td>
+<td>基于 uBlock 修改的广告过滤扩展</td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/nano-defender-firefox/">Nano Defender</a></td>
+<td>是</td>
+<td>Nano Adblocker 需要，使用默认设置即可</td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/header-editor/">Header Editor</a></td>
+<td>否</td>
+<td>参考卡饭的这个贴子设置优酷重定向：<a href="https://bbs.kafan.cn/thread-2142935-1-1.html">重定向规则</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>注：</p>
+
+<ol>
+<li><p>不使用 Header Editor 重定向的话，Nano Adblocker 和 Nano Defender 会自动加速优酷的60s广告的速度，实现类似 <a href="https://greasyfork.org/zh-CN/scripts/372673">计时器掌控者</a> 的功能。</p></li>
+
+<li><p>使用 Header Editor 的重定向规则会导致优酷的页面强制为网页全屏，不能显示评论和切换视频。</p></li>
+</ol>
+
+<hr />
+
+<p><strong>以下过期内容（2020-03-03 已清空）</strong></p>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/doublecmdtextsearch.html">给 Double Commander 增加文档内容文本搜索功能</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/fixerror2755.html">Windows Installer 2755错误的解决方法</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

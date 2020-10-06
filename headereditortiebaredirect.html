@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Header Editor,贴吧,重定向,">
+        <meta name="description" content="用 Header Editor 重定向奇形怪状的百度贴吧链接">
+        <meta name="author" content="">
+        <title>用 Header Editor 重定向奇形怪状的百度贴吧链接</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">用 Header Editor 重定向奇形怪状的百度贴吧链接</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1581840000"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Header%20Editor/index.html">Header Editor</a><a class="tag" href="/tag/%e8%b4%b4%e5%90%a7/index.html">贴吧</a><a class="tag" href="/tag/%e9%87%8d%e5%ae%9a%e5%90%91/index.html">重定向</a></span>
+                </section>
+                <article class="content"><h3>用 Header Editor 重定向奇形怪状的百度贴吧链接</h3>
+
+<blockquote>
+<p>2020-02-18 补充 Github 链接。</p>
+</blockquote>
+
+<p>现在在 Google 上搜索到的贴吧的地址有各种各样奇怪的开头，包括但不限于：</p>
+
+<pre><code>wapp.baidu.com
+c.tieba.baidu.com
+dq.teiba.com
+jump.bdimg.com
+jump2.bdimg.com
+</code></pre>
+
+<p>这些奇形怪状的开头给我带来了两个问题：</p>
+
+<ul>
+<li>部分地址 <a href="https://greasyfork.org/zh-CN/scripts/23687">贴吧页面精简</a> 这个脚本无法匹配（<code>c.tieba.baidu.com</code>）或是处理效果不佳（<code>jump.bdimg.com</code>）</li>
+<li>部分地址对应的是移动端页面，在 PC 上显示效果极差（<code>wapp.baidu.com</code>）。</li>
+</ul>
+
+<p>我目前找到的涉及贴吧重定向的有两个工具：</p>
+
+<ul>
+<li><p><a href="https://addons.mozilla.org/zh-CN/firefox/addon/header-editor/">Header Editor</a> 这个扩展相关的 <a href="https://raw.githubusercontent.com/dupontjoy/customization/master/Rules/HeaderEditor/headereditor-CingList.json">CingList 规则</a> 中有一条涉及贴吧重定向的规则。</p></li>
+
+<li><p>Greasyfork 上 <a href="https://greasyfork.org/zh-CN/scripts/390955">百度贴吧重定向</a> 这个脚本。</p></li>
+</ul>
+
+<p>但是截止至我写这篇东西时，相关规则均并未覆盖上面所有链接，今天参照写了一下用于 Header Editor 的规则（一共三条），以下是规则内容，懒得手工加入的可以直接导入</p>
+
+<ul>
+<li><p><a href="https://raw.githubusercontent.com/JPLiu/TestFiles/master/Header-Editor/HE_2020-02-16T07-58-31Z_Tieba.json">Github</a></p></li>
+
+<li><p><a href="https://pan.baidu.com/s/1zedqVZ6l3Wye4tzKJ305XQ">百度云链接</a> 提取码: gec6</p></li>
+</ul>
+
+<hr />
+
+<h4>规则内容</h4>
+
+<ul>
+<li>规则1</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>规则1</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>名称</td>
+<td>贴吧重定向补充1</td>
+</tr>
+
+<tr>
+<td>规则类型</td>
+<td>重定向请求</td>
+</tr>
+
+<tr>
+<td>匹配类型</td>
+<td>正则表达式</td>
+</tr>
+
+<tr>
+<td>匹配规则</td>
+<td><code>^https?:\/\/wapp.baidu.com/mo/q/m?(.*)</code></td>
+</tr>
+
+<tr>
+<td>排除规则</td>
+<td></td>
+</tr>
+
+<tr>
+<td>执行类型</td>
+<td>常规</td>
+</tr>
+
+<tr>
+<td>重定向至</td>
+<td><code>http://tieba.baidu.com/f$1</code></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>规则2</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>规则2</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>名称</td>
+<td>贴吧重定向补充2</td>
+</tr>
+
+<tr>
+<td>规则类型</td>
+<td>重定向请求</td>
+</tr>
+
+<tr>
+<td>匹配类型</td>
+<td>正则表达式</td>
+</tr>
+
+<tr>
+<td>匹配规则</td>
+<td><code>^https?:\/\/(.+)tieba.baidu.com/(.*)</code></td>
+</tr>
+
+<tr>
+<td>排除规则</td>
+<td></td>
+</tr>
+
+<tr>
+<td>执行类型</td>
+<td>常规</td>
+</tr>
+
+<tr>
+<td>重定向至</td>
+<td><code>http://tieba.baidu.com/$2</code></td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>规则3</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>规则3</th>
+<th>贴吧重定向补充3</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>名称</td>
+<td>贴吧重定向补充3</td>
+</tr>
+
+<tr>
+<td>规则类型</td>
+<td>重定向请求</td>
+</tr>
+
+<tr>
+<td>匹配类型</td>
+<td>正则表达式</td>
+</tr>
+
+<tr>
+<td>匹配规则</td>
+<td><code>^https?:\/\/jump2?.bdimg.com/(.*)</code></td>
+</tr>
+
+<tr>
+<td>排除规则</td>
+<td></td>
+</tr>
+
+<tr>
+<td>执行类型</td>
+<td>常规</td>
+</tr>
+
+<tr>
+<td>重定向至</td>
+<td><code>http://tieba.baidu.com/$1</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>加了这三条规则之后我移除了 <a href="https://greasyfork.org/zh-CN/scripts/390955">百度贴吧重定向</a> 这个脚本，不过这些规则同样可能没有覆盖所有的奇形怪状地址或者存在一些问题，那些遇到再说吧。</p>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/taskschedulerautoupdate.html">使用任务计划程序定时运行程序</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/ublockorigindarkworkflowy.html">用 uBlock Origin 实现 WorkFlowy 的暗色模式</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

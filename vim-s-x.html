@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Vim,">
+        <meta name="description" content="Vim 的 s 与 x命令">
+        <meta name="author" content="">
+        <title>Vim 的 s 与 x命令</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">Vim 的 s 与 x命令</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1446208200"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Vim/index.html">Vim</a></span>
+                </section>
+                <article class="content"><h3>Vim 的 s 与 xi/xa 命令的小差别</h3>
+
+<p>在Vim中的s命令是删除当前光标下的字符并在该字符位置进入插入模式，xi/xa两个命令则是在删除当前光标下的字符后进入插入模式。表面上看两者并没有什么不同：</p>
+
+<p>其实，有一点是不同的，就是进入插入模式后<strong>光标的位置</strong>。</p>
+
+<p>如果光标后面没有文字（比如说在行尾），使用 xa 正常，但是使用 xi 就会位置向前移一个字符；同样的：</p>
+
+<p>如果光标前面没有文字（也就是在行首），使用 xi 则正常，xa 在会向后移一个字符。</p>
+
+<p>在 Virsual 模式下，s 与 d 也有类似的差别。</p>
+
+<p>如果需要在原内容位置上添加内容，s 比 x 或者 d 要好用得多，如，要将当前所选的内容的左右两边加上两个星号（Markdown 的加粗）：</p>
+
+<pre><code>vnoremap &lt;silent&gt; md &quot;ms****&lt;Esc&gt;h&quot;mPe
+</code></pre>
+
+<p>如果在这里使用 d 的话就要分两种情况，由于 Vim 默认是删除后光标靠原来右边一位，所以要分别考虑光标在行尾与不在行尾，用 s 的话就不存在这个问题。</p>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/aria2.html">aria2 Firefox 调用教程（已过时）</a>
+                    </section>
+                    
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>
