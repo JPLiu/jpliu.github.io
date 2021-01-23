@@ -70,14 +70,14 @@
                     
                     
                     
-                    <span class="date" data-time="1604119500"><span class="from"></span></span>
+                    <span class="date" data-time="1611370800"><span class="from"></span></span>
                     
                     <span class="tags"><a class="tag" href="/tag/Firefox/index.html">Firefox</a><a class="tag" href="/tag/Addon/index.html">Addon</a><a class="tag" href="/tag/%e6%b2%b9%e7%8c%b4%e8%84%9a%e6%9c%ac/index.html">油猴脚本</a><a class="tag" href="/tag/%e6%a0%b7%e5%bc%8f/index.html">样式</a></span>
                 </section>
-                <article class="content"><h3>Firefox 扩展和脚本清单</h3>
+                <article class="content"><h3>Firefox 扩展和脚本清单（2021-01-23 更新）</h3>
 
 <blockquote>
-<p>2020-10-31：移除了 Nano Adblocker 和 Nano Defender。</p>
+<p>2021-01-23：时隔一年，根据 2020 年末的个人使用情况进行了调整。</p>
 </blockquote>
 
 <p>趁着年前最后的值班日的时间，整理一下目前 Firefox 扩展和脚本清单（部分扩展可能有 Chrome 版）。</p>
@@ -113,17 +113,17 @@
 </tr>
 
 <tr>
-<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/ext-saladict/">沙拉查词</a></td>
-<td>划词翻译扩展</td>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/onejzx/">集装箱</a></td>
+<td>比价、网盘等多个功能</td>
 <td>是</td>
 <td>配置支持导出</td>
 </tr>
 
 <tr>
-<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/content-farm-terminator/">终结内容农场</a></td>
-<td>避免误入内容农场</td>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/ext-saladict/">沙拉查词</a></td>
+<td>划词翻译扩展</td>
 <td>是</td>
-<td>-</td>
+<td>配置支持导出</td>
 </tr>
 
 <tr>
@@ -138,6 +138,13 @@
 <td>修改网页的 Header</td>
 <td>是</td>
 <td><a href="https://raw.githubusercontent.com/dupontjoy/customization/master/Rules/HeaderEditor/headereditor-CingList.json">CingList 规则</a></td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/history-cleaner/">History Cleaner</a></td>
+<td>自动清理浏览历史</td>
+<td>是</td>
+<td>使用原因是不希望 Profile 文件夹下的 places.sqlite 的文件过大。</td>
 </tr>
 
 <tr>
@@ -158,19 +165,19 @@
 <td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/smartup/">smartUp手势</a></td>
 <td>手势，拖拽，二维码</td>
 <td>是</td>
-<td>-</td>
-</tr>
-
-<tr>
-<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/styl-us/">Stylus</a></td>
-<td>样式管理器</td>
-<td>是</td>
 <td>配置支持导出</td>
 </tr>
 
 <tr>
 <td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/text-link/">Text Link</a></td>
 <td>文本链接转成可点击链接</td>
+<td>是</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/ublock-origin/">uBlock Origin</a></td>
+<td>广告过滤、样式调整</td>
 <td>是</td>
 <td>-</td>
 </tr>
@@ -195,6 +202,27 @@
 <td>是</td>
 <td>配置支持导出</td>
 </tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/multi-account-containers">Firefox Multi-Account Containers</a></td>
+<td>多开小号挂课程</td>
+<td>否，备用</td>
+<td>-</td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/styl-us/">Stylus</a></td>
+<td>样式管理器</td>
+<td>否</td>
+<td>配置支持导出</td>
+</tr>
+
+<tr>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/content-farm-terminator/">终结内容农场</a></td>
+<td>避免误入内容农场</td>
+<td>否</td>
+<td>Android 上 Fenix 版目前未放开扩展安装。<br> 用 <a href="https://raw.githubusercontent.com/JPLiu/TestFiles/main/uBlock-Origin/More-Rule/Content-Farms-Lite.list">自制 uBlock Origin 内容农场规则</a> 代替。</td>
+</tr>
 </tbody>
 </table>
 
@@ -216,50 +244,8 @@
 
 <tbody>
 <tr>
-<td><a href="https://greasyfork.org/zh-CN/scripts/11915">anti-redirect</a></td>
-<td>Google、百度等页面链接调整为真实链接</td>
-<td>是</td>
-<td></td>
-</tr>
-
-<tr>
-<td><a href="https://greasyfork.org/zh-CN/scripts/390955">百度贴吧重定向</a></td>
-<td>重定向百度贴吧的各种变体链接</td>
-<td>是</td>
-<td></td>
-</tr>
-
-<tr>
-<td><a href="https://github.com/kkren/bilibili_adjustPlayer">哔哩哔哩（bilibili.com）播放器调整</a></td>
-<td>哔哩哔哩自动定位到播放器，自动宽屏等功能</td>
-<td>是</td>
-<td></td>
-</tr>
-
-<tr>
-<td><a href="https://greasyfork.org/zh-CN/scripts/14466">购物党自动比价工具-领取淘宝内部券</a></td>
-<td>购物党比较工具的脚本版</td>
-<td>是</td>
-<td>此外也有扩展版</td>
-</tr>
-
-<tr>
-<td><a href="https://greasyfork.org/zh-CN/scripts/27183">拒绝二维码登录</a></td>
-<td>淘宝，京东等页面默认密码登录</td>
-<td>是</td>
-<td></td>
-</tr>
-
-<tr>
-<td><a href="https://greasyfork.org/zh-CN/scripts/23687">贴吧页面精简</a></td>
-<td>贴吧界面优化</td>
-<td>是</td>
-<td></td>
-</tr>
-
-<tr>
-<td><a href="https://greasyfork.org/zh-CN/scripts/378301">网盘助手</a></td>
-<td>网盘自动填写验证码等</td>
+<td><a href="https://github.com/the1812/Bilibili-Evolved">Bilibili Evolved</a></td>
+<td>哔哩哔哩 使用体验优化</td>
 <td>是</td>
 <td>配置支持导出</td>
 </tr>
@@ -268,20 +254,69 @@
 <td><a href="https://tiansh.github.io/yawf/">药方</a></td>
 <td>微博页面优化</td>
 <td>是</td>
+<td>配置支持导出</td>
+</tr>
+
+<tr>
+<td><a href="https://greasyfork.org/zh-CN/scripts/11915">anti-redirect</a></td>
+<td>Google、百度等页面链接调整为真实链接</td>
+<td>否</td>
 <td></td>
+</tr>
+
+<tr>
+<td><a href="https://greasyfork.org/zh-CN/scripts/390955">百度贴吧重定向</a></td>
+<td>重定向百度贴吧的各种变体链接</td>
+<td>否</td>
+<td>使用 Header Editor 自定义规则代替</td>
+</tr>
+
+<tr>
+<td><a href="https://github.com/kkren/bilibili_adjustPlayer">哔哩哔哩播放器调整</a></td>
+<td>哔哩哔哩自动定位到播放器，自动宽屏等功能</td>
+<td>否</td>
+<td>使用 Bilibili Evolved 代替</td>
+</tr>
+
+<tr>
+<td><a href="https://greasyfork.org/zh-CN/scripts/14466">购物党自动比价工具</a></td>
+<td>购物党比较工具的脚本版</td>
+<td>否</td>
+<td>此外也有扩展版</td>
+</tr>
+
+<tr>
+<td><a href="https://greasyfork.org/zh-CN/scripts/27183">拒绝二维码登录</a></td>
+<td>淘宝，京东等页面默认密码登录</td>
+<td>否</td>
+<td></td>
+</tr>
+
+<tr>
+<td><a href="https://greasyfork.org/zh-CN/scripts/23687">贴吧页面精简</a></td>
+<td>贴吧界面优化</td>
+<td>否</td>
+<td></td>
+</tr>
+
+<tr>
+<td><a href="https://greasyfork.org/zh-CN/scripts/378301">网盘助手</a></td>
+<td>网盘自动填写验证码等</td>
+<td>否</td>
+<td>使用 集装箱 的功能代替</td>
 </tr>
 
 <tr>
 <td><a href="https://greasyfork.org/zh-CN/scripts/367724">知乎、简书、csdn、实验楼剪切板消毒</a></td>
 <td>处理知乎等复制文本的无用附加项目</td>
-<td>是</td>
+<td>否</td>
 <td></td>
 </tr>
 
 <tr>
 <td><a href="https://greasyfork.org/zh-CN/scripts/20431">知乎真实链接地址重定向</a></td>
 <td>知乎真实链接地址重定向</td>
-<td>是</td>
+<td>否</td>
 <td></td>
 </tr>
 </tbody>
@@ -307,15 +342,15 @@
 <tr>
 <td><a href="http://userstyles.org/styles/169578">Bilibili直播界面调整</a></td>
 <td>-</td>
-<td>是</td>
-<td>-</td>
+<td>否</td>
+<td>使用 Bilibili Evolved 脚本代替</td>
 </tr>
 
 <tr>
 <td><a href="https://userstyles.org/styles/143680">Workflowy Dark</a></td>
 <td>Workflowy 的暗色主题</td>
-<td>是</td>
-<td>-</td>
+<td>否</td>
+<td>在 uBlock Origin 中使用样式调整规则代替</td>
 </tr>
 </tbody>
 </table>
