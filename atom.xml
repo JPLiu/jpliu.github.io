@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-01-23T11:10:05+08:00</updated>
+  <updated>2021-01-23T12:08:12+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2020-11-21:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>2021 年我的 RSS 订阅方式</title>
+    <updated>2021-01-23T11:40:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-01-23:/rss2021.html</id>
+    <content type="html">&lt;p&gt;简单说一下目前（2021年）主要使用的 RSS 订阅源生成服务。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/rss2021.html"></link>
   </entry>
   <entry>
     <title>给 Double Commander 增加查看 EXE 文件版本信息的功能</title>
@@ -36,9 +43,9 @@
     <link href="http://jpliu.github.io/lenovobatterychargethreshold.html"></link>
   </entry>
   <entry>
-    <title>自用的 PDFtk 批处理脚本</title>
-    <updated>2020-05-23T19:20:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-05-23:/pdftkbat.html</id>
+    <title>自用的 PDFtk 批处理脚本（2021-01-23 更新）</title>
+    <updated>2021-01-23T11:20:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-01-23:/pdftkbat.html</id>
     <content type="html">&lt;p&gt;自用的 PDFtk 批处理脚本&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/pdftkbat.html"></link>
   </entry>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2020-04-05:/irfanviewpdf2pic.html</id>
     <content type="html">&lt;p&gt;IrfanView 加载 PDF 文件的两个插件：PDF.dll 和 Postscript.dll。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/irfanviewpdf2pic.html"></link>
-  </entry>
-  <entry>
-    <title>使用任务计划程序定时运行程序</title>
-    <updated>2020-03-22T14:20:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-03-22:/taskschedulerautoupdate.html</id>
-    <content type="html">&lt;p&gt;使用任务计划程序定时运行脚本，实现 ClashWeb 订阅的定时更新。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/taskschedulerautoupdate.html"></link>
   </entry>
 </feed>

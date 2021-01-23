@@ -46,9 +46,9 @@
 
 
         <meta name="keywords" content="PDFtk,批处理,PDF,Double Commander,">
-        <meta name="description" content="自用的 PDFtk 批处理脚本">
+        <meta name="description" content="自用的 PDFtk 批处理脚本（2021-01-23 更新）">
         <meta name="author" content="">
-        <title>自用的 PDFtk 批处理脚本</title>
+        <title>自用的 PDFtk 批处理脚本（2021-01-23 更新）</title>
     </head>
     <body>
         <article class="container">
@@ -65,16 +65,20 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">自用的 PDFtk 批处理脚本</h1>
+                <h1 class="title">自用的 PDFtk 批处理脚本（2021-01-23 更新）</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1590232800"><span class="from"></span></span>
+                    <span class="date" data-time="1611372000"><span class="from"></span></span>
                     
                     <span class="tags"><a class="tag" href="/tag/PDFtk/index.html">PDFtk</a><a class="tag" href="/tag/%e6%89%b9%e5%a4%84%e7%90%86/index.html">批处理</a><a class="tag" href="/tag/PDF/index.html">PDF</a><a class="tag" href="/tag/Double%20Commander/index.html">Double Commander</a></span>
                 </section>
-                <article class="content"><h3>自用的 PDFtk 批处理脚本</h3>
+                <article class="content"><h3>自用的 PDFtk 批处理脚本（2021-01-23 更新）</h3>
+
+<blockquote>
+<p>2021-01-23：脚本增加了 水印 和 加密 的功能。</p>
+</blockquote>
 
 <p>最初在 2017 年在 <a href="pdftk.html">PDF 处理工具 PDFTK 介绍</a> 中提到过 PDFtk 这个命令行的 PDF 处理工具，以及 <a href="http://www.angusj.com/pdftkb/">PDF Builder</a> 这个第三方的 GUI，但是今年年初办公用的电脑抽风，每次运行 PDF Builder，在添加需要处理的文件的时候必定奔溃，只能改用 IrfanView 或是批处理调用 PDFtk 处理，干脆就自己写了一个简单的批处理脚本。</p>
 
@@ -87,13 +91,18 @@ set PDFtk=%PDFtkPath%\pdftk.exe
 set PDFtkSourcePath=%PDFtkPath%\PDFtkSource
 set PDFtkTargetPath=%PDFtkPath%\PDFtkTarget
 
+::设置加密时使用的密码
+set user_pw=123456
+
 echo PDFtk List
 echo.
-echo 1. 截取 PDF
-echo 2. 分拆 PDF
-echo 3. 合并 PDF
-echo 4. 压缩 PDF
-echo 5. 旋转 PDF
+echo 1. PDF 截取
+echo 2. PDF 分拆
+echo 3. PDF 合并
+echo 4. PDF 压缩
+echo 5. PDF 旋转
+echo 6. PDF 加水印
+echo 7. PDF 加密
 echo.
 set /p choose=请选择处理方式：
 if &quot;%choose%&quot;==&quot;1&quot; Goto PDFtkCAT
@@ -101,6 +110,8 @@ if &quot;%choose%&quot;==&quot;2&quot; Goto PDFtkBRUST
 if &quot;%choose%&quot;==&quot;3&quot; Goto PDFtkCOMBINE
 if &quot;%choose%&quot;==&quot;4&quot; Goto PDFtkCOMPRESS
 if &quot;%choose%&quot;==&quot;5&quot; Goto PDFtkROTATE
+if &quot;%choose%&quot;==&quot;6&quot; Goto PDFtkMULTISTAMP
+if &quot;%choose%&quot;==&quot;7&quot; Goto PDFtkPW
 exit
 
 :PDFtkCAT
@@ -108,6 +119,7 @@ if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFP
 set /p PDFtkCAT=请输入需要截取的页数（支持 1 2 或 1-3 或 2-end）：
 cd %PDFtkTargetPath%
 echo 正在处理 %PDFPath%
+::%PDFtk% %PDFPath% cat %PDFtkCAT% output %date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%-CAT.pdf
 %PDFtk% &quot;%PDFPath%&quot; cat %PDFtkCAT% output &quot;%PDFPath%-CAT.pdf&quot;
 exit
 
@@ -130,6 +142,7 @@ exit
 if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFPath=请输入需要处理的 PDF 文件并回车:
 cd %PDFtkTargetPath%
 echo 正在处理 %PDFPath%
+::%PDFtk% %PDFPath% output %date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%-COMPRESS.pdf compress
 %PDFtk% &quot;%PDFPath%&quot; output &quot;%PDFPath%-COMPRESS.pdf&quot; compress
 exit
 
@@ -141,7 +154,40 @@ if defined PDFPath ( echo 脚本启动时已带入路径： %1) else set /p PDFP
 set /p PDFtkROTATECAT=请输入旋转参数：
 cd %PDFtkTargetPath%
 echo 正在处理 %PDFPath%
+::%PDFtk% %PDFPath% cat %PDFtkROTATECAT% output %date:~0,4%%date:~5,2%%date:~8,2%%time:~0,2%%time:~3,2%%time:~6,2%-ROTATE.pdf
 %PDFtk% &quot;%PDFPath%&quot; cat %PDFtkROTATECAT% output &quot;%PDFPath%-ROTATE.pdf&quot;
+exit
+
+:PDFtkMULTISTAMP
+echo.
+echo 水印 PDF 文件（watermark.pdf）请放在 PDFtk.exe 的同一目录
+echo.
+pause
+for /r %PDFtkSourcePath% %%a in (*.pdf) do (
+    echo 正在给 %%~na 加水印
+    %PDFtk% &quot;%%a&quot; multistamp watermark.pdf output %PDFtkTargetPath%\%%~na-WM.pdf
+    echo.
+    )
+exit
+
+:PDFtkPW
+echo.
+echo 默认设置用户密码，且允许复制内容，如需调整密码或变更参数，请打开脚本修改。
+:: allow 后面为参数，表示允许相关功能
+:: 留空 不允许下述功能 / AllFeatures 允许下述说用功能
+:: Printing 打印（高质量）
+:: DegradedPrinting 打印（低质量）
+:: ModifyContents 修改内容
+:: CopyContents 复制内容
+:: ModifyAnnotations 修改提示
+:: FillIn 填入内容
+echo.
+pause
+for /r %PDFtkSourcePath% %%a in (*.pdf) do (
+    echo 正在给 %%~na 加密
+    %PDFtk% &quot;%%a&quot; output %PDFtkTargetPath%\%%~na-PW.pdf user_pw %user_pw% allow printing copycontents
+    echo.
+    )
 exit
 </code></pre>
 
