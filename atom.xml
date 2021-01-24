@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-01-23T12:08:12+08:00</updated>
+  <updated>2021-01-24T12:01:37+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2020-11-21:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>Header Editor 与 Decentraleyes 共用需要注意排除</title>
+    <updated>2021-01-24T12:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-01-24:/headereditordecentraleyes.html</id>
+    <content type="html">&lt;p&gt;Header Editor 与 Decentraleyes 共用需要注意排除一些字体重定向规则。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/headereditordecentraleyes.html"></link>
   </entry>
   <entry>
     <title>2021 年我的 RSS 订阅方式</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2020-04-12:/syncthing-portable.html</id>
     <content type="html">&lt;p&gt;Syncthing 的一些命令行参数。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/syncthing-portable.html"></link>
-  </entry>
-  <entry>
-    <title>使用 IrfanView 将 PDF 的各个页面保存为单独的图片</title>
-    <updated>2020-04-05T12:45:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-04-05:/irfanviewpdf2pic.html</id>
-    <content type="html">&lt;p&gt;IrfanView 加载 PDF 文件的两个插件：PDF.dll 和 Postscript.dll。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/irfanviewpdf2pic.html"></link>
   </entry>
 </feed>

@@ -46,9 +46,9 @@
 
 
         <meta name="keywords" content="Total Commander,Double Commander,zip,7-Zip,Total7zip,">
-        <meta name="description" content="解决 Double Commander 部分 zip 压缩包文件名乱码的问题">
+        <meta name="description" content="解决 Double Commander 部分 zip 压缩包文件名乱码的问题（部分内容已过时）">
         <meta name="author" content="">
-        <title>解决 Double Commander 部分 zip 压缩包文件名乱码的问题</title>
+        <title>解决 Double Commander 部分 zip 压缩包文件名乱码的问题（部分内容已过时）</title>
     </head>
     <body>
         <article class="container">
@@ -65,19 +65,21 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">解决 Double Commander 部分 zip 压缩包文件名乱码的问题</h1>
+                <h1 class="title">解决 Double Commander 部分 zip 压缩包文件名乱码的问题（部分内容已过时）</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1590231300"><span class="from"></span></span>
+                    <span class="date" data-time="1611460800"><span class="from"></span></span>
                     
                     <span class="tags"><a class="tag" href="/tag/Total%20Commander/index.html">Total Commander</a><a class="tag" href="/tag/Double%20Commander/index.html">Double Commander</a><a class="tag" href="/tag/zip/index.html">zip</a><a class="tag" href="/tag/7-Zip/index.html">7-Zip</a><a class="tag" href="/tag/Total7zip/index.html">Total7zip</a></span>
                 </section>
-                <article class="content"><h3>解决 Double Commander 部分 zip 压缩包文件名乱码的问题</h3>
+                <article class="content"><h3>解决 Double Commander 部分 zip 压缩包文件名乱码的问题（部分内容已过时）</h3>
 
 <blockquote>
 <p>2020.05.23 发现这个方法并不能完全解决乱码的问题，部分压缩包可以，部分压缩包不行，暂时还没有找到更好的方案。</p>
+
+<p>2021.01.24 新版的 Double Commander 已经可以不依赖插件，正常处理我之前提到的有问题的文件，本文的配置仍然可用。</p>
 </blockquote>
 
 <p>使用 Double Commander 替换 Total Commander 已有一段时间了，使用过程中发现了一个针对 zip 压缩文件的问题，Double Commander(以下简称 DC)自带的 zip 插件 zip.wcx，无法正常处理某一些 zip 包，文件名显示乱码，我个人试着排查了一下，应该与 zip 压缩文件中针对中文文件名编码的选择有关，以命令行 7-Zip 压缩的 Zip 包为例，如果压缩参数中没有 <code>-mcu=on</code>，且压缩文件中的文件名有中文，DC 默认配置的情况下，文件名会乱码，如下图：</p>
