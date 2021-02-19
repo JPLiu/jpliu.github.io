@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-01-24T13:13:55+08:00</updated>
+  <updated>2021-02-19T23:59:55+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2020-11-21:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>Scrcpy 简单介绍</title>
+    <updated>2021-02-20T00:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-02-20:/scrcpy.html</id>
+    <content type="html">&lt;p&gt;简单说一下我使用 Scrcpy 的过程。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/scrcpy.html"></link>
   </entry>
   <entry>
     <title>Header Editor 与 Decentraleyes 共用需要注意排除</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2020-04-25:/vim-openssl-base64.html</id>
     <content type="html">&lt;p&gt;在 Vim 中使用 OpenSSL 转码 Base64 编码的文本。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/vim-openssl-base64.html"></link>
-  </entry>
-  <entry>
-    <title>Syncthing 设置便携化</title>
-    <updated>2020-04-12T22:00:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-04-12:/syncthing-portable.html</id>
-    <content type="html">&lt;p&gt;Syncthing 的一些命令行参数。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/syncthing-portable.html"></link>
   </entry>
 </feed>
