@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-02-21T23:28:17+08:00</updated>
+  <updated>2021-03-20T16:29:18+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -50,10 +50,10 @@
     <link href="http://jpliu.github.io/ublockorigincontentfarms.html"></link>
   </entry>
   <entry>
-    <title>无需 Lenovo Vantage，配置 Lenovo 设备的充电阙值</title>
+    <title>无需 Lenovo Vantage，配置 ThinkPad 设备的充电阙值</title>
     <updated>2020-06-03T21:10:00+08:00</updated>
     <id>tag:jpliu.github.io,2020-06-03:/lenovobatterychargethreshold.html</id>
-    <content type="html">&lt;p&gt;在不使用 Lenovo Vantage 的前提下配置 Lenovo 设备的充电阙值&lt;/p&gt;&#xA;</content>
+    <content type="html">&lt;p&gt;在不使用 Lenovo Vantage 的前提下配置 ThinkPad 设备的充电阙值&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/lenovobatterychargethreshold.html"></link>
   </entry>
   <entry>
