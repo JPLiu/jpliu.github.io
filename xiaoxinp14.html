@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Lenovo,充电阈值,AutoHotkey,">
+        <meta name="description" content="小新 Pro 14 到手之后的一些小调整">
+        <meta name="author" content="">
+        <title>小新 Pro 14 到手之后的一些小调整</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">小新 Pro 14 到手之后的一些小调整</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1618232400"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Lenovo/index.html">Lenovo</a><a class="tag" href="/tag/%e5%85%85%e7%94%b5%e9%98%88%e5%80%bc/index.html">充电阈值</a><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a></span>
+                </section>
+                <article class="content"><h3>小新 Pro 14 到手之后的一些小调整</h3>
+
+<p>我之前的笔记本设备是一台 2017 年购入的 ThinkPad S2，已经好几年了，年初决定今年换掉，看中了联想的小新 Pro 14 锐龙版，4 月 1 日付了 200 块定金，7 号付尾款后 8 号收到，目前体验了 5 天，大致感受上是满意的。本文主要说下一些小地方的调整。</p>
+
+<h4>关于电源适配器。</h4>
+
+<p>小新 Pro 14 自带的是一个 95W ，体积比较大而且重的电源适配器，我自己买了个 倍思 的 C+C+A 的 120W GaN 充电器，可以正常充电，而且桌面会简洁一点。</p>
+
+<h4>关于电池阈值。</h4>
+
+<p>大部分的时间我都在公司附近住，而且笔记本除了回家的时候，都是在宿舍接着电源使用，比起设备没电，更多是担心电池损耗，所以之前的 ThinkPad S2 我一直开着电池阈值的设置。</p>
+
+<p>之前的 ThinkPad S2 有 Lenovo Power Manager，可以用 ChargeThreshold.exe 进行控制。但小新 Pro 14 没有 Lenovo Power Manager，需要在 Microsoft Store 中搜索 Lenovo Ventage 安装，Lenovo Ventage 中的电池设置可以打开节电模式，会把设备的充电时的电量限制在 55% 至 60% 之间。</p>
+
+<blockquote>
+<p>这里提一下 联想电脑管家，根据我了解到的情况，联想电脑管家之前将电池阈值称为养护模式，但在新版中已经没有直接的入口，需要用户去调注册表，比较麻烦，不如 Lenovo Ventage 方便。</p>
+</blockquote>
+
+<h4>关于键盘布局。</h4>
+
+<p>ThinkPad S2 毕竟是 ThinkPad 的键盘，这是我对过去几年最满意的地方，用起来非常舒服，而 小新 Pro 14 的键盘布局相比 ThinkPad 要差很多。</p>
+
+<p>一是没有独立的 Home、End、Page Up、Page Down 键，需要使用 Fn 符合键，在 Word 翻页的时候非常很不方便。</p>
+
+<p>二是上下方向键是半高方向键，适应了几天还是经常按错。</p>
+
+<p>问题二的半高方向键没有办法解决，问题一我尝试用 AutoHotkey 作了一下映射，效果基本可以接受。</p>
+
+<blockquote>
+<p>本来是想把 RAlt 单击映射成 PgUp，RCtrl 单击映射成 PgDn，Insert 单击映射成 Home，PrintScreen 单击映射成 End 的，但是实测只要映射了 RCtrl，Ditto 就有可能工作不支持，懒得具体找原因，只好改用下面的方案。</p>
+</blockquote>
+
+<pre><code>#SingleInstance Force
+; 移动功能键映射 {{{1
+;RAlt           单击 Home，连击 End
+;PrintScreen    单击 PgDn，连击 PrintScreen
+;Insert         单击 PgUp，连击 Insert
+RAlt::
+    If key_times &gt; 0
+    {
+        key_times += 1
+        Return
+    }
+    key_times = 1
+    SetTimer, KeyWinA, 300
+    Return
+    KeyWinA:
+    SetTimer, KeyWinA, off
+    If key_times = 1
+    {
+        Send {Home}
+    }
+    Else If key_times &gt; 1
+    {
+        Send {End}
+    }
+    key_times = 0
+    Return
+
+$PrintScreen::
+    If key_times &gt; 0
+    {
+        key_times += 1
+        Return
+    }
+    key_times = 1
+    SetTimer, KeyWinP, 300
+    Return
+    KeyWinP:
+    SetTimer, KeyWinP, off
+    If key_times = 1
+    {
+        Send {PgDn}
+    }
+    Else If key_times &gt; 1
+    {
+        Send {PrintScreen}
+    }
+    key_times = 0
+    Return
+
+$Insert::
+    If key_times &gt; 0
+    {
+        key_times += 1
+        Return
+    }
+    key_times = 1
+    SetTimer, KeyWinI, 300
+    Return
+    KeyWinI:
+    SetTimer, KeyWinI, off
+    If key_times = 1
+    {
+        Send {PgUp}
+    }
+    Else If key_times &gt; 1
+    {
+        Send {Insert}
+    }
+    key_times = 0
+    Return
+</code></pre>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/mylist.html">我的软件清单</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/scrcpy.html">Scrcpy 简单介绍</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

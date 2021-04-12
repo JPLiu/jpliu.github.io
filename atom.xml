@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-03-20T16:29:18+08:00</updated>
+  <updated>2021-04-12T21:20:15+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2021-02-21:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>小新 Pro 14 到手之后的一些小调整</title>
+    <updated>2021-04-12T21:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-04-12:/xiaoxinp14.html</id>
+    <content type="html">&lt;p&gt;简单说一下近期换笔记本设备之后的一些感受，以及对小新 Pro 14 一些我个人不喜欢的细节的处理。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/xiaoxinp14.html"></link>
   </entry>
   <entry>
     <title>Scrcpy 简单介绍</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2020-05-02:/vim-quickfix.html</id>
     <content type="html">&lt;p&gt;借助 Tabular 自定义 Vim 中 QuickFix 列表的格式。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/vim-quickfix.html"></link>
-  </entry>
-  <entry>
-    <title>在 Vim 中使用 OpenSSL 处理 Base64 编码的文本</title>
-    <updated>2020-04-25T11:30:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-04-25:/vim-openssl-base64.html</id>
-    <content type="html">&lt;p&gt;在 Vim 中使用 OpenSSL 转码 Base64 编码的文本。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/vim-openssl-base64.html"></link>
   </entry>
 </feed>
