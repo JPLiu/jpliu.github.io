@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Vim,Open-Browser,">
+        <meta name="description" content="在 Vim 中使用 Open-browser.vim 来替换自带的 gx 命令">
+        <meta name="author" content="">
+        <title>在 Vim 中使用 Open-browser.vim 来替换自带的 gx 命令</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">在 Vim 中使用 Open-browser.vim 来替换自带的 gx 命令</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1577283600"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Vim/index.html">Vim</a><a class="tag" href="/tag/Open-Browser/index.html">Open-Browser</a></span>
+                </section>
+                <article class="content"><h3>在 Vim 中使用 Open-browser.vim 来替换自带的 gx 命令</h3>
+
+<p>在 Vim 中，使用 <code>gx</code> 命令是可以打开当前光标下的链接的，但是从大约8.1.1800的版本开始，Vim 更新了自带的 netrw 插件之后，在 Vim 中 <code>gx</code> 命令就不正常了，还有不少人和我一样 Github 上开了 issue，Vim 最近更新了8.2的版本，但是截止至目前，这个问题也还没有得到解决……</p>
+
+<p>在 Github 上有人给出了一个处理方案：安装 <a href="https://github.com/tyru/open-browser.vim">Open-browser.vim</a>，代替 Vim 自带的 <code>gx</code> 命令。</p>
+
+<ul>
+<li><p>使用 Vim-Plug 之类的插件管理器，安装 Open-browser.vim 插件。使用 Vim-Plug 的话可以在配置文件上加一行，使用其他插件管理器的就不说了。</p>
+
+<pre><code>Plug 'tyru/open-browser.vim'
+</code></pre></li>
+
+<li><p>安装完成之后，在 Vim 的配置文件中增加以下内容：</p>
+
+<pre><code>let g:netrw_nogx = 1 &quot; disable netrw's gx mapping.
+nmap gx &lt;Plug&gt;(openbrowser-smart-search)
+vmap gx &lt;Plug&gt;(openbrowser-smart-search)
+</code></pre></li>
+
+<li><p>之后，在链接上使用 <code>gx</code> 命令，应该就能正常打开光标下的链接了</p></li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/doublecmdtoolbar.html">Double Commander 的 Toolbar 自定义命令</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/huorongblockconnection.html">用火绒拦截指定程序的联网</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

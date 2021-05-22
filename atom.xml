@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-05-22T20:48:47+08:00</updated>
+  <updated>2021-05-22T20:53:58+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2021-05-16:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>在 Windows 10 21H1 中使用 IE 打开 EasyConnect 的问题</title>
+    <updated>2021-05-22T20:50:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-05-22:/win1021h1edgeie.html</id>
+    <content type="html">&lt;p&gt;简单说下 在 Windows 10 21H1 中使用 IE 打开 EasyConnect 的问题。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/win1021h1edgeie.html"></link>
   </entry>
   <entry>
     <title>小新 Pro 14 到手之后的一些小调整</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2021-01-23:/pdftkbat.html</id>
     <content type="html">&lt;p&gt;自用的 PDFtk 批处理脚本&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/pdftkbat.html"></link>
-  </entry>
-  <entry>
-    <title>自定义 Vim 中 QuickFix 列表的格式</title>
-    <updated>2020-05-02T22:00:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-05-02:/vim-quickfix.html</id>
-    <content type="html">&lt;p&gt;借助 Tabular 自定义 Vim 中 QuickFix 列表的格式。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/vim-quickfix.html"></link>
   </entry>
 </feed>

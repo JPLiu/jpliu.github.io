@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="批处理,PotPlayer,Aria2,FastCopy,7-Zip,">
+        <meta name="description" content="一键更新 PotPlayer（已过时）">
+        <meta name="author" content="">
+        <title>一键更新 PotPlayer（已过时）</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">一键更新 PotPlayer（已过时）</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1491830160"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e6%89%b9%e5%a4%84%e7%90%86/index.html">批处理</a><a class="tag" href="/tag/PotPlayer/index.html">PotPlayer</a><a class="tag" href="/tag/Aria2/index.html">Aria2</a><a class="tag" href="/tag/FastCopy/index.html">FastCopy</a><a class="tag" href="/tag/7-Zip/index.html">7-Zip</a></span>
+                </section>
+                <article class="content"><h3>一键更新 PotPlayer</h3>
+
+<ul>
+<li>2017.04.10 感觉 PotPlayer 一直没有更新，原来换了地址了，新的皮肤不太好看……</li>
+<li>2019.04.13 个人已经没有使用 PotPlayer 了，脚本已不适用。</li>
+</ul>
+
+<p>使用 PotPlayer 大概有5年的时间了，一直使用的是闻雷的绿色版，城通网盘的分享不太好用，于是就利用提供的制作 PotPlayer 便携版的批处理，配合其他工具写了个自动下载的脚本。</p>
+
+<pre><code>@echo off
+::设定aria2，7z，FastCopy，PotPlayer的路径
+set aria2=d:\1-Program\0-CommandLineTools\Aria2\aria2c.exe
+set zipper=d:\1-Program\0-CommandLineTools\7-Zip\7z.exe
+set fastcopy=d:\1-Program\TotalCMD\plugins\FastCopy\FastCopy.exe
+set potplayerpath=d:\1-Program\PotPlayer
+
+set temppot=%temp%\Pot
+del /s /q %temppot%
+
+::PotPlayer的下载链接
+set PotPlayerlink=http://get.daum.net/PotPlayer/v4/PotPlayerSetup.exe
+set FFmpegMininumLink=http://get.daum.net/PotPlayer/v3/Module/FFmpeg/FFmpegMininum.dll
+
+::下载并解压，合并文件
+set PotPlayerSet=%temppot%\PotPlayerSetup.exe
+%aria2% --split=15 --max-connection-per-server=15 --dir=%temppot% %PotPlayerlink%
+%aria2% --split=15 --max-connection-per-server=15 --dir=%temppot%\exaPotPlayerSet\Module\FFmpeg %FFmpegMininumLink%
+%zipper% x %PotPlayerSet% -o%temp%\pot\exaPotPlayerSet -y
+copy %potplayerpath%\PotPlayerMini.ini %temp%\pot\exaPotPlayerSet\PotPlayerMini.ini
+copy %potplayerpath%\PotPlayerUpdate.bat %temp%\pot\exaPotPlayerSet\PotPlayerUpdate.bat
+
+::删除不需要的文件
+rd /s /q %temp%\pot\exaPotPlayerSet\$PLUGINSDIR
+rd /s /q %temp%\pot\exaPotPlayerSet\$SYSDIR
+rd /s /q %temp%\pot\exaPotPlayerSet\$TEMP
+rd /s /q %temp%\pot\exaPotPlayerSet\[LICENSE]
+rd /s /q %temp%\pot\exaPotPlayerSet\Html
+if exist %temp%\pot\exaPotPlayerSet\Logos\PotPlayer_1.png (del /f /q %temp%\pot\exaPotPlayerSet\Logos\PotPlayer.png &amp; rename %temp%\pot\exaPotPlayerSet\Logos\PotPlayer_1.png PotPlayer.png) else (go on)
+del /f /q %temp%\pot\exaPotPlayerSet\Skins
+del /f /q %temp%\pot\exaPotPlayerSet\UrlList
+rename %temp%\pot\exaPotPlayerSet\History\Chinese(Simplified).txt Chinese(Simplified).bak
+rename %temp%\pot\exaPotPlayerSet\History\English.txt English.bak
+rename %temp%\pot\exaPotPlayerSet\History\Korean.txt Korean.bak
+rename %temp%\pot\exaPotPlayerSet\Language\Chinese(Simplified).ini Chinese(Simplified).bak
+rename %temp%\pot\exaPotPlayerSet\Language\English.ini English.bak
+rename %temp%\pot\exaPotPlayerSet\Language\Korean.ini Korean.bak
+del /f /q %temp%\pot\exaPotPlayerSet\History\*.txt
+del /f /q %temp%\pot\exaPotPlayerSet\Language\*.ini
+rename %temp%\pot\exaPotPlayerSet\History\Chinese(Simplified).bak Chinese(Simplified).txt
+rename %temp%\pot\exaPotPlayerSet\History\English.bak English.txt
+rename %temp%\pot\exaPotPlayerSet\History\Korean.bak Korean.txt
+rename %temp%\pot\exaPotPlayerSet\Language\Chinese(Simplified).bak Chinese(Simplified).ini
+rename %temp%\pot\exaPotPlayerSet\Language\English.bak English.ini
+rename %temp%\pot\exaPotPlayerSet\Language\Korean.bak Korean.ini
+md %temp%\pot\exaPotPlayerSet\Module\FFmpeg
+del /f %temp%\pot\exaPotPlayerSet\[NSIS].nsi
+del /f %temp%\pot\exaPotPlayerSet\uninstall.exe.nsis
+del /f %temp%\pot\exaPotPlayerSet\Daum_Movie.resource
+del /f %temp%\pot\exaPotPlayerSet\Loading.swf
+del /f %temp%\pot\exaPotPlayerSet\Logo.swf
+del /f %temp%\pot\exaPotPlayerSet\LogoMini.swf
+del /f %temp%\pot\exaPotPlayerSet\Alarm.wav
+del /f %temp%\pot\exaPotPlayerSet\PotScreenSaver.scr
+del /f %temp%\pot\exaPotPlayerSet\FileList.txt
+del /f %temp%\pot\exaPotPlayerSet\LGPL.TXT
+del /f %temp%\pot\exaPotPlayerSet\D_Exec.exe
+del /f %temp%\pot\exaPotPlayerSet\DaumDownloader.exe
+del /f %temp%\pot\exaPotPlayerSet\DesktopHook.exe
+del /f %temp%\pot\exaPotPlayerSet\KillPot.exe
+del /f %temp%\pot\exaPotPlayerSet\LogManager.exe
+del /f %temp%\pot\exaPotPlayerSet\PotPlayer.exe
+del /f %temp%\pot\exaPotPlayerSet\PotPlayerXP.exe
+del /f %temp%\pot\exaPotPlayerSet\SetTime.exe
+del /f %temp%\pot\exaPotPlayerSet\AudFilt.dll
+del /f %temp%\pot\exaPotPlayerSet\DaumCrashHandler.dll
+del /f %temp%\pot\exaPotPlayerSet\DChat.dll
+del /f %temp%\pot\exaPotPlayerSet\DMVDLoader.dll
+del /f %temp%\pot\exaPotPlayerSet\LibNCG.dll
+del /f %temp%\pot\exaPotPlayerSet\NCGDownloadDLL.dll
+
+::利用FastCopy来同步文件夹的内容
+%fastcopy% /cmd=sync /no_ui /error_stop /bufsize=128 /log=FALSE /disk_mode=auto /speed=full /auto_close %temppot%\exaPotPlayerSet\*.* /to=%potplayerpath%\
+
+del /s /q %temppot%
+exit
+</code></pre>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/fastcopy.html">FastCopy 的几种操作模式</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/imagemagickprocesspic.html">ImageMagick 批量处理图片 （2016.10.30更新）</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>
