@@ -45,10 +45,10 @@
 </script>
 
 
-        <meta name="keywords" content="批处理,PotPlayer,Aria2,FastCopy,7-Zip,">
-        <meta name="description" content="一键更新 PotPlayer（已过时）">
+        <meta name="keywords" content="批处理,Potplayer,Aria2,FastCopy,7-Zip,">
+        <meta name="description" content="一键更新 Potplayer（已过时）">
         <meta name="author" content="">
-        <title>一键更新 PotPlayer（已过时）</title>
+        <title>一键更新 Potplayer（已过时）</title>
     </head>
     <body>
         <article class="container">
@@ -65,97 +65,97 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">一键更新 PotPlayer（已过时）</h1>
+                <h1 class="title">一键更新 Potplayer（已过时）</h1>
                 <section class="info">
                     
                     
                     
                     <span class="date" data-time="1491830160"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/%e6%89%b9%e5%a4%84%e7%90%86/index.html">批处理</a><a class="tag" href="/tag/PotPlayer/index.html">PotPlayer</a><a class="tag" href="/tag/Aria2/index.html">Aria2</a><a class="tag" href="/tag/FastCopy/index.html">FastCopy</a><a class="tag" href="/tag/7-Zip/index.html">7-Zip</a></span>
+                    <span class="tags"><a class="tag" href="/tag/%e6%89%b9%e5%a4%84%e7%90%86/index.html">批处理</a><a class="tag" href="/tag/Potplayer/index.html">Potplayer</a><a class="tag" href="/tag/Aria2/index.html">Aria2</a><a class="tag" href="/tag/FastCopy/index.html">FastCopy</a><a class="tag" href="/tag/7-Zip/index.html">7-Zip</a></span>
                 </section>
-                <article class="content"><h3>一键更新 PotPlayer</h3>
+                <article class="content"><h3>一键更新 Potplayer</h3>
 
 <ul>
-<li>2017.04.10 感觉 PotPlayer 一直没有更新，原来换了地址了，新的皮肤不太好看……</li>
-<li>2019.04.13 个人已经没有使用 PotPlayer 了，脚本已不适用。</li>
+<li>2017.04.10 感觉 Potplayer 一直没有更新，原来换了地址了，新的皮肤不太好看……</li>
+<li>2019.04.13 个人已经没有使用 Potplayer 了，脚本已不适用。</li>
 </ul>
 
-<p>使用 PotPlayer 大概有5年的时间了，一直使用的是闻雷的绿色版，城通网盘的分享不太好用，于是就利用提供的制作 PotPlayer 便携版的批处理，配合其他工具写了个自动下载的脚本。</p>
+<p>使用 Potplayer 大概有5年的时间了，一直使用的是闻雷的绿色版，城通网盘的分享不太好用，于是就利用提供的制作 Potplayer 便携版的批处理，配合其他工具写了个自动下载的脚本。</p>
 
 <pre><code>@echo off
-::设定aria2，7z，FastCopy，PotPlayer的路径
+::设定aria2，7z，FastCopy，Potplayer的路径
 set aria2=d:\1-Program\0-CommandLineTools\Aria2\aria2c.exe
 set zipper=d:\1-Program\0-CommandLineTools\7-Zip\7z.exe
 set fastcopy=d:\1-Program\TotalCMD\plugins\FastCopy\FastCopy.exe
-set potplayerpath=d:\1-Program\PotPlayer
+set potplayerpath=d:\1-Program\Potplayer
 
 set temppot=%temp%\Pot
 del /s /q %temppot%
 
-::PotPlayer的下载链接
-set PotPlayerlink=http://get.daum.net/PotPlayer/v4/PotPlayerSetup.exe
-set FFmpegMininumLink=http://get.daum.net/PotPlayer/v3/Module/FFmpeg/FFmpegMininum.dll
+::Potplayer的下载链接
+set Potplayerlink=http://get.daum.net/Potplayer/v4/PotplayerSetup.exe
+set FFmpegMininumLink=http://get.daum.net/Potplayer/v3/Module/FFmpeg/FFmpegMininum.dll
 
 ::下载并解压，合并文件
-set PotPlayerSet=%temppot%\PotPlayerSetup.exe
-%aria2% --split=15 --max-connection-per-server=15 --dir=%temppot% %PotPlayerlink%
-%aria2% --split=15 --max-connection-per-server=15 --dir=%temppot%\exaPotPlayerSet\Module\FFmpeg %FFmpegMininumLink%
-%zipper% x %PotPlayerSet% -o%temp%\pot\exaPotPlayerSet -y
-copy %potplayerpath%\PotPlayerMini.ini %temp%\pot\exaPotPlayerSet\PotPlayerMini.ini
-copy %potplayerpath%\PotPlayerUpdate.bat %temp%\pot\exaPotPlayerSet\PotPlayerUpdate.bat
+set PotplayerSet=%temppot%\PotplayerSetup.exe
+%aria2% --split=15 --max-connection-per-server=15 --dir=%temppot% %Potplayerlink%
+%aria2% --split=15 --max-connection-per-server=15 --dir=%temppot%\exaPotplayerSet\Module\FFmpeg %FFmpegMininumLink%
+%zipper% x %PotplayerSet% -o%temp%\pot\exaPotplayerSet -y
+copy %potplayerpath%\PotplayerMini.ini %temp%\pot\exaPotplayerSet\PotplayerMini.ini
+copy %potplayerpath%\PotplayerUpdate.bat %temp%\pot\exaPotplayerSet\PotplayerUpdate.bat
 
 ::删除不需要的文件
-rd /s /q %temp%\pot\exaPotPlayerSet\$PLUGINSDIR
-rd /s /q %temp%\pot\exaPotPlayerSet\$SYSDIR
-rd /s /q %temp%\pot\exaPotPlayerSet\$TEMP
-rd /s /q %temp%\pot\exaPotPlayerSet\[LICENSE]
-rd /s /q %temp%\pot\exaPotPlayerSet\Html
-if exist %temp%\pot\exaPotPlayerSet\Logos\PotPlayer_1.png (del /f /q %temp%\pot\exaPotPlayerSet\Logos\PotPlayer.png &amp; rename %temp%\pot\exaPotPlayerSet\Logos\PotPlayer_1.png PotPlayer.png) else (go on)
-del /f /q %temp%\pot\exaPotPlayerSet\Skins
-del /f /q %temp%\pot\exaPotPlayerSet\UrlList
-rename %temp%\pot\exaPotPlayerSet\History\Chinese(Simplified).txt Chinese(Simplified).bak
-rename %temp%\pot\exaPotPlayerSet\History\English.txt English.bak
-rename %temp%\pot\exaPotPlayerSet\History\Korean.txt Korean.bak
-rename %temp%\pot\exaPotPlayerSet\Language\Chinese(Simplified).ini Chinese(Simplified).bak
-rename %temp%\pot\exaPotPlayerSet\Language\English.ini English.bak
-rename %temp%\pot\exaPotPlayerSet\Language\Korean.ini Korean.bak
-del /f /q %temp%\pot\exaPotPlayerSet\History\*.txt
-del /f /q %temp%\pot\exaPotPlayerSet\Language\*.ini
-rename %temp%\pot\exaPotPlayerSet\History\Chinese(Simplified).bak Chinese(Simplified).txt
-rename %temp%\pot\exaPotPlayerSet\History\English.bak English.txt
-rename %temp%\pot\exaPotPlayerSet\History\Korean.bak Korean.txt
-rename %temp%\pot\exaPotPlayerSet\Language\Chinese(Simplified).bak Chinese(Simplified).ini
-rename %temp%\pot\exaPotPlayerSet\Language\English.bak English.ini
-rename %temp%\pot\exaPotPlayerSet\Language\Korean.bak Korean.ini
-md %temp%\pot\exaPotPlayerSet\Module\FFmpeg
-del /f %temp%\pot\exaPotPlayerSet\[NSIS].nsi
-del /f %temp%\pot\exaPotPlayerSet\uninstall.exe.nsis
-del /f %temp%\pot\exaPotPlayerSet\Daum_Movie.resource
-del /f %temp%\pot\exaPotPlayerSet\Loading.swf
-del /f %temp%\pot\exaPotPlayerSet\Logo.swf
-del /f %temp%\pot\exaPotPlayerSet\LogoMini.swf
-del /f %temp%\pot\exaPotPlayerSet\Alarm.wav
-del /f %temp%\pot\exaPotPlayerSet\PotScreenSaver.scr
-del /f %temp%\pot\exaPotPlayerSet\FileList.txt
-del /f %temp%\pot\exaPotPlayerSet\LGPL.TXT
-del /f %temp%\pot\exaPotPlayerSet\D_Exec.exe
-del /f %temp%\pot\exaPotPlayerSet\DaumDownloader.exe
-del /f %temp%\pot\exaPotPlayerSet\DesktopHook.exe
-del /f %temp%\pot\exaPotPlayerSet\KillPot.exe
-del /f %temp%\pot\exaPotPlayerSet\LogManager.exe
-del /f %temp%\pot\exaPotPlayerSet\PotPlayer.exe
-del /f %temp%\pot\exaPotPlayerSet\PotPlayerXP.exe
-del /f %temp%\pot\exaPotPlayerSet\SetTime.exe
-del /f %temp%\pot\exaPotPlayerSet\AudFilt.dll
-del /f %temp%\pot\exaPotPlayerSet\DaumCrashHandler.dll
-del /f %temp%\pot\exaPotPlayerSet\DChat.dll
-del /f %temp%\pot\exaPotPlayerSet\DMVDLoader.dll
-del /f %temp%\pot\exaPotPlayerSet\LibNCG.dll
-del /f %temp%\pot\exaPotPlayerSet\NCGDownloadDLL.dll
+rd /s /q %temp%\pot\exaPotplayerSet\$PLUGINSDIR
+rd /s /q %temp%\pot\exaPotplayerSet\$SYSDIR
+rd /s /q %temp%\pot\exaPotplayerSet\$TEMP
+rd /s /q %temp%\pot\exaPotplayerSet\[LICENSE]
+rd /s /q %temp%\pot\exaPotplayerSet\Html
+if exist %temp%\pot\exaPotplayerSet\Logos\Potplayer_1.png (del /f /q %temp%\pot\exaPotplayerSet\Logos\Potplayer.png &amp; rename %temp%\pot\exaPotplayerSet\Logos\Potplayer_1.png Potplayer.png) else (go on)
+del /f /q %temp%\pot\exaPotplayerSet\Skins
+del /f /q %temp%\pot\exaPotplayerSet\UrlList
+rename %temp%\pot\exaPotplayerSet\History\Chinese(Simplified).txt Chinese(Simplified).bak
+rename %temp%\pot\exaPotplayerSet\History\English.txt English.bak
+rename %temp%\pot\exaPotplayerSet\History\Korean.txt Korean.bak
+rename %temp%\pot\exaPotplayerSet\Language\Chinese(Simplified).ini Chinese(Simplified).bak
+rename %temp%\pot\exaPotplayerSet\Language\English.ini English.bak
+rename %temp%\pot\exaPotplayerSet\Language\Korean.ini Korean.bak
+del /f /q %temp%\pot\exaPotplayerSet\History\*.txt
+del /f /q %temp%\pot\exaPotplayerSet\Language\*.ini
+rename %temp%\pot\exaPotplayerSet\History\Chinese(Simplified).bak Chinese(Simplified).txt
+rename %temp%\pot\exaPotplayerSet\History\English.bak English.txt
+rename %temp%\pot\exaPotplayerSet\History\Korean.bak Korean.txt
+rename %temp%\pot\exaPotplayerSet\Language\Chinese(Simplified).bak Chinese(Simplified).ini
+rename %temp%\pot\exaPotplayerSet\Language\English.bak English.ini
+rename %temp%\pot\exaPotplayerSet\Language\Korean.bak Korean.ini
+md %temp%\pot\exaPotplayerSet\Module\FFmpeg
+del /f %temp%\pot\exaPotplayerSet\[NSIS].nsi
+del /f %temp%\pot\exaPotplayerSet\uninstall.exe.nsis
+del /f %temp%\pot\exaPotplayerSet\Daum_Movie.resource
+del /f %temp%\pot\exaPotplayerSet\Loading.swf
+del /f %temp%\pot\exaPotplayerSet\Logo.swf
+del /f %temp%\pot\exaPotplayerSet\LogoMini.swf
+del /f %temp%\pot\exaPotplayerSet\Alarm.wav
+del /f %temp%\pot\exaPotplayerSet\PotScreenSaver.scr
+del /f %temp%\pot\exaPotplayerSet\FileList.txt
+del /f %temp%\pot\exaPotplayerSet\LGPL.TXT
+del /f %temp%\pot\exaPotplayerSet\D_Exec.exe
+del /f %temp%\pot\exaPotplayerSet\DaumDownloader.exe
+del /f %temp%\pot\exaPotplayerSet\DesktopHook.exe
+del /f %temp%\pot\exaPotplayerSet\KillPot.exe
+del /f %temp%\pot\exaPotplayerSet\LogManager.exe
+del /f %temp%\pot\exaPotplayerSet\Potplayer.exe
+del /f %temp%\pot\exaPotplayerSet\PotplayerXP.exe
+del /f %temp%\pot\exaPotplayerSet\SetTime.exe
+del /f %temp%\pot\exaPotplayerSet\AudFilt.dll
+del /f %temp%\pot\exaPotplayerSet\DaumCrashHandler.dll
+del /f %temp%\pot\exaPotplayerSet\DChat.dll
+del /f %temp%\pot\exaPotplayerSet\DMVDLoader.dll
+del /f %temp%\pot\exaPotplayerSet\LibNCG.dll
+del /f %temp%\pot\exaPotplayerSet\NCGDownloadDLL.dll
 
 ::利用FastCopy来同步文件夹的内容
-%fastcopy% /cmd=sync /no_ui /error_stop /bufsize=128 /log=FALSE /disk_mode=auto /speed=full /auto_close %temppot%\exaPotPlayerSet\*.* /to=%potplayerpath%\
+%fastcopy% /cmd=sync /no_ui /error_stop /bufsize=128 /log=FALSE /disk_mode=auto /speed=full /auto_close %temppot%\exaPotplayerSet\*.* /to=%potplayerpath%\
 
 del /s /q %temppot%
 exit

@@ -45,10 +45,10 @@
 </script>
 
 
-        <meta name="keywords" content="Lenovo,联想,充电阙值,命令行,">
-        <meta name="description" content="无需 Lenovo Vantage，配置 ThinkPad 设备的充电阙值">
+        <meta name="keywords" content="Lenovo,充电阈值,命令行,">
+        <meta name="description" content="无需 Lenovo Vantage，配置 ThinkPad 设备的充电阈值">
         <meta name="author" content="">
-        <title>无需 Lenovo Vantage，配置 ThinkPad 设备的充电阙值</title>
+        <title>无需 Lenovo Vantage，配置 ThinkPad 设备的充电阈值</title>
     </head>
     <body>
         <article class="container">
@@ -65,29 +65,29 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">无需 Lenovo Vantage，配置 ThinkPad 设备的充电阙值</h1>
+                <h1 class="title">无需 Lenovo Vantage，配置 ThinkPad 设备的充电阈值</h1>
                 <section class="info">
                     
                     
                     
                     <span class="date" data-time="1591189800"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/Lenovo/index.html">Lenovo</a><a class="tag" href="/tag/%e8%81%94%e6%83%b3/index.html">联想</a><a class="tag" href="/tag/%e5%85%85%e7%94%b5%e9%98%99%e5%80%bc/index.html">充电阙值</a><a class="tag" href="/tag/%e5%91%bd%e4%bb%a4%e8%a1%8c/index.html">命令行</a></span>
+                    <span class="tags"><a class="tag" href="/tag/Lenovo/index.html">Lenovo</a><a class="tag" href="/tag/%e5%85%85%e7%94%b5%e9%98%88%e5%80%bc/index.html">充电阈值</a><a class="tag" href="/tag/%e5%91%bd%e4%bb%a4%e8%a1%8c/index.html">命令行</a></span>
                 </section>
-                <article class="content"><h3>无需 Lenovo Vantage，配置 ThinkPad 设备的充电阙值</h3>
+                <article class="content"><h3>无需 Lenovo Vantage，配置 ThinkPad 设备的充电阈值</h3>
 
-<p>我现在手上用的设备是联想的 ThinkPad S2，可以配置充电阙值，但是在 Win 10 下，图形化界面配置充电阙值的方式就必须使用到 Windows 应用商店中的 Lenovo Vantage（以下简称 Vantage），这个东西安装之后开机就会挂在后台，而且会出现偶发性的高占用，我个人很不喜欢，而 Vantage 的功能中对我有用的只用充电阙值，最近在网上找到了不需要 Vantage 的一个办法：</p>
+<p>我现在手上用的设备是联想的 ThinkPad S2，可以配置充电阈值，但是在 Win 10 下，图形化界面配置充电阈值的方式就必须使用到 Windows 应用商店中的 Lenovo Vantage（以下简称 Vantage），这个东西安装之后开机就会挂在后台，而且会出现偶发性的高占用，我个人很不喜欢，而 Vantage 的功能中对我有用的只用充电阈值，最近在网上找到了不需要 Vantage 的一个办法：</p>
 
 <ol>
 <li><p>在 设备管理器→系统设备 中确认 Lenovo Power Manager device 已经安装，这个驱动可以通过 Windows Update 安装。</p></li>
 
 <li><p>下载 <a href="https://download.lenovo.com/pccbbs//thinkvantage_en/metroapps/Vantage/ChargeThreshold/ChargeThreshold.exe">ChargeThreshold.exe</a>，此处的链接来自 Lenovo。</p></li>
 
-<li><p>命令行运行 ChargeThreshold.exe on 80 可以将充电阙值设定为 80%</p></li>
+<li><p>命令行运行 ChargeThreshold.exe on 80 可以将充电阈值设定为 80%</p></li>
 
-<li><p>命令行运行 ChargeThreshold.exe off 可以禁用充电阙值。</p></li>
+<li><p>命令行运行 ChargeThreshold.exe off 可以禁用充电阈值。</p></li>
 
-<li><p>命令行运行 ChargeThreshold.exe 可以看到更多的选项，比如 ChargeThreshold.exe on 80 40，可以将充电阙值设置为上限 80，下限 40。</p></li>
+<li><p>命令行运行 ChargeThreshold.exe 可以看到更多的选项，比如 ChargeThreshold.exe on 80 40，可以将充电阈值设置为上限 80，下限 40。</p></li>
 </ol>
 
 <p>内容整理自 <a href="https://forums.lenovo.com/t5/Lenovo-Vantage-Knowledge-Base/Q-amp-A-setting-a-ThinkPad-battery-charge-threshold-by-script/m-p/4345631">Q&amp;A - setting a ThinkPad battery charge threshold by script</a>。</p>
@@ -101,14 +101,14 @@
 set highp=70
 set lowp=40
 
-echo 当前的充电阙值配置为：
+echo 当前的充电阈值配置为：
 ChargeThreshold.exe status
 
 echo.
 echo ChargeThreshold List
 echo.
-echo 1. 禁用充电阙值
-echo 2. 启用充电阙值（%highp% : %lowp%）
+echo 1. 禁用充电阈值
+echo 2. 启用充电阈值（%highp% : %lowp%）
 echo 3. 查看说明
 
 set /p choose=请选择相应的处理方式：
@@ -119,12 +119,12 @@ exit
 
 
 :ChargeThresholdOff
-echo 正在禁用充电阙值
+echo 正在禁用充电阈值
 ChargeThreshold.exe off
 exit
 
 :ChargeThresholdHL
-echo 正在启用充电阙值
+echo 正在启用充电阈值
 ChargeThreshold.exe On %highp% %lowp%
 exit
 
