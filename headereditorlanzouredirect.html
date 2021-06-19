@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Header Editor,蓝奏云,重定向,">
+        <meta name="description" content="用 Header Editor 重定向蓝奏云的访问链接">
+        <meta name="author" content="">
+        <title>用 Header Editor 重定向蓝奏云的访问链接</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">用 Header Editor 重定向蓝奏云的访问链接</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1624094700"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Header%20Editor/index.html">Header Editor</a><a class="tag" href="/tag/%e8%93%9d%e5%a5%8f%e4%ba%91/index.html">蓝奏云</a><a class="tag" href="/tag/%e9%87%8d%e5%ae%9a%e5%90%91/index.html">重定向</a></span>
+                </section>
+                <article class="content"><h3>用 Header Editor 重定向蓝奏云的访问链接</h3>
+
+<p>近期上网时发现蓝奏云 lanzous.com 的链接无法正常打开，看了一下貌似是 DNS 污染的问题，需要手工修改至 lanzoui.com 访问，于是决定使用 Header Editor 实现自动重定向。</p>
+
+<p>有兴趣自己配置的可以参考本文后续的表格进行配置，只想导入的可以在下面这个链接下载规则文件。</p>
+
+<ul>
+<li><a href="https://raw.githubusercontent.com/JPLiu/TestFiles/main/Header-Editor/HE_2021-06-19T09-23-22Z_lanzou.json">Github</a></li>
+</ul>
+
+<hr />
+
+<h4>规则内容</h4>
+
+<ul>
+<li>蓝奏云重定向规则</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>名称</td>
+<td>蓝奏云重定向</td>
+</tr>
+
+<tr>
+<td>规则类型</td>
+<td>重定向请求</td>
+</tr>
+
+<tr>
+<td>匹配类型</td>
+<td>正则表达式</td>
+</tr>
+
+<tr>
+<td>匹配规则</td>
+<td><code>^https?:\/\/www\.lanzous\.com\/(.*)$</code></td>
+</tr>
+
+<tr>
+<td>排除规则</td>
+<td></td>
+</tr>
+
+<tr>
+<td>执行类型</td>
+<td>常规</td>
+</tr>
+
+<tr>
+<td>重定向至</td>
+<td><code>https://www.lanzoui.com/$1</code></td>
+</tr>
+</tbody>
+</table>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/mylist.html">我的软件清单</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/win1021h1edgeie.html">在 Windows 10 21H1 中使用 IE 打开 EasyConnect 的问题</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>
