@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-06-19T17:31:51+08:00</updated>
+  <updated>2021-06-25T22:16:27+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2021-06-19:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>WinMerge 设置便携化</title>
+    <updated>2021-06-25T22:15:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-06-25:/winmergeportable.html</id>
+    <content type="html">&lt;p&gt;简单说一下 WinMerge 2.16.13 Beta 开始可用的设置便携化&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/winmergeportable.html"></link>
   </entry>
   <entry>
     <title>用 Header Editor 重定向蓝奏云的访问链接</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2020-09-09:/ublockorigincontentfarms.html</id>
     <content type="html">&lt;p&gt;在 uBlock Origin 中增加终结内容农场扩展的内容农场规则的精简版。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/ublockorigincontentfarms.html"></link>
-  </entry>
-  <entry>
-    <title>无需 Lenovo Vantage，配置 ThinkPad 设备的充电阈值</title>
-    <updated>2020-06-03T21:10:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-06-03:/lenovobatterychargethreshold.html</id>
-    <content type="html">&lt;p&gt;在不使用 Lenovo Vantage 的前提下配置 ThinkPad 设备的充电阈值&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/lenovobatterychargethreshold.html"></link>
   </entry>
 </feed>

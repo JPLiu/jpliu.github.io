@@ -45,10 +45,10 @@
 </script>
 
 
-        <meta name="keywords" content="Header Editor,蓝奏云,重定向,">
-        <meta name="description" content="用 Header Editor 重定向蓝奏云的访问链接">
+        <meta name="keywords" content="WinMerge,Portable,">
+        <meta name="description" content="WinMerge 设置便携化">
         <meta name="author" content="">
-        <title>用 Header Editor 重定向蓝奏云的访问链接</title>
+        <title>WinMerge 设置便携化</title>
     </head>
     <body>
         <article class="container">
@@ -65,78 +65,26 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">用 Header Editor 重定向蓝奏云的访问链接</h1>
+                <h1 class="title">WinMerge 设置便携化</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1624094700"><span class="from"></span></span>
+                    <span class="date" data-time="1624630500"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/Header%20Editor/index.html">Header Editor</a><a class="tag" href="/tag/%e8%93%9d%e5%a5%8f%e4%ba%91/index.html">蓝奏云</a><a class="tag" href="/tag/%e9%87%8d%e5%ae%9a%e5%90%91/index.html">重定向</a></span>
+                    <span class="tags"><a class="tag" href="/tag/WinMerge/index.html">WinMerge</a><a class="tag" href="/tag/Portable/index.html">Portable</a></span>
                 </section>
-                <article class="content"><h3>用 Header Editor 重定向蓝奏云的访问链接</h3>
+                <article class="content"><h3>WinMerge 设置便携化</h3>
 
-<p>近期上网时发现蓝奏云 lanzous.com 的链接无法正常打开，看了一下貌似是 DNS 污染的问题，需要手工修改至 lanzoui.com 访问，于是决定使用 Header Editor 实现自动重定向。</p>
-
-<p>有兴趣自己配置的可以参考本文后续的表格进行配置，只想导入的可以在下面这个链接下载规则文件。</p>
+<p>最近发现 WinMerge 的 <a href="https://github.com/WinMerge/winmerge/releases">GitHub Releases</a> 上更新了 2.16.13 Beta 的版本，里面提到的其中一个功能点是 <code>Possibility to store settings in INI file</code>，大致意思是支持将 WinMerge 的配置保存至 ini 文件中。</p>
 
 <ul>
-<li><a href="https://raw.githubusercontent.com/JPLiu/TestFiles/main/Header-Editor/HE_2021-06-19T09-23-22Z_lanzou.json">Github</a></li>
+<li><p>2.16.13 Beta 之前的 WinMerge 设置是保存在注册表中的，但是可以在程序设置中对设置的 reg 进行导出，更换设备之后需要重新导入 reg 文件之后才能正常显示功能。</p></li>
+
+<li><p>2.16.13 Beta 之后的版本只要在 WinMergeU.exe 的文件夹中新建一个名为 <code>WinMerge.ini</code> 的文件，WinMerge 就会自动将设置保存至该文件中，但是需要注意，新建文件后，之前的设置需要重新设置，因为读取到 WinMerge.ini的文件之后程序就不去读注册表了。</p></li>
 </ul>
 
-<hr />
-
-<h4>规则内容</h4>
-
-<ul>
-<li>蓝奏云重定向规则</li>
-</ul>
-
-<table>
-<thead>
-<tr>
-<th>规则</th>
-<th></th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>名称</td>
-<td>蓝奏云重定向</td>
-</tr>
-
-<tr>
-<td>规则类型</td>
-<td>重定向请求</td>
-</tr>
-
-<tr>
-<td>匹配类型</td>
-<td>正则表达式</td>
-</tr>
-
-<tr>
-<td>匹配规则</td>
-<td><code>^https?:\/\/www\.lanzous\.com\/(.*)$</code></td>
-</tr>
-
-<tr>
-<td>排除规则</td>
-<td></td>
-</tr>
-
-<tr>
-<td>执行类型</td>
-<td>常规</td>
-</tr>
-
-<tr>
-<td>重定向至</td>
-<td><code>https://www.lanzoui.com/$1</code></td>
-</tr>
-</tbody>
-</table>
+<p>本次没什么好配图的。</p>
 </article>
                 <section class="author">
                     
@@ -147,13 +95,13 @@
                     
                     <section class="nav prev more">
                         <div class="head">上篇文章</div>
-                        <a class="link" href="/winmergeportable.html">WinMerge 设置便携化</a>
+                        <a class="link" href="/mylist.html">我的软件清单</a>
                     </section>
                     
                     
                     <section class="nav next more">
                         <div class="head">下篇文章</div>
-                        <a class="link" href="/win1021h1edgeie.html">在 Windows 10 21H1 中使用 IE 打开 EasyConnect 的问题</a>
+                        <a class="link" href="/headereditorlanzouredirect.html">用 Header Editor 重定向蓝奏云的访问链接</a>
                     </section>
                     
                 </section>
