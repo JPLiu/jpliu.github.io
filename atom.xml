@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-06-25T22:16:27+08:00</updated>
+  <updated>2021-07-10T18:36:45+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2021-06-19:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>用 Header Editor 避免网站外链访问确认</title>
+    <updated>2021-07-10T18:25:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-07-10:/headereditorautoredirect.html</id>
+    <content type="html">&lt;p&gt;用 Header Editor 避免网站（如知乎，豆瓣等）页面访问外链时，需要点击确认的问题。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/headereditorautoredirect.html"></link>
   </entry>
   <entry>
     <title>WinMerge 设置便携化</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2020-08-16:/doublecmdfileinfo.html</id>
     <content type="html">&lt;p&gt;借助 fileinfo 插件给 Double Commander 增加查看 EXE 文件版本信息的功能。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/doublecmdfileinfo.html"></link>
-  </entry>
-  <entry>
-    <title>自制的 uBlock Origin 的内容农场规则</title>
-    <updated>2020-09-09T22:25:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-09-09:/ublockorigincontentfarms.html</id>
-    <content type="html">&lt;p&gt;在 uBlock Origin 中增加终结内容农场扩展的内容农场规则的精简版。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/ublockorigincontentfarms.html"></link>
   </entry>
 </feed>
