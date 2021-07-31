@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="AutoHotkey,Windows,计划任务,">
+        <meta name="description" content="用 AutoHotkey 实现自动切换 Windows 的深色主题">
+        <meta name="author" content="">
+        <title>用 AutoHotkey 实现自动切换 Windows 的深色主题</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">用 AutoHotkey 实现自动切换 Windows 的深色主题</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1627699500"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a><a class="tag" href="/tag/Windows/index.html">Windows</a><a class="tag" href="/tag/%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1/index.html">计划任务</a></span>
+                </section>
+                <article class="content"><h3>用 AutoHotkey 实现自动切换 Windows 的深色主题</h3>
+
+<p>起因是我在小众软件的官方论坛看到了 <a href="https://meta.appinn.net/t/topic/24884">Windows无需额外下载软件深色主题切换</a> 这个帖子，帖子里面内容提到 Windows 10 控制系统是否使用深色主题是根据注册表中 <code>HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize</code>下的 <code>AppsUseLightTheme</code> 的值决定的，于是心血来潮尝试用 AutoHotkey 实现简单的自动切换，具体代码如下。</p>
+
+<pre><code>#Persistent
+#SingleInstance force
+
+SetTimer, ModeSwitch, 1800000
+
+ModeSwitch:
+FormatTime, TimeToMeet,,HHmm
+If TimeToMeet between 0800 and 1945
+{
+    RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme, 1
+} Else {
+    RegWrite, REG_DWORD, HKCU\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize, AppsUseLightTheme, 0
+}
+Return
+</code></pre>
+
+<p>简单说明一下：</p>
+
+<ul>
+<li><p><strong>SetTimer</strong> 一行中的 1800000 是多长时间触发一次判断，1800000 代表 1800 秒，也就是半个小时。</p></li>
+
+<li><p><strong>If TimeToMeet</strong> 一行的 <code>0800 and 1945</code> 是指非暗色主题的生效时间，也就是上午八点至晚上七点四十五分之间，不使用暗色主题。</p></li>
+
+<li><p>由于每半个小时才判断一次，所以并不一定会在晚上七点四十五分切换，常驻后台理论上最晚的时间是晚上八点十五分会切换到暗色主题，对我来说可以接受，有需要的话可以自行调整判断间隔。</p></li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/mylist.html">我的软件清单</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/headereditorautoredirect.html">用 Header Editor 避免网站外链访问确认</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

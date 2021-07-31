@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-07-24T09:30:28+08:00</updated>
+  <updated>2021-07-31T10:51:20+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2021-07-24:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>用 AutoHotkey 实现自动切换 Windows 的深色主题</title>
+    <updated>2021-07-31T10:45:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-07-31:/ahk-dark-light-switch.html</id>
+    <content type="html">&lt;p&gt;用 AutoHotkey 实现自动切换 Windows 的深色主题&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/ahk-dark-light-switch.html"></link>
   </entry>
   <entry>
     <title>用 Header Editor 避免网站外链访问确认</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2021-01-23:/rss2021.html</id>
     <content type="html">&lt;p&gt;简单说一下目前（2021年）主要使用的 RSS 订阅源生成服务。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/rss2021.html"></link>
-  </entry>
-  <entry>
-    <title>给 Double Commander 增加查看 EXE 文件版本信息的功能</title>
-    <updated>2020-08-16T17:00:00+08:00</updated>
-    <id>tag:jpliu.github.io,2020-08-16:/doublecmdfileinfo.html</id>
-    <content type="html">&lt;p&gt;借助 fileinfo 插件给 Double Commander 增加查看 EXE 文件版本信息的功能。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/doublecmdfileinfo.html"></link>
   </entry>
 </feed>
