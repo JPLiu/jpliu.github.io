@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2021-07-31T10:51:20+08:00</updated>
+  <updated>2021-08-08T16:10:57+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2021-07-24:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>自制的 uBlock Origin 的网址清理规则</title>
+    <updated>2021-08-08T16:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2021-08-08:/ublockoriginclearurls.html</id>
+    <content type="html">&lt;p&gt;通过 uBlock Origin 实现类似 ClearUrls 扩展的网址清理功能。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/ublockoriginclearurls.html"></link>
   </entry>
   <entry>
     <title>用 AutoHotkey 实现自动切换 Windows 的深色主题</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2021-01-24:/headereditordecentraleyes.html</id>
     <content type="html">&lt;p&gt;Header Editor 与 Decentraleyes 共用需要注意排除一些字体重定向规则。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/headereditordecentraleyes.html"></link>
-  </entry>
-  <entry>
-    <title>2021 年我的 RSS 订阅方式</title>
-    <updated>2021-01-23T11:40:00+08:00</updated>
-    <id>tag:jpliu.github.io,2021-01-23:/rss2021.html</id>
-    <content type="html">&lt;p&gt;简单说一下目前（2021年）主要使用的 RSS 订阅源生成服务。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/rss2021.html"></link>
   </entry>
 </feed>
