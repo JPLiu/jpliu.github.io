@@ -78,11 +78,13 @@
 
 <p>Firefox 和 Chrome 上有一个名为 <a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls/">ClearUrls</a> 的扩展，功能是清理网址上的跟踪参数，举个例子，在淘宝天猫上搜索商品，打开之后网址可能是下面这个样子的：</p>
 
-<p><code>https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-18400927085.12.3e3e5920adKbOH&amp;id=640835814817&amp;rn=adf30abc188214603d72268f53824350&amp;abbucket=9</code></p>
+<pre><code>https://detail.tmall.com/item.htm?spm=a1z10.3-b-s.w4011-18400927085.12.3e3e5920adKbOH&amp;id=640835814817&amp;rn=adf30abc188214603d72268f53824350&amp;abbucket=9
+</code></pre>
 
 <p>而安装了 ClearUrls 扩展之后，网址会被清理成下面这个样子：</p>
 
-<p><code>https://detail.tmall.com/item.htm?id=640835814817</code></p>
+<pre><code>https://detail.tmall.com/item.htm?id=640835814817
+</code></pre>
 
 <p>但是 ClearUrls 这个扩展有个无法解决的问题，支持的国内网站较少（比如百度的页面就不支持）且无法简单地自定义规则，最近看到 uBlock Origin 的内置规则上增加了 AdGuard URL Tracking Protection 规则清单，用到的 <code>removeparam=</code> 语法的功能和 ClearUrls 相类似，于是干脆把 ClearUrls 内置的规则中我自己会用到的部分，已经一些原本在 ClearUrls 上没有的但是我常用的网站的规则用 uBlock Origin 的规则写一遍：</p>
 

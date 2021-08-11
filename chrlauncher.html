@@ -100,6 +100,8 @@
 
 <p>大体上使用 chrlauncher 制作 Chromium 的便携版的步骤如下：</p>
 
+<p>chrlauncher 下载地址：<a href="https://github.com/henrypp/chrlauncher/releases">GitHub</a></p>
+
 <ul>
 <li>下载 chrlauncher 并解压。</li>
 <li>打开 chrlauncher.exe（32 位还是 64 位可以根据系统选择） 所在目录下的 chrlauncher.ini，找到 <code>ChromiumType=</code> 开头的那一行，指定需要使用的 Chromium 版本，如果不打算更换的话，也可以保持默认。</li>
@@ -128,10 +130,15 @@
 
 <ul>
 <li>将 chrlauncher 文件夹下的 bin 文件夹内的 chrome.exe 固定到任务栏（注意不要双击打开）。</li>
-<li>复制 chrlauncher.ini 中 <code>ChromiumCommandLine=</code> 一行的参数，比如：<code>--flag-switches-begin --user-data-dir=..\profile --no-default-browser-check --allow-outdated-plugins --disable-logging --disable-breakpad --flag-switches-end</code></li>
-<li>对着任务栏固定的<strong>未启动的 Chromium 图标</strong>，按下 <code>Shift + 鼠标右键</code>，弹出菜单中选择属性。</li>
-<li>在 Chromium 图标属性的窗口的<strong>目标</strong>框内的 chrome.exe 的路径后，输入 <code>空格＋复制的 ChromiumCommandLine 参数</code>，保存，之后可以通过点击任务栏的 Chromium 图标，打开便携版的 Chromium。
-<br /></li>
+
+<li><p>复制 chrlauncher.ini 中 <code>ChromiumCommandLine=</code> 一行的参数，比如：</p>
+
+<pre><code>--flag-switches-begin --user-data-dir=..\profile --no-default-browser-check --allow-outdated-plugins --disable-logging --disable-breakpad --flag-switches-end
+</code></pre></li>
+
+<li><p>对着任务栏固定的<strong>未启动的 Chromium 图标</strong>，按下 <code>Shift + 鼠标右键</code>，弹出菜单中选择属性。</p></li>
+
+<li><p>在 Chromium 图标属性的窗口的<strong>目标</strong>框内的 chrome.exe 的路径后，输入 <code>空格＋复制的 ChromiumCommandLine 参数</code>，保存，之后可以通过点击任务栏的 Chromium 图标，打开便携版的 Chromium。</p></li>
 </ul></li>
 </ul>
 
