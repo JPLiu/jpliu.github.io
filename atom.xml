@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2022-03-19T12:49:06+08:00</updated>
+  <updated>2022-03-19T12:55:19+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -36,7 +36,7 @@
     <link href="http://jpliu.github.io/docfetcher.html"></link>
   </entry>
   <entry>
-    <title>chrlauncher 的简单介绍</title>
+    <title>chrlauncher 简单介绍</title>
     <updated>2021-08-10T23:45:00+08:00</updated>
     <id>tag:jpliu.github.io,2021-08-10:/chrlauncher.html</id>
     <content type="html">&lt;p&gt;简单说一下用 chrlauncher 制作 Chromium 浏览器便携版的经验。&lt;/p&gt;&#xA;</content>
