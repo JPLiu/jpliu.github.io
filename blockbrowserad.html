@@ -45,10 +45,10 @@
 </script>
 
 
-        <meta name="keywords" content="Firefox,Addon,油猴脚本,uBlock Origin,Header Editor,去广告,视频广告,">
-        <meta name="description" content="Firefox 目前可用的去广告方案（2021-10-02 更新）">
+        <meta name="keywords" content="Firefox,Addon,油猴脚本,uBlock Origin,Header Editor,去广告,">
+        <meta name="description" content="Firefox 目前可用的去广告方案（2022-09-17 更新）">
         <meta name="author" content="">
-        <title>Firefox 目前可用的去广告方案（2021-10-02 更新）</title>
+        <title>Firefox 目前可用的去广告方案（2022-09-17 更新）</title>
     </head>
     <body>
         <article class="container">
@@ -65,21 +65,19 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">Firefox 目前可用的去广告方案（2021-10-02 更新）</h1>
+                <h1 class="title">Firefox 目前可用的去广告方案（2022-09-17 更新）</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1633185300"><span class="from"></span></span>
+                    <span class="date" data-time="1663425300"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/Firefox/index.html">Firefox</a><a class="tag" href="/tag/Addon/index.html">Addon</a><a class="tag" href="/tag/%e6%b2%b9%e7%8c%b4%e8%84%9a%e6%9c%ac/index.html">油猴脚本</a><a class="tag" href="/tag/uBlock%20Origin/index.html">uBlock Origin</a><a class="tag" href="/tag/Header%20Editor/index.html">Header Editor</a><a class="tag" href="/tag/%e5%8e%bb%e5%b9%bf%e5%91%8a/index.html">去广告</a><a class="tag" href="/tag/%e8%a7%86%e9%a2%91%e5%b9%bf%e5%91%8a/index.html">视频广告</a></span>
+                    <span class="tags"><a class="tag" href="/tag/Firefox/index.html">Firefox</a><a class="tag" href="/tag/Addon/index.html">Addon</a><a class="tag" href="/tag/%e6%b2%b9%e7%8c%b4%e8%84%9a%e6%9c%ac/index.html">油猴脚本</a><a class="tag" href="/tag/uBlock%20Origin/index.html">uBlock Origin</a><a class="tag" href="/tag/Header%20Editor/index.html">Header Editor</a><a class="tag" href="/tag/%e5%8e%bb%e5%b9%bf%e5%91%8a/index.html">去广告</a></span>
                 </section>
-                <article class="content"><h3>Firefox 目前可用的去广告方案（2021-10-02 更新）</h3>
+                <article class="content"><h3>Firefox 目前可用的去广告方案（2022-09-17 更新）</h3>
 
 <blockquote>
 <p>此处的方案适用于 Firefox，所使用的扩展可能有 Chrome 版，Chrome 可参考，但不保证效果一致。</p>
-
-<p>此处的方案所指的视频广告过滤，通常只针对优酷，爱奇艺，腾讯视频，其他视频站不一定有效。</p>
 
 <p>此处的方案不一定是最好的方案。</p>
 </blockquote>
@@ -90,28 +88,30 @@
 
 <p>210124 更新：移除之前提到的 Nana Adblocker 的方案。</p>
 
-<p>200303 更新方案：uBlock Origin + Header Editor</p>
+<p>220303 更新：uBlock Origin + Header Editor</p>
+
+<p>220917 更新：移除了关于视频站的部分。</p>
 
 <table>
 <thead>
 <tr>
 <th>扩展</th>
-<th>是否必需</th>
+<th>必需</th>
 <th>备注</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/">uBlock Origin</a></td>
-<td>是</td>
-<td>基础的广告过滤扩展，需要订阅扩展自带的 uBlock filters 和 <a href="https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt">乘风视频规则</a></td>
+<td><a href="https://addons.mozilla.org/en-US/firefox/addon/ublock-origin">uBlock Origin</a></td>
+<td>必须</td>
+<td>基础扩展，需订阅扩展自带的 uBlock filters 和 <a href="https://bbs.kafan.cn/thread-1866845-1-1.html">乘风视频规则-卡饭</a></td>
 </tr>
 
 <tr>
-<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/header-editor/">Header Editor</a></td>
-<td>否</td>
-<td>参考卡饭的帖子设置优酷重定向：<a href="https://bbs.kafan.cn/thread-2142935-1-1.html">重定向规则1</a>、<a href="https://bbs.kafan.cn/forum.php?mod=viewthread&amp;tid=2171691&amp;page=1#pid45734014">重定向规则2</a></td>
+<td><a href="https://addons.mozilla.org/zh-CN/firefox/addon/header-editor">Header Editor</a></td>
+<td>可选</td>
+<td>按需设置重定向，比如：<a href="https://bbs.kafan.cn/forum.php?mod=viewthread&amp;tid=2171691&amp;page=1#pid45734014">重定向规则</a></td>
 </tr>
 </tbody>
 </table>
@@ -119,16 +119,7 @@
 <p>注：</p>
 
 <ol>
-<li><p>Header Editor 的重定向规则二选一即可。</p>
-
-<ul>
-<li>重定向规则1 会导致优酷的页面强制为网页全屏，不能显示评论和切换视频。</li>
-<li>重定向规则2 仅限 Firefox 57+ &amp; 最新版的 Header Editor，优酷视频页面时会有一个短暂的重载，页面评论弹幕等功能均正常。</li>
-</ul></li>
-
-<li><p>优酷可以不使用 Header Editor 的规则，uBlock Origin 的规则可以自动加速广告播放。</p></li>
-
-<li><p>乘风视频规则 上文中提供的是 Github 的链接，如果无法访问的，也可以到<a href="https://bbs.kafan.cn/thread-1866845-1-1.html">卡饭的帖子</a>找到新的链接。</p></li>
+<li>Header Editor 的重定向规则 仅限 Firefox 57+ &amp; 最新版的 Header Editor。</li>
 </ol>
 </article>
                 <section class="author">
