@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2022-10-15T10:43:23+08:00</updated>
+  <updated>2022-10-22T11:39:44+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2022-06-17:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>cgVim 简单介绍</title>
+    <updated>2022-10-22T11:15:00+08:00</updated>
+    <id>tag:jpliu.github.io,2022-10-22:/ahk-cgvim.html</id>
+    <content type="html">&lt;p&gt;更新了 cgVim，现在是基于 AutoHotkey v2 的版本，顺带简单介绍一下。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/ahk-cgvim.html"></link>
   </entry>
   <entry>
     <title>关于 uLister 和 Viewer Technology 的一条小记录</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2021-08-10:/chrlauncher.html</id>
     <content type="html">&lt;p&gt;简单说一下用 chrlauncher 制作 Chromium 浏览器便携版的经验。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/chrlauncher.html"></link>
-  </entry>
-  <entry>
-    <title>自制的 uBlock Origin 的网址清理规则</title>
-    <updated>2021-08-08T16:00:00+08:00</updated>
-    <id>tag:jpliu.github.io,2021-08-08:/ublockoriginclearurls.html</id>
-    <content type="html">&lt;p&gt;通过 uBlock Origin 实现类似 ClearUrls 扩展的网址清理功能。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/ublockoriginclearurls.html"></link>
   </entry>
 </feed>
