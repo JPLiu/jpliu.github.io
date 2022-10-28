@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="无人小站">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+
+<meta property="og:url" content="http://jpliu.github.io">
+<meta property="og:title" content="无人小站">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="无人小站">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+
+<link rel="canonical" href="http://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+
+        <meta name="keywords" content="Scrcpy,AutoHotkey,">
+        <meta name="description" content="用 AutoHotkey 实现 Scrcpy 自动运行">
+        <meta name="author" content="">
+        <title>用 AutoHotkey 实现 Scrcpy 自动运行</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/Mine.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">用 AutoHotkey 实现 Scrcpy 自动运行</h1>
+                <section class="info">
+                    
+                    
+                    
+                    <span class="date" data-time="1666973400"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Scrcpy/index.html">Scrcpy</a><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a></span>
+                </section>
+                <article class="content"><h3>用 AutoHotkey 实现 Scrcpy 自动运行</h3>
+
+<p>在工作中经常需要使用微信回复同事或是合作方，而手机的输入效率很低，所以我时长使用 Scrcpy 将我的 Android 手机投屏到电脑上后，使用键盘输入（公司的电脑设备是内网，不支持登录微信，也无法使用 Wifi 连接 Scrcpy）。但是由于不时需要离开座位（比如开会，或是讨论），离开后再回到座位上就需要重新手工打开 Scrcpy，非常麻烦，于是趁着最近将 AutoHotkey v1 脚本转换为 AutoHotkey v2 脚本的同时，参考之前实现的 Dark-Light-Switch 的逻辑，用 AutoHotkey v2 实现了个自动启动 Scrcpy 的功能，具体如下。</p>
+
+<pre><code>; Scrcpy 自动运行脚本
+; 每 10 秒检查一次当前设备是否有 Scrcpy 运行，如有，则无动作，如无，则启动 Scrcpy。
+#SingleInstance force
+A_IconTip := &quot;Auto-Scrcpy&quot;
+SetTimer ScrcpySwitch, 10000
+ScrcpySwitch()
+{
+    If (ProcessExist(&quot;scrcpy.exe&quot;) != 0)
+    {
+        Return
+    } Else {
+        Run A_ComSpec &quot; /c D:\1-Program\0-CommandLineTools\Scrcpy\scrcpy.exe --push-target=/sdcard/Files/Scrcpy/ --shortcut-mod=rctrl&quot;, ,&quot;Hide&quot;
+    }
+}
+</code></pre>
+
+<h3>补充说明</h3>
+
+<ul>
+<li><code>SetTimer</code>一行最后是判断的间隔时长 10000 代表 一万毫秒，即 10 秒。</li>
+<li>如果目前已经有 Scrcpy.exe 在运行，这无动作，等待 10 秒再执行第二次判断；如果目前没有 Scrcpy.exe 在运行，则会按命令启动 Scrcpy.exe。</li>
+<li>Scrcpy 运行的具体参数可以在<code>Run</code>行进行修改。</li>
+</ul>
+</article>
+                <section class="author">
+                    
+                    <a class="name" href="/about..html"></a>
+                    <div class="intro"></div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">上篇文章</div>
+                        <a class="link" href="/mylist.html">我的软件清单</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下篇文章</div>
+                        <a class="link" href="/ahk-cgvim.html">cgVim 简单介绍</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="http://www.chole.io/" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+    </body>
+</html>

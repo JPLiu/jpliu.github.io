@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2022-10-26T20:32:30+08:00</updated>
+  <updated>2022-10-29T00:10:55+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2022-06-17:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>用 AutoHotkey 实现 Scrcpy 自动运行</title>
+    <updated>2022-10-29T00:10:00+08:00</updated>
+    <id>tag:jpliu.github.io,2022-10-29:/ahk-auto-scrcpy.html</id>
+    <content type="html">&lt;p&gt;一个 AutoHotkey v2 的实例，用于持续运行 Scrcpy。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/ahk-auto-scrcpy.html"></link>
   </entry>
   <entry>
     <title>cgVim 简单介绍</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2021-11-09:/docfetcher.html</id>
     <content type="html">&lt;p&gt;介绍一下文件内容搜索工具 DocFetcher&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/docfetcher.html"></link>
-  </entry>
-  <entry>
-    <title>chrlauncher 简单介绍</title>
-    <updated>2021-08-10T23:45:00+08:00</updated>
-    <id>tag:jpliu.github.io,2021-08-10:/chrlauncher.html</id>
-    <content type="html">&lt;p&gt;简单说一下用 chrlauncher 制作 Chromium 浏览器便携版的经验。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/chrlauncher.html"></link>
   </entry>
 </feed>
