@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2022-10-29T00:10:55+08:00</updated>
+  <updated>2022-11-04T21:01:04+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2022-06-17:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>7-ZipPasswordExt 加密压缩包解压脚本</title>
+    <updated>2022-11-04T21:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2022-11-04:/7-zippasswordext.html</id>
+    <content type="html">&lt;p&gt;一个供 Double Commander 调用的加密压缩包解压脚本。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/7-zippasswordext.html"></link>
   </entry>
   <entry>
     <title>用 AutoHotkey 实现 Scrcpy 自动运行</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-01-15:/extractnow.html</id>
     <content type="html">&lt;p&gt;一款解压的小工具，支持密码本。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/extractnow.html"></link>
-  </entry>
-  <entry>
-    <title>DocFetcher 简单介绍</title>
-    <updated>2021-11-09T23:50:00+08:00</updated>
-    <id>tag:jpliu.github.io,2021-11-09:/docfetcher.html</id>
-    <content type="html">&lt;p&gt;介绍一下文件内容搜索工具 DocFetcher&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/docfetcher.html"></link>
   </entry>
 </feed>
