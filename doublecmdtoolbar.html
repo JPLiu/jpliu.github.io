@@ -76,6 +76,10 @@
                 </section>
                 <article class="content"><h3>Double Commander 的 Toolbar 自定义命令</h3>
 
+<blockquote>
+<p>2022.11.04 修正了 NewFiles 的调用参数。</p>
+</blockquote>
+
 <p>Double Commander（以下简称“DC”）的 Toolbar，允许用户添加自定义命令，类似 Total Commander 的 usercmd.ini，这里简单说一下相关的配置。</p>
 
 <ul>
@@ -208,13 +212,13 @@
 <tr>
 <td>NewFiles 新建文件</td>
 <td>NewFiles.exe</td>
-<td><code>%ps</code></td>
+<td><code>%/1%Ds</code></td>
 </tr>
 
 <tr>
 <td>NewFiles 新建文件夹</td>
 <td>NewFiles.exe</td>
-<td><code>-onlyDir %ps</code></td>
+<td><code>-onlyDir %/1%Ds</code></td>
 </tr>
 
 <tr>
