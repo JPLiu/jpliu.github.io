@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2022-11-19T12:30:46+08:00</updated>
+  <updated>2022-11-21T22:27:03+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2022-06-17:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>Firefox 扩展 Don&#39;t track me Google</title>
+    <updated>2022-11-21T22:20:00+08:00</updated>
+    <id>tag:jpliu.github.io,2022-11-21:/dont-track-me-google.html</id>
+    <content type="html">&lt;p&gt;一个 Firefox/Chrome 转换 Google 搜索结果链接为原始链接的扩展。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/dont-track-me-google.html"></link>
   </entry>
   <entry>
     <title>用 uBlock Origin 调整微博 V7 显示效果</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-03-19:/word-translation-ext.html</id>
     <content type="html">&lt;p&gt;简单说下 沙拉查词 和 划词翻译 两个扩展的自定义翻译 Key 的功能，支持的几个翻译服务的差异。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/word-translation-ext.html"></link>
-  </entry>
-  <entry>
-    <title>Firefox 扩展 Download with Aria2（通过 Aria2 下载）</title>
-    <updated>2022-03-19T12:30:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-03-19:/download-with-aria2.html</id>
-    <content type="html">&lt;p&gt;一个 Firefox/Chrome 调用 Aria2 进行下载的 扩展。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/download-with-aria2.html"></link>
   </entry>
 </feed>
