@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2022-11-21T22:27:03+08:00</updated>
+  <updated>2022-11-21T22:53:11+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -20,6 +20,13 @@
     <id>tag:jpliu.github.io,2022-11-21:/dont-track-me-google.html</id>
     <content type="html">&lt;p&gt;一个 Firefox/Chrome 转换 Google 搜索结果链接为原始链接的扩展。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/dont-track-me-google.html"></link>
+  </entry>
+  <entry>
+    <title>userChrome.css 隐藏 Firefox 的 ClearKey 报错提示</title>
+    <updated>2022-11-21T22:20:00+08:00</updated>
+    <id>tag:jpliu.github.io,2022-11-21:/firefoxclearkeybilibili.html</id>
+    <content type="html">&lt;p&gt;用 userChrome.css 隐藏 Firefox 在哔哩哔哩番剧播放页面的 ClearKey 报错提示。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/firefoxclearkeybilibili.html"></link>
   </entry>
   <entry>
     <title>用 uBlock Origin 调整微博 V7 显示效果</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-08-20:/aria2ahk.html</id>
     <content type="html">&lt;p&gt;Aria2AHK，一个 Aria2 的托盘程序&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/aria2ahk.html"></link>
-  </entry>
-  <entry>
-    <title>关于划词翻译扩展的自定义翻译 Key 功能</title>
-    <updated>2022-03-19T16:30:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-03-19:/word-translation-ext.html</id>
-    <content type="html">&lt;p&gt;简单说下 沙拉查词 和 划词翻译 两个扩展的自定义翻译 Key 的功能，支持的几个翻译服务的差异。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/word-translation-ext.html"></link>
   </entry>
 </feed>
