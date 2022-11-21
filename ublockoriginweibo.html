@@ -78,15 +78,16 @@
 
 <p>很久之前曾经写过 <a href="uBlockOriginDarkWorkFlowy.html">用 uBlock Origin 实现 WorkFlowy 的暗色模式</a>，用 uBlock Origin 的 <code>:style()</code> 规则实现 WorkFlowy 的暗色主题，最近看到微博宣布旧版网页版微博即将下架，试了下微博的新网页版（即 微博 V7），主页左边的栏目暂且不提，右边的栏目对于我来说是完全无意义的，于是干脆用 uBlock Origin 干掉，规则如下：</p>
 
-<pre><code>! 以下这条规则会移除微博的整个右侧栏
+<pre><code>! 各条规则的参数应当根据自身显示器情况进行调整。
+! 以下这条规则会移除微博的整个右侧栏
 ! 如果不添加此条，主页面栏目会被压缩；如果添加，用户主页的按时间搜索等右侧按钮也会被移除
 weibo.com##div[class^=&quot;Main_side&quot;]
-! 以下两条规则会修改左侧栏，可根据自身显示屏修改。
+! 以下两条规则会修改左侧栏。
 weibo.com##div[class^=&quot;Frame_side_&quot;]:style(width: 182px !important)
 weibo.com##div[class^=&quot;Nav_main&quot;]:style(width: 182px !important)
 ! 以下两条规则会修改主要内容区的左侧对齐。
 weibo.com##div[class*=&quot;Frame_content&quot;]:style(margin-left: 2% !important)
-! 以下几条规则会修改微博内容区的宽度，包括主页和用户主页，可根据自身显示屏修改。
+! 以下几条规则会修改微博内容区的宽度，包括主页和用户主页。
 weibo.com##div[class^=&quot;Frame_main_&quot;]:style(width: 975px !important)
 weibo.com##div[class^=&quot;Home_home&quot;]:style(width: 975px !important)
 weibo.com##div[class^=&quot;Main_wrap&quot;]:style(width: 975px !important)
