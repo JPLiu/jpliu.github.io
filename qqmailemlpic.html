@@ -45,10 +45,10 @@
 </script>
 
 
-        <meta name="keywords" content="Firefox,userChrome.css,">
-        <meta name="description" content="userChrome.css 隐藏 Firefox 的 ClearKey 报错提示">
+        <meta name="keywords" content="QQ邮箱,Office,">
+        <meta name="description" content="关于QQ邮箱导出的 eml 文件的一个小技巧">
         <meta name="author" content="">
-        <title>userChrome.css 隐藏 Firefox 的 ClearKey 报错提示</title>
+        <title>关于QQ邮箱导出的 eml 文件的一个小技巧</title>
     </head>
     <body>
         <article class="container">
@@ -65,39 +65,41 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">userChrome.css 隐藏 Firefox 的 ClearKey 报错提示</h1>
+                <h1 class="title">关于QQ邮箱导出的 eml 文件的一个小技巧</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1669041600"><span class="from"></span></span>
+                    <span class="date" data-time="1673182800"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/Firefox/index.html">Firefox</a><a class="tag" href="/tag/userChrome.css/index.html">userChrome.css</a></span>
+                    <span class="tags"><a class="tag" href="/tag/QQ%e9%82%ae%e7%ae%b1/index.html">QQ邮箱</a><a class="tag" href="/tag/Office/index.html">Office</a></span>
                 </section>
-                <article class="content"><h3>userChrome.css 隐藏 Firefox 的 ClearKey 报错提示</h3>
+                <article class="content"><h3>关于QQ邮箱导出的 eml 文件的一个小经验</h3>
 
-<p>Firefox 从大约 103 的版本开始，在哔哩哔哩的番剧页面播放视频时，就会不时出现 ClearKey 的报错，在我这里，这个问题一直到最新的 107 的版本都存在，只是在 107 的版本上问题变更为：在启动 Firefox 之后，第一次打开哔哩哔哩的番剧的播放页面时，有一定概率 ClearKey 报错，无论第一次打开是否报错，在关闭 Firefox 前都不会再次报错，而在关闭 Firefox 后，下次打开 Firefox 后再一次第一次打开哔哩哔哩的番剧的播放页面时，又会有一定概率报错。</p>
+<p>起因是今天看到小众软件发的 <a href="https://www.appinn.com/word-export-images/">如何提取 Word 文档中的原图？</a> 一文，想起之前提取QQ邮箱中邮件的图片的经历，简单写下。</p>
 
-<p>昨天突然想起来，Firefox 可以用 userChrome.css 隐藏界面上面的元素，于是就决定尝试隐藏这个报错。</p>
+<h4>提取QQ邮箱邮件正文图片的步骤</h4>
+
+<p>先说明下，本文说的邮件中的图片是指发件人插入在邮件正文中的图片，不是指邮件附件的图片，附件的图片可以直接点全部下载。</p>
 
 <ol>
-<li><p>在 about:config 中修改以下参数：</p>
+<li><p>登录QQ邮箱，打开包含图片的邮件，点击邮件信息最右边，向下的箭头符号。</p></li>
 
-<p><code>toolkit.legacyUserProfileCustomizations.stylesheets</code> 设置为 <code>true</code></p></li>
+<li><p>这个时候，会看到一个“导出为eml文件”的选项，点击这个按钮，将邮件下载为单个文件。</p>
 
-<li><p>在 Firefox 的 Profiles 文件夹中，新建 chrome 文件夹，在 chrome 文件夹中，新建 userChrome.css 文件。</p></li>
+<ul>
+<li>下载下来的 eml 文件，不是压缩包，所以无法直接解压。</li>
+<li>这个地方要吐槽下，界面提示是“导出为eml文件”，但是下载的文件默认没有扩展名。</li>
+</ul></li>
 
-<li><p>在 userChrome.css 文件中，添加以下内容</p>
+<li><p>使用 MS Office 或者 WPS Office 中的文件组件（Word）打开下载的邮件文件。</p></li>
 
-<pre><code>/* 主窗口 移除顶部提示（避免 ClearKey 崩溃提示） */
-/* 可能也会影响 ClearKey 以外的提示） */
-.notificationbox-stack {
-      height: 0px !important;
-}
-</code></pre></li>
+<li><p>在 MS Office 或者 WPS Office 中，对打开的文件进行“另存为”，选择为 Html。</p></li>
+
+<li><p>然后在保存为 Html 的位置，就可以看到邮件正文中的图片文件了。</p></li>
 </ol>
 
-<p>之后再次重启 Firefox，哔哩哔哩的番剧播放页面应该不会再显示 ClearKey 的报错。</p>
+<p>步骤说明应该够细了，这里就不放图了。</p>
 </article>
                 <section class="author">
                     
@@ -108,13 +110,13 @@
                     
                     <section class="nav prev more">
                         <div class="head">上篇文章</div>
-                        <a class="link" href="/qqmailemlpic.html">关于QQ邮箱导出的 eml 文件的一个小技巧</a>
+                        <a class="link" href="/mylist.html">我的软件清单</a>
                     </section>
                     
                     
                     <section class="nav next more">
                         <div class="head">下篇文章</div>
-                        <a class="link" href="/dont-track-me-google.html">Firefox 扩展 Don&#39;t track me Google</a>
+                        <a class="link" href="/firefoxclearkeybilibili.html">userChrome.css 隐藏 Firefox 的 ClearKey 报错提示</a>
                     </section>
                     
                 </section>
