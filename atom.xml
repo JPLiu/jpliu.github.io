@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-01-08T21:10:40+08:00</updated>
+  <updated>2023-02-04T23:12:57+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2023-01-08:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>在火绒中添加对 KeePass Xml 配置文件的保护规则</title>
+    <updated>2023-02-04T23:10:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-02-04:/keepassxmlhuorong.html</id>
+    <content type="html">&lt;p&gt;在火绒中添加对 KeePass Xml 配置文件的保护规则&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/keepassxmlhuorong.html"></link>
   </entry>
   <entry>
     <title>关于QQ邮箱导出的 eml 文件的一个小技巧</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-10-15:/ulistersviewermsvc.html</id>
     <content type="html">&lt;p&gt;近期遇到的 uLister 和 Viewer Technology 的一个小问题解决的记录，以免遗忘。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/ulistersviewermsvc.html"></link>
-  </entry>
-  <entry>
-    <title>Lenovo Legion Toolkit 简单介绍</title>
-    <updated>2022-10-15T09:15:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-10-15:/lenovolegiontoolkit.html</id>
-    <content type="html">&lt;p&gt;简单介绍 Lenovo Ventage 的一个替代品，Lenovo Legion Toolkit。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/lenovolegiontoolkit.html"></link>
   </entry>
 </feed>
