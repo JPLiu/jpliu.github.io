@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-02-26T17:50:36+08:00</updated>
+  <updated>2023-02-26T18:38:05+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
     <name>无人小站</name>
   </author>
+  <entry>
+    <title>我的 Android 应用清单</title>
+    <updated>2023-02-26T18:30:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-02-26:/myandroidlist.html</id>
+    <content type="html">&lt;p&gt;个人推荐 Android 应用列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/myandroidlist.html"></link>
+  </entry>
   <entry>
     <title>我的软件清单</title>
     <updated>2023-01-08T20:40:00+08:00</updated>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-11-04:/7-zippasswordext.html</id>
     <content type="html">&lt;p&gt;一个供 Double Commander 调用的加密压缩包解压脚本。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/7-zippasswordext.html"></link>
-  </entry>
-  <entry>
-    <title>用 AutoHotkey 实现 Scrcpy 自动运行</title>
-    <updated>2022-10-29T00:10:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-10-29:/ahk-auto-scrcpy.html</id>
-    <content type="html">&lt;p&gt;一个 AutoHotkey v2 的实例，用于持续运行 Scrcpy。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/ahk-auto-scrcpy.html"></link>
   </entry>
 </feed>
