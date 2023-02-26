@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-02-13T22:32:29+08:00</updated>
+  <updated>2023-02-26T17:50:36+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -13,6 +13,13 @@
     <id>tag:jpliu.github.io,2023-01-08:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>关于 Firefox 的三个 Text Link 扩展的简单对比</title>
+    <updated>2023-02-26T17:40:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-02-26:/firefoxtextlinkaddon.html</id>
+    <content type="html">&lt;p&gt;关于 Firefox 的三个 Text Link 扩展的简单对比（Plain Text Linker，Text Link，Text Link webext）&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/firefoxtextlinkaddon.html"></link>
   </entry>
   <entry>
     <title>2023 年我的 RSS 订阅方式</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-10-29:/ahk-auto-scrcpy.html</id>
     <content type="html">&lt;p&gt;一个 AutoHotkey v2 的实例，用于持续运行 Scrcpy。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/ahk-auto-scrcpy.html"></link>
-  </entry>
-  <entry>
-    <title>cgVim 简单介绍</title>
-    <updated>2022-10-22T11:15:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-10-22:/ahk-cgvim.html</id>
-    <content type="html">&lt;p&gt;更新了 cgVim，现在是基于 AutoHotkey v2 的版本，顺带简单介绍一下。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/ahk-cgvim.html"></link>
   </entry>
 </feed>
