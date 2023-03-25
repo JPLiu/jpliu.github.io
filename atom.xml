@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-02-26T18:40:56+08:00</updated>
+  <updated>2023-03-25T12:05:01+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -64,17 +64,17 @@
     <link href="http://jpliu.github.io/dont-track-me-google.html"></link>
   </entry>
   <entry>
-    <title>用 uBlock Origin 调整微博 V7 显示效果</title>
-    <updated>2022-11-12T09:30:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-11-12:/ublockoriginweibo.html</id>
-    <content type="html">&lt;p&gt;用 uBlock Origin 调整微博 V7 显示效果。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/ublockoriginweibo.html"></link>
-  </entry>
-  <entry>
     <title>7-ZipPasswordExt 加密压缩包解压脚本</title>
     <updated>2022-11-04T21:00:00+08:00</updated>
     <id>tag:jpliu.github.io,2022-11-04:/7-zippasswordext.html</id>
     <content type="html">&lt;p&gt;一个供 Double Commander 调用的加密压缩包解压脚本。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/7-zippasswordext.html"></link>
+  </entry>
+  <entry>
+    <title>用 AutoHotkey 实现 Scrcpy 自动运行</title>
+    <updated>2022-10-29T00:10:00+08:00</updated>
+    <id>tag:jpliu.github.io,2022-10-29:/ahk-auto-scrcpy.html</id>
+    <content type="html">&lt;p&gt;一个 AutoHotkey v2 的实例，用于持续运行 Scrcpy。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/ahk-auto-scrcpy.html"></link>
   </entry>
 </feed>
