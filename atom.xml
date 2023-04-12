@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-03-25T12:07:41+08:00</updated>
+  <updated>2023-04-12T15:40:13+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -20,6 +20,13 @@
     <id>tag:jpliu.github.io,2023-01-08:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>RssEverthing 简单介绍</title>
+    <updated>2023-04-12T15:30:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-04-12:/rsseverything.html</id>
+    <content type="html">&lt;p&gt;简单介绍下 RssEverthing 这个 RSS 相关服务。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/rsseverything.html"></link>
   </entry>
   <entry>
     <title>关于 Firefox 的三个 Text Link 扩展的简单对比</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2023-03-25:/ublockoriginweibo.html</id>
     <content type="html">&lt;p&gt;用 uBlock Origin 调整微博 V7 显示效果。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/ublockoriginweibo.html"></link>
-  </entry>
-  <entry>
-    <title>7-ZipPasswordExt 加密压缩包解压脚本</title>
-    <updated>2022-11-04T21:00:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-11-04:/7-zippasswordext.html</id>
-    <content type="html">&lt;p&gt;一个供 Double Commander 调用的加密压缩包解压脚本。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/7-zippasswordext.html"></link>
   </entry>
 </feed>
