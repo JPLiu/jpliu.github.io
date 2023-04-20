@@ -46,9 +46,9 @@
 
 
         <meta name="keywords" content="uBlock Origin,微博,CSS,">
-        <meta name="description" content="用 uBlock Origin 调整微博 V7 显示效果（2023-03-25 更新）">
+        <meta name="description" content="用 uBlock Origin 调整微博 V7 显示效果（2023-04-20 更新）">
         <meta name="author" content="">
-        <title>用 uBlock Origin 调整微博 V7 显示效果（2023-03-25 更新）</title>
+        <title>用 uBlock Origin 调整微博 V7 显示效果（2023-04-20 更新）</title>
     </head>
     <body>
         <article class="container">
@@ -65,19 +65,21 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">用 uBlock Origin 调整微博 V7 显示效果（2023-03-25 更新）</h1>
+                <h1 class="title">用 uBlock Origin 调整微博 V7 显示效果（2023-04-20 更新）</h1>
                 <section class="info">
                     
                     
                     
-                    <span class="date" data-time="1679716800"><span class="from"></span></span>
+                    <span class="date" data-time="1681980000"><span class="from"></span></span>
                     
                     <span class="tags"><a class="tag" href="/tag/uBlock%20Origin/index.html">uBlock Origin</a><a class="tag" href="/tag/%e5%be%ae%e5%8d%9a/index.html">微博</a><a class="tag" href="/tag/CSS/index.html">CSS</a></span>
                 </section>
                 <article class="content"><h3>用 uBlock Origin 调整微博 V7 显示效果</h3>
 
 <blockquote>
-<p>2023.03.25 增加一条修改搜索页面微博评论框长度</p>
+<p>2023.04.20 增加一条，修改用户主页版头图的高度，可根据自身显示屏修改。</p>
+
+<p>2023.03.25 增加一条修改搜索页面微博评论框长度。</p>
 </blockquote>
 
 <p>很久之前曾经写过 <a href="uBlockOriginDarkWorkFlowy.html">用 uBlock Origin 实现 WorkFlowy 的暗色模式</a>，用 uBlock Origin 的 <code>:style()</code> 规则实现 WorkFlowy 的暗色主题，最近看到微博宣布旧版网页版微博即将下架，试了下微博的新网页版（即 微博 V7），主页左边的栏目暂且不提，右边的栏目对于我来说是完全无意义的，于是干脆用 uBlock Origin 干掉，规则如下：</p>
@@ -96,6 +98,8 @@ weibo.com##div[class^=&quot;Frame_main_&quot;]:style(width: 975px !important)
 weibo.com##div[class^=&quot;Home_home&quot;]:style(width: 975px !important)
 weibo.com##div[class^=&quot;Main_wrap&quot;]:style(width: 975px !important)
 weibo.com##div[class^=&quot;Main_full&quot;]:style(width: 975px !important)
+! 修改用户主页版头图的高度，点击图片可看全图，可根据自身显示屏修改。
+weibo.com##div[class^=&quot;woo-picture-main ProfileHeader_pic&quot;]:style(height: 100px !important)
 ! 以下两条规则会修改信息流中微博视频和图片的显示大小。
 weibo.com##div[class^=&quot;card-video_videoBox&quot;]:style(width: 75% !important; height: 75% !important)
 weibo.com##div[class*=&quot;card-article_pic&quot;]:style(width: 60% !important; height: 60% !important)
