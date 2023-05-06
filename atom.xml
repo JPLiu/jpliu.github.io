@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-04-20T16:45:01+08:00</updated>
+  <updated>2023-05-06T19:49:26+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -20,6 +20,13 @@
     <id>tag:jpliu.github.io,2023-01-08:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>在 Firefox 上启用 Bing AI 的对话机器人</title>
+    <updated>2023-05-06T19:40:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-05-06:/firefoxbingaiaddon.html</id>
+    <content type="html">&lt;p&gt;简单说下在 Firefox 上启用 Bing AI 对话机器人的方法。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/firefoxbingaiaddon.html"></link>
   </entry>
   <entry>
     <title>RssEverthing 简单介绍</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-11-21:/dont-track-me-google.html</id>
     <content type="html">&lt;p&gt;一个 Firefox/Chrome 转换 Google 搜索结果链接为原始链接的扩展。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/dont-track-me-google.html"></link>
-  </entry>
-  <entry>
-    <title>用 uBlock Origin 调整微博 V7 显示效果（2023-04-20 更新）</title>
-    <updated>2023-04-20T16:40:00+08:00</updated>
-    <id>tag:jpliu.github.io,2023-04-20:/ublockoriginweibo.html</id>
-    <content type="html">&lt;p&gt;用 uBlock Origin 调整微博 V7 显示效果。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/ublockoriginweibo.html"></link>
   </entry>
 </feed>
