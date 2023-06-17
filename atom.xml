@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>http://jpliu.github.io</id>
-  <updated>2023-06-16T18:23:25+08:00</updated>
+  <updated>2023-06-17T19:38:17+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="http://jpliu.github.io"></link>
   <author>
@@ -20,6 +20,13 @@
     <id>tag:jpliu.github.io,2023-06-16:/mylist.html</id>
     <content type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/mylist.html"></link>
+  </entry>
+  <entry>
+    <title>Vim 给特定文件增加功能以及菜单</title>
+    <updated>2023-06-17T19:20:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-06-17:/vim-specialsetting.html</id>
+    <content type="html">&lt;p&gt;用 Vim 打开特定文件时，增加功能以及菜单。&lt;/p&gt;&#xA;</content>
+    <link href="http://jpliu.github.io/vim-specialsetting.html"></link>
   </entry>
   <entry>
     <title>在 Firefox 上启用 Bing AI 的对话机器人</title>
@@ -69,12 +76,5 @@
     <id>tag:jpliu.github.io,2022-11-21:/firefoxclearkeybilibili.html</id>
     <content type="html">&lt;p&gt;用 userChrome.css 隐藏 Firefox 在哔哩哔哩番剧播放页面的 ClearKey 报错提示。&lt;/p&gt;&#xA;</content>
     <link href="http://jpliu.github.io/firefoxclearkeybilibili.html"></link>
-  </entry>
-  <entry>
-    <title>Firefox 扩展 Don&#39;t track me Google</title>
-    <updated>2022-11-21T22:20:00+08:00</updated>
-    <id>tag:jpliu.github.io,2022-11-21:/dont-track-me-google.html</id>
-    <content type="html">&lt;p&gt;一个 Firefox/Chrome 转换 Google 搜索结果链接为原始链接的扩展。&lt;/p&gt;&#xA;</content>
-    <link href="http://jpliu.github.io/dont-track-me-google.html"></link>
   </entry>
 </feed>
