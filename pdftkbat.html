@@ -10,22 +10,29 @@
 <meta name="robots" content="index,follow">
 
 
+
+
+
+
+
+
+
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="无人小站">
+<meta name="twitter:title" content="自用的 PDFtk 批处理脚本（2021-01-23 更新）">
 <meta name="twitter:description" content="这只是个无人小站">
-<meta name="twitter:image:src" content="http://jpliu.github.io/images/Mine.png">
+<meta name="twitter:image:src" content="http://jpliu.github.io/images/avatar.png">
 
 <meta property="og:url" content="http://jpliu.github.io">
-<meta property="og:title" content="无人小站">
+<meta property="og:title" content="自用的 PDFtk 批处理脚本（2021-01-23 更新）">
 <meta property="og:description" content="这只是个无人小站">
 <meta property="og:site_name" content="无人小站">
-<meta property="og:image" content="http://jpliu.github.io/images/Mine.png">
+<meta property="og:image" content="http://jpliu.github.io/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
-<meta itemprop="name" content="无人小站">
+<meta itemprop="name" content="自用的 PDFtk 批处理脚本（2021-01-23 更新）">
 <meta itemprop="description" content="这只是个无人小站">
-<meta itemprop="image" content="http://jpliu.github.io/images/Mine.png">
+<meta itemprop="image" content="http://jpliu.github.io/images/avatar.png">
 
 <link rel="canonical" href="http://jpliu.github.io">
 
@@ -44,6 +51,10 @@
     var root = '';
 </script>
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
 
         <meta name="keywords" content="PDFtk,批处理,PDF,Double Commander,">
         <meta name="description" content="自用的 PDFtk 批处理脚本（2021-01-23 更新）">
@@ -54,7 +65,7 @@
         <article class="container">
             <header class="header-wrap">
   <a class="index" href="/">
-    <img class="logo" src="/images/Mine.png" />
+    <img class="logo" src="/images/avatar.png" />
     无人小站
   </a>
   <ul class="menu">
@@ -165,8 +176,8 @@ echo.
 pause
 for /r %PDFtkSourcePath% %%a in (*.pdf) do (
     echo 正在给 %%~na 加水印
-    %PDFtk% &quot;%%a&quot; multistamp watermark.pdf output %PDFtkTargetPath%\%%~na-WM.pdf
-    echo.
+	%PDFtk% &quot;%%a&quot; multistamp watermark.pdf output %PDFtkTargetPath%\%%~na-WM.pdf
+	echo.
     )
 exit
 
@@ -185,8 +196,8 @@ echo.
 pause
 for /r %PDFtkSourcePath% %%a in (*.pdf) do (
     echo 正在给 %%~na 加密
-    %PDFtk% &quot;%%a&quot; output %PDFtkTargetPath%\%%~na-PW.pdf user_pw %user_pw% allow printing copycontents
-    echo.
+	%PDFtk% &quot;%%a&quot; output %PDFtkTargetPath%\%%~na-PW.pdf user_pw %user_pw% allow printing copycontents
+	echo.
     )
 exit
 </code></pre>
@@ -214,11 +225,11 @@ exit
 <p>在 Setting 中加入以下内容 CommandLine 是批处理文件的路径，Name 是文件名，Filter 是当 Sumatra PDF 打开什么类型的文件时会出现：</p>
 
 <pre><code>ExternalViewers [
-    [
-        CommandLine = D:\1-Program\0-CommandLineTools\PDFtk\PDFtk.bat
-        Name = PDFtk
-        Filter = *.pdf
-    ]
+	[
+		CommandLine = D:\1-Program\0-CommandLineTools\PDFtk\PDFtk.bat
+		Name = PDFtk
+		Filter = *.pdf
+	]
 </code></pre>
 </article>
                 <section class="author">
@@ -229,13 +240,13 @@ exit
                 <section class="recommend">
                     
                     <section class="nav prev more">
-                        <div class="head">上篇文章</div>
+                        <div class="head">◀ 上一篇</div>
                         <a class="link" href="/lenovobatterychargethreshold.html">无需 Lenovo Vantage，配置 ThinkPad 设备的充电阈值</a>
                     </section>
                     
                     
                     <section class="nav next more">
-                        <div class="head">下篇文章</div>
+                        <div class="head">下一篇 ▶</div>
                         <a class="link" href="/vim-quickfix.html">自定义 Vim 中 QuickFix 列表的格式</a>
                     </section>
                     
@@ -260,9 +271,14 @@ exit
             document.write(new Date().getFullYear());
         </script>
     </span>
-    <span class="publish">Powered by <a href="https://inkproject.github.io/" target="_blank">Ink</a></span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
 </footer>
 
         <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
     </body>
 </html>
