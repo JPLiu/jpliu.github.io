@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>https://jpliu.github.io</id>
-  <updated>2023-07-21T19:39:44+08:00</updated>
+  <updated>2023-07-23T19:58:19+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="https://jpliu.github.io"></link>
   <author>
@@ -23,6 +23,16 @@
     <id>tag:jpliu.github.io,2023-06-16:/mylist.html</id>
     <link href="https://jpliu.github.io/mylist.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</summary>
+    <author>
+      <name>JP-Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <title>用 AutoHotkey 获取当前连接的 WiFi 热点的名称</title>
+    <updated>2023-07-23T19:50:00+08:00</updated>
+    <id>tag:jpliu.github.io,2023-07-23:/ahk-get-current-ssid.html</id>
+    <link href="https://jpliu.github.io/ahk-get-current-ssid.html" rel="alternate"></link>
+    <summary type="html">&lt;p&gt;一个 AutoHotkey v2 的实例，用于获取当前连接的 WiFi 热点的名称。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
@@ -93,16 +103,6 @@
     <id>tag:jpliu.github.io,2023-02-04:/keepassxmlhuorong.html</id>
     <link href="https://jpliu.github.io/keepassxmlhuorong.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;在火绒中添加对 KeePass Xml 配置文件的保护规则&lt;/p&gt;&#xA;</summary>
-    <author>
-      <name>JP-Liu</name>
-    </author>
-  </entry>
-  <entry>
-    <title>关于QQ邮箱导出的 eml 文件的一个小技巧</title>
-    <updated>2023-01-08T21:00:00+08:00</updated>
-    <id>tag:jpliu.github.io,2023-01-08:/qqmailemlpic.html</id>
-    <link href="https://jpliu.github.io/qqmailemlpic.html" rel="alternate"></link>
-    <summary type="html">&lt;p&gt;关于QQ邮箱导出的 eml 文件中提取图片的一个技巧。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
