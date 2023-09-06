@@ -18,19 +18,19 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用 AutoHotkey 获取当前连接的 WiFi 热点的名称">
+<meta name="twitter:title" content="Vim 定时调整色彩配置">
 <meta name="twitter:description" content="这只是个无人小站">
 <meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
 
 <meta property="og:url" content="https://jpliu.github.io">
-<meta property="og:title" content="用 AutoHotkey 获取当前连接的 WiFi 热点的名称">
+<meta property="og:title" content="Vim 定时调整色彩配置">
 <meta property="og:description" content="这只是个无人小站">
 <meta property="og:site_name" content="无人小站">
 <meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
-<meta itemprop="name" content="用 AutoHotkey 获取当前连接的 WiFi 热点的名称">
+<meta itemprop="name" content="Vim 定时调整色彩配置">
 <meta itemprop="description" content="这只是个无人小站">
 <meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
 
@@ -56,10 +56,10 @@
 
 
 
-        <meta name="keywords" content="AutoHotkey,WIFi,">
-        <meta name="description" content="用 AutoHotkey 获取当前连接的 WiFi 热点的名称">
+        <meta name="keywords" content="Vim,">
+        <meta name="description" content="Vim 定时调整色彩配置">
         <meta name="author" content="JP-Liu">
-        <title>用 AutoHotkey 获取当前连接的 WiFi 热点的名称</title>
+        <title>Vim 定时调整色彩配置</title>
     </head>
     <body>
         <article class="container">
@@ -76,33 +76,31 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">用 AutoHotkey 获取当前连接的 WiFi 热点的名称</h1>
+                <h1 class="title">Vim 定时调整色彩配置</h1>
                 <section class="info">
                     <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
                     <a class="name" href="/about.me.html">JP-Liu</a>
                     
-                    <span class="date" data-time="1690113000"><span class="from"></span></span>
+                    <span class="date" data-time="1694007000"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a><a class="tag" href="/tag/WIFi/index.html">WIFi</a></span>
+                    <span class="tags"><a class="tag" href="/tag/Vim/index.html">Vim</a></span>
                 </section>
-                <article class="content"><h3>用 AutoHotkey 获取当前连接的 WiFi 热点的名称</h3>
+                <article class="content"><h3>Vim 定时切换色彩配置</h3>
 
-<p>今天突发奇想修改了一下 Aria2AHK，增加了一个根据启动时连接的热点不同，切换不同的 Aria2 限速配置的功能。实现过程中需要获取当前连接的 Wifi 的 SSID 名称，记录一下。</p>
+<p>之前写过一个 AutoHotkey 脚本，用于<a href="AHK-Dark-Light-Switch.html">根据时间切换 Windows 系统的明暗主题</a>，前几天突然想起来，自用的 Vim 一直使用暗色的主题，于是决定折腾下看看能否实现主题自动切换，搜索了以下，最后结果如下。</p>
 
-<pre><code>; 获取当前连接的 WiFi 热点的名称
-; 通过 NETSH 命令获取当前的 SSID 信息，保存到 SSID.info 文件中。
-Runwait A_ComSpec ' /c netsh wlan show interface | findstr /i &quot;SSID&quot; &gt; SSID.info', ,&quot;Hide&quot;
-; 读取 SSID.info 内容到 SSIDInfo 变量。
-SSIDInfo := FileRead(&quot;SSID.info&quot;, &quot;UTF-8&quot;)
-; 读取完成后，删除 SSID.info 文件。
-FileDelete A_ScriptDir . &quot;\SSID.info&quot;
-; 由于 SSIDInfo 中会存在 SSID 和 BSSID 信息，移除 BSSID 的信息，只保留 SSID 名称到 SSIDName。
-SSIDName := RegExReplace(SSIDInfo, &quot;mi)^\s*SSID\s*:\s*([^\r]+)$\r\n.*&quot; , &quot;$1&quot;)
-; 上一步的替换后，SSIDName 中存在换行，需要进行移除，否则匹配时会由于最后的换行导致无法匹配成功。
-SSIDName := StrReplace(SSIDName, &quot;`r`n&quot;, &quot;&quot;,)
-; 显示 SSIDName。
-Msgbox SSIDName
+<pre><code>&quot; ColorScheme （示例使用 Vim 自带的 wildcharm 主题）
+colorscheme wildcharm
+if strftime(&quot;%H%M&quot;) &gt;= 0700 &amp;&amp; strftime(&quot;%H%M&quot;) &lt; 1945
+   set background=light
+else
+   set background=dark
+endif
 </code></pre>
+
+<p>简单说明下，上面的内容加入 vimrc 后，Vim 启动时，会判断当前的时间，当时间在 07:00 至 19:45 之间时，使用 colorscheme 的 light 模式；否则，使用 dark 模式。如果有需要的话，可以使用不同 colorscheme。</p>
+
+<p>请注意，只在 Vim 启动时会判定，启动后只要不关闭 Vim，显示效果不会变更。应该可以用 autocmd 优化，但感觉触发的机会很少，先不改吧。</p>
 </article>
                 <section class="author">
                     <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
@@ -113,13 +111,13 @@ Msgbox SSIDName
                     
                     <section class="nav prev more">
                         <div class="head">◀ 上一篇</div>
-                        <a class="link" href="/vim-colorscheme-lightdark.html">Vim 定时调整色彩配置</a>
+                        <a class="link" href="/mylist.html">我的 Windows 软件清单</a>
                     </section>
                     
                     
                     <section class="nav next more">
                         <div class="head">下一篇 ▶</div>
-                        <a class="link" href="/mpc-hcavisynth.html">MPC-HC 与 AviSynth&#43; 便携化</a>
+                        <a class="link" href="/ahk-get-current-ssid.html">用 AutoHotkey 获取当前连接的 WiFi 热点的名称</a>
                     </section>
                     
                 </section>
