@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jpliu.github.io</loc>
-    <lastmod>2023-09-06T21:44:17.1077597+08:00</lastmod>
+    <lastmod>2023-10-15T18:39:15.684777+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -13,6 +13,11 @@
   <url>
     <loc>https://jpliu.github.io/mylist.html</loc>
     <lastmod>2023-06-16T18:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://jpliu.github.io/huorongremovewpscmenu.html</loc>
+    <lastmod>2023-10-15T18:35:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
