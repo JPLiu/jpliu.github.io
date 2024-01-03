@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>https://jpliu.github.io</id>
-  <updated>2023-12-02T00:18:31+08:00</updated>
+  <updated>2024-01-03T20:50:32+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="https://jpliu.github.io"></link>
   <author>
@@ -23,6 +23,16 @@
     <id>tag:jpliu.github.io,2023-06-16:/mylist.html</id>
     <link href="https://jpliu.github.io/mylist.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</summary>
+    <author>
+      <name>JP-Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <title>AHK-NewFiles 简单介绍</title>
+    <updated>2024-01-03T20:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2024-01-03:/ahk-newfiles.html</id>
+    <link href="https://jpliu.github.io/ahk-newfiles.html" rel="alternate"></link>
+    <summary type="html">&lt;p&gt;用 AutoHotkey 编写的适用于 Double Commander 新建文件 / 文件夹的小工具。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
@@ -93,16 +103,6 @@
     <id>tag:jpliu.github.io,2023-04-12:/rsseverything.html</id>
     <link href="https://jpliu.github.io/rsseverything.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;简单介绍下 RssEverthing 这个 RSS 相关服务。&lt;/p&gt;&#xA;</summary>
-    <author>
-      <name>JP-Liu</name>
-    </author>
-  </entry>
-  <entry>
-    <title>关于 Firefox 的三个 Text Link 扩展的简单对比</title>
-    <updated>2023-02-26T17:40:00+08:00</updated>
-    <id>tag:jpliu.github.io,2023-02-26:/firefoxtextlinkaddon.html</id>
-    <link href="https://jpliu.github.io/firefoxtextlinkaddon.html" rel="alternate"></link>
-    <summary type="html">&lt;p&gt;关于 Firefox 的三个 Text Link 扩展的简单对比（Plain Text Linker，Text Link，Text Link webext）&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
