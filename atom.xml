@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>https://jpliu.github.io</id>
-  <updated>2024-04-30T16:34:50+08:00</updated>
+  <updated>2024-04-30T17:19:48+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="https://jpliu.github.io"></link>
   <author>
@@ -23,6 +23,16 @@
     <id>tag:jpliu.github.io,2024-04-30:/mylist.html</id>
     <link href="https://jpliu.github.io/mylist.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</summary>
+    <author>
+      <name>JP-Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <title>关于 FFmpeg 几个可用的 Build</title>
+    <updated>2024-04-30T17:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2024-04-30:/ffmpegbuild.html</id>
+    <link href="https://jpliu.github.io/ffmpegbuild.html" rel="alternate"></link>
+    <summary type="html">&lt;p&gt;简单列一下几个目前可用的 FFmpeg x86 Build。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
@@ -93,16 +103,6 @@
     <id>tag:jpliu.github.io,2023-05-06:/firefoxbingaiaddon.html</id>
     <link href="https://jpliu.github.io/firefoxbingaiaddon.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;简单说下在 Firefox 上启用 Bing AI 对话机器人的方法。&lt;/p&gt;&#xA;</summary>
-    <author>
-      <name>JP-Liu</name>
-    </author>
-  </entry>
-  <entry>
-    <title>RssEverthing 简单介绍</title>
-    <updated>2023-04-12T15:30:00+08:00</updated>
-    <id>tag:jpliu.github.io,2023-04-12:/rsseverything.html</id>
-    <link href="https://jpliu.github.io/rsseverything.html" rel="alternate"></link>
-    <summary type="html">&lt;p&gt;简单介绍下 RssEverthing 这个 RSS 相关服务。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
