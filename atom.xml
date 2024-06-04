@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>https://jpliu.github.io</id>
-  <updated>2024-05-14T20:17:45+08:00</updated>
+  <updated>2024-06-04T21:00:33+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="https://jpliu.github.io"></link>
   <author>
@@ -23,6 +23,16 @@
     <id>tag:jpliu.github.io,2024-04-30:/mylist.html</id>
     <link href="https://jpliu.github.io/mylist.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</summary>
+    <author>
+      <name>JP-Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <title>关于 MV3 版本的广告拦截扩展的比较</title>
+    <updated>2024-06-04T21:00:00+08:00</updated>
+    <id>tag:jpliu.github.io,2024-06-04:/adblockmv3.html</id>
+    <link href="https://jpliu.github.io/adblockmv3.html" rel="alternate"></link>
+    <summary type="html">&lt;p&gt;比较一下 AdGuard 和 uBlock Origin 的 MV3 版本。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
@@ -93,16 +103,6 @@
     <id>tag:jpliu.github.io,2023-06-18:/mpc-hcavisynth.html</id>
     <link href="https://jpliu.github.io/mpc-hcavisynth.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;为 MPC-HC 添加对 AviSynth+ 的便携化支持。&lt;/p&gt;&#xA;</summary>
-    <author>
-      <name>JP-Liu</name>
-    </author>
-  </entry>
-  <entry>
-    <title>Vim 给特定文件增加功能以及菜单</title>
-    <updated>2023-06-17T19:20:00+08:00</updated>
-    <id>tag:jpliu.github.io,2023-06-17:/vim-specialsetting.html</id>
-    <link href="https://jpliu.github.io/vim-specialsetting.html" rel="alternate"></link>
-    <summary type="html">&lt;p&gt;用 Vim 打开特定文件时，增加功能以及菜单。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
