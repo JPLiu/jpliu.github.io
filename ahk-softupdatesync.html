@@ -18,19 +18,19 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于 MV3 版本的广告拦截扩展的比较">
+<meta name="twitter:title" content="SoftUpdateSync 简单介绍">
 <meta name="twitter:description" content="这只是个无人小站">
 <meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
 
 <meta property="og:url" content="https://jpliu.github.io">
-<meta property="og:title" content="关于 MV3 版本的广告拦截扩展的比较">
+<meta property="og:title" content="SoftUpdateSync 简单介绍">
 <meta property="og:description" content="这只是个无人小站">
 <meta property="og:site_name" content="无人小站">
 <meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
-<meta itemprop="name" content="关于 MV3 版本的广告拦截扩展的比较">
+<meta itemprop="name" content="SoftUpdateSync 简单介绍">
 <meta itemprop="description" content="这只是个无人小站">
 <meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
 
@@ -56,10 +56,10 @@
 
 
 
-        <meta name="keywords" content="Chrome,AdBlock,AdGuard,">
-        <meta name="description" content="关于 MV3 版本的广告拦截扩展的比较">
+        <meta name="keywords" content="Scrcpy,AutoHotkey,">
+        <meta name="description" content="SoftUpdateSync 简单介绍">
         <meta name="author" content="JP-Liu">
-        <title>关于 MV3 版本的广告拦截扩展的比较</title>
+        <title>SoftUpdateSync 简单介绍</title>
     </head>
     <body>
         <article class="container">
@@ -76,50 +76,38 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">关于 MV3 版本的广告拦截扩展的比较</h1>
+                <h1 class="title">SoftUpdateSync 简单介绍</h1>
                 <section class="info">
                     <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
                     <a class="name" href="/about.me.html">JP-Liu</a>
                     
-                    <span class="date" data-time="1717506000"><span class="from"></span></span>
+                    <span class="date" data-time="1717506600"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/Chrome/index.html">Chrome</a><a class="tag" href="/tag/AdBlock/index.html">AdBlock</a><a class="tag" href="/tag/AdGuard/index.html">AdGuard</a></span>
+                    <span class="tags"><a class="tag" href="/tag/Scrcpy/index.html">Scrcpy</a><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a></span>
                 </section>
-                <article class="content"><h3>关于 MV3 版本的广告拦截扩展的比较</h3>
+                <article class="content"><h3>SoftUpdateSync 简单介绍</h3>
 
-<p>由于 Google 已经计划正式抛弃 MV2 的扩展，是时候需要对 MV3 的广告拦截扩展做一下比较了。</p>
-
-<h4>AdGuard</h4>
-
-<p>扩展地址：<a href="https://chromewebstore.google.com/detail/adguard-adblocker-mv3-exp/apjcbfpjihpedihablmalmbbhjpklbdf">AdGuard MV3</a></p>
+<p>这是一个个人自用的 AutoHotkey 脚本，由于我有以下软件更新习惯：</p>
 
 <ul>
-<li><p>支持规则自定义订阅，但是要求自定义的规则必须为 txt 扩展名（MV3 的版本可以使用其他扩展名）。</p>
-
-<ul>
-<li>基于这个原因我的自制规则补充了 AdGuard 的版本 <a href="https://github.com/JPLiu/TestFiles/tree/main/Browser/AdGuard">TestFiles AdGuard</a>。</li>
-</ul></li>
-
-<li><p>有自定义规则功能。</p></li>
-
-<li><p>无法查看当前页触发规则。</p></li>
+<li>及时更新。</li>
+<li>可选择的情况下，软件使用<strong>官方提供的</strong>便携版。</li>
+<li>必须安装的软件，保留安装包（保留最新版）。</li>
 </ul>
 
-<h4>uBlock Origin Lite</h4>
-
-<p>扩展地址：<a href="https://chromewebstore.google.com/detail/ublock-origin-lite/ddkjiahejlhfcafbddmgiahcphecmpfh">uBlock Origin Lite</a></p>
+<p>由于便携版软件的更新需要我自己到对应文件夹内更新，比较麻烦，所以写了一个脚本来实现以下功能：</p>
 
 <ul>
-<li><p>不支持规则订阅。</p></li>
-
-<li><p>无自定义规则功能。</p></li>
-
-<li><p>无动态规则。</p></li>
-
-<li><p>无法查看当前页触发规则。</p></li>
+<li>判断默认下载路径下有无对应软件的压缩包或安装包。</li>
+<li>若存在便携版压缩包，即解压到对应的文件夹位置，同时在更新文件夹中建立快捷方式，并生成相应压缩包（我在不同的地方有四台电脑，且互不相通，故会每月将更新了的软件压缩包保存至移动硬盘）。</li>
+<li>若存在对应软件安装包，即移动到对应位置。</li>
 </ul>
 
-<p>目前来看，AdGuard 提供的扩展可用性更高，但是我作为 Firefox 用户暂时还是继续用 uBlock Origin。</p>
+<p>GitHub 地址： <a href="https://github.com/JPLiu/TestFiles/tree/main/AutoHotkey/SoftUpdateSync">TestFiles SoftUpdateSync</a></p>
+
+<p>使用方法很简单，直接运行 SoftUpdateSync.ahk 就可以，但是需要提前在 SyncScripts 文件夹下的各个 ahk 文件和 SyncScripts.ini 中配置相应路径。</p>
+
+<p>最开始脚本是用 bat 写的，用了一段时间，最近改用 AutoHotkey v2，可能还有些 Bug，有类似需要的可以看看。</p>
 </article>
                 <section class="author">
                     <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
@@ -130,13 +118,13 @@
                     
                     <section class="nav prev more">
                         <div class="head">◀ 上一篇</div>
-                        <a class="link" href="/ahk-softupdatesync.html">SoftUpdateSync 简单介绍</a>
+                        <a class="link" href="/mylist.html">我的 Windows 软件清单</a>
                     </section>
                     
                     
                     <section class="nav next more">
                         <div class="head">下一篇 ▶</div>
-                        <a class="link" href="/qpdfbat.html">QPDF 简单介绍（附自用脚本）</a>
+                        <a class="link" href="/adblockmv3.html">关于 MV3 版本的广告拦截扩展的比较</a>
                     </section>
                     
                 </section>
