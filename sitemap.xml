@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jpliu.github.io</loc>
-    <lastmod>2024-08-14T22:40:08.358484+08:00</lastmod>
+    <lastmod>2024-08-21T20:47:26.8186096+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -13,6 +13,11 @@
   <url>
     <loc>https://jpliu.github.io/mylist.html</loc>
     <lastmod>2024-04-30T16:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://jpliu.github.io/keepasswebdavargument.html</loc>
+    <lastmod>2024-08-21T20:45:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>

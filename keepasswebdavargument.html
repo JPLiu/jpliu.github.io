@@ -18,19 +18,19 @@
 
 
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SoftUpdateSync 简单介绍">
+<meta name="twitter:title" content="KeePass 命令行自动进入坚果云 WebDAV 密码库">
 <meta name="twitter:description" content="这只是个无人小站">
 <meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
 
 <meta property="og:url" content="https://jpliu.github.io">
-<meta property="og:title" content="SoftUpdateSync 简单介绍">
+<meta property="og:title" content="KeePass 命令行自动进入坚果云 WebDAV 密码库">
 <meta property="og:description" content="这只是个无人小站">
 <meta property="og:site_name" content="无人小站">
 <meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
 <meta property="og:type" content="website">
 <meta name="robots" content="noodp">
 
-<meta itemprop="name" content="SoftUpdateSync 简单介绍">
+<meta itemprop="name" content="KeePass 命令行自动进入坚果云 WebDAV 密码库">
 <meta itemprop="description" content="这只是个无人小站">
 <meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
 
@@ -56,10 +56,10 @@
 
 
 
-        <meta name="keywords" content="AutoHotkey,SoftUpdateSync,7-Zip,">
-        <meta name="description" content="SoftUpdateSync 简单介绍">
+        <meta name="keywords" content="KeePass,WebDAV,坚果云,">
+        <meta name="description" content="KeePass 命令行自动进入坚果云 WebDAV 密码库">
         <meta name="author" content="JP-Liu">
-        <title>SoftUpdateSync 简单介绍</title>
+        <title>KeePass 命令行自动进入坚果云 WebDAV 密码库</title>
     </head>
     <body>
         <article class="container">
@@ -76,38 +76,35 @@
 </header>
 
             <article class="main article">
-                <h1 class="title">SoftUpdateSync 简单介绍</h1>
+                <h1 class="title">KeePass 命令行自动进入坚果云 WebDAV 密码库</h1>
                 <section class="info">
                     <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
                     <a class="name" href="/about.me.html">JP-Liu</a>
                     
-                    <span class="date" data-time="1717506600"><span class="from"></span></span>
+                    <span class="date" data-time="1724244300"><span class="from"></span></span>
                     
-                    <span class="tags"><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a><a class="tag" href="/tag/SoftUpdateSync/index.html">SoftUpdateSync</a><a class="tag" href="/tag/7-Zip/index.html">7-Zip</a></span>
+                    <span class="tags"><a class="tag" href="/tag/KeePass/index.html">KeePass</a><a class="tag" href="/tag/WebDAV/index.html">WebDAV</a><a class="tag" href="/tag/%e5%9d%9a%e6%9e%9c%e4%ba%91/index.html">坚果云</a></span>
                 </section>
-                <article class="content"><h3>SoftUpdateSync 简单介绍</h3>
+                <article class="content"><h1>KeePass 命令行自动进入坚果云 WebDAV 密码库</h1>
 
-<p>这是一个个人自用的 AutoHotkey 脚本，由于我有以下软件更新习惯：</p>
+<p>本文是对坚果云帮助中心中 <a href="https://help.jianguoyun.com/?p=3348">KeePass 如何搭配坚果云实现多设备同步</a> 的一个补充，具体的 KeePass 连接 WebDAV 的步骤，请参考原文。</p>
 
-<ul>
-<li>及时更新。</li>
-<li>可选择的情况下，软件使用<strong>官方提供的</strong>便携版。</li>
-<li>必须安装的软件，保留安装包（保留最新版）。</li>
-</ul>
+<p>我的电脑默认是启动 KeePass 且自动打开密码库，且之前一直是使用本地密码库，原有的启动参数（数据库在 KeePass 目录下）：</p>
 
-<p>由于便携版软件的更新需要我自己到对应文件夹内更新，比较麻烦，所以写了一个脚本来实现以下功能：</p>
+<pre><code>KeePass.exe &quot;DataBase.kdbx&quot; -pw:123456
+</code></pre>
 
-<ul>
-<li>判断默认下载路径下有无对应软件的压缩包或安装包。</li>
-<li>若存在便携版压缩包，即解压到对应的文件夹位置，同时在更新文件夹中建立快捷方式，并生成相应压缩包（我在不同的地方有四台电脑，且互不相通，故会每月将更新了的软件压缩包保存至移动硬盘）。</li>
-<li>若存在对应软件安装包，即移动到对应位置。</li>
-</ul>
+<p>但是使用 WebDAV 密码库后，相对应的以下命令是无法直接打开密码库的：</p>
 
-<p>GitHub 地址： <a href="https://github.com/JPLiu/TestFiles/tree/main/AutoHotkey/SoftUpdateSync">TestFiles SoftUpdateSync</a></p>
+<pre><code>KeePass.exe &quot;https://dav.jianguoyun.com/dav/Mine/DataBase.kdbx&quot; -pw:123456
+</code></pre>
 
-<p>使用方法很简单，直接运行 SoftUpdateSync.ahk 就可以，但是需要提前在 SyncScripts 文件夹下的各个 ahk 文件和 SyncScripts.ini 中配置相应路径。</p>
+<p>经过搜索之后发现，之前在 SourceForge 上已经有人讨论过：<a href="https://sourceforge.net/p/keepass/discussion/329221/thread/9849601c93/">Passing Parameters when Opening Remote WebDAV through Command Line</a>，修改命令行之后，即可正常打开。</p>
 
-<p>最开始脚本是用 bat 写的，用了一段时间，最近改用 AutoHotkey v2，可能还有些 Bug，有类似需要的可以看看。</p>
+<pre><code>KeePass.exe &quot;https://dav.jianguoyun.com/dav/Mine/DataBase.kdbx&quot; -iocredfromrecent -pw:123456
+</code></pre>
+
+<p>简单说下 <code>-iocredfromrecent</code> 这个参数，当把 WebDAV 的登录信息保存如 KeePass 配置文件后，使用此参数时，KeePass 自动使用从配置文件中保存的 WebDAV 登录凭据，此时 KeePass 可以实现自动获取 WebDav 数据库并解密。</p>
 </article>
                 <section class="author">
                     <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
@@ -118,13 +115,13 @@
                     
                     <section class="nav prev more">
                         <div class="head">◀ 上一篇</div>
-                        <a class="link" href="/keepasswebdavargument.html">KeePass 命令行自动进入坚果云 WebDAV 密码库</a>
+                        <a class="link" href="/mylist.html">我的 Windows 软件清单</a>
                     </section>
                     
                     
                     <section class="nav next more">
                         <div class="head">下一篇 ▶</div>
-                        <a class="link" href="/adblockmv3.html">关于 MV3 版本的广告拦截扩展的比较</a>
+                        <a class="link" href="/ahk-softupdatesync.html">SoftUpdateSync 简单介绍</a>
                     </section>
                     
                 </section>
