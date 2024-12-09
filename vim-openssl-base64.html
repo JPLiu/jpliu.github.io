@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="在 Vim 中使用 OpenSSL 处理 Base64 编码的文本">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://jpliu.github.io">
+<meta property="og:title" content="在 Vim 中使用 OpenSSL 处理 Base64 编码的文本">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="在 Vim 中使用 OpenSSL 处理 Base64 编码的文本">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+        <meta name="keywords" content="Vim,OpenSSL,Base64,QQ邮箱,">
+        <meta name="description" content="在 Vim 中使用 OpenSSL 处理 Base64 编码的文本">
+        <meta name="author" content="JP-Liu">
+        <title>在 Vim 中使用 OpenSSL 处理 Base64 编码的文本</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">在 Vim 中使用 OpenSSL 处理 Base64 编码的文本</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    
+                    <span class="date" data-time="1587785400"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Vim/index.html">Vim</a><a class="tag" href="/tag/OpenSSL/index.html">OpenSSL</a><a class="tag" href="/tag/Base64/index.html">Base64</a><a class="tag" href="/tag/QQ%e9%82%ae%e7%ae%b1/index.html">QQ邮箱</a></span>
+                </section>
+                <article class="content"><h3>在 Vim 中使用 OpenSSL 处理 Base64 编码的文本</h3>
+
+<p>QQ邮箱上有个<strong>导出为eml文件</strong>的功能，使用这个功能下载的邮件，扩展名是 txt，但很多时候邮件内容是 Base64 编码的，使用 Notepad，Vim 等工具打开看不到正文，使用 Office 中的 Word 则可以正常查看。但是我更想直接在 Vim 中查看相关文本，于是开始 Google 搜索 Vim 和 Base64 的内容。</p>
+
+<h4>参考资料</h4>
+
+<ul>
+<li><p>首先是 Github 上的 <a href="https://github.com/christianrondeau/vim-base64">Vim Base64</a>，这个插件需要 Python，我个人不太喜欢。</p></li>
+
+<li><p>其次是 Vim Wiki 上的 <a href="https://vim.fandom.com/wiki/Read_base64_raw_string/email_in_Vim">Read base64 raw string/email in Vim</a>，但是这篇文章上提到的 decode64.zip 的链接，已经无法正常下载。</p></li>
+
+<li><p>之后是 Stack Overflow 上的 <a href="https://stackoverflow.com/questions/7845671/executing-base64-decode-on-a-selection-in-vim/7846569#7846569">Executing ‘base64 &ndash;decode’ on a selection in Vim</a> 这个问题，里面提到了一个映射：</p>
+
+<p>	vnoremap <leader>64 c<c-r>=system(&lsquo;base64 &ndash;decode&rsquo;, @&ldquo;)<cr><esc></p></li>
+</ul>
+
+<p>按照上面这个写法，我只要找到一个可以解码 Base64 的工具就可以。</p>
+
+<h4>OpenSSL 与 vimrc 的配置</h4>
+
+<ul>
+<li><p>OpenSSL 可以解码 Base64，可在 <a href="https://bintray.com/vszakats/generic/openssl">vszakats/generic/openssl</a> 下载</p></li>
+
+<li><p>解压之后 OpenSSL 的压缩包后，将以下三个文件放到 Vim.exe 所在目录。</p>
+
+<ul>
+<li>libcrypto-1_1.dll</li>
+<li>libssl-1_1.dll</li>
+<li>openssl.exe</li>
+</ul></li>
+
+<li><p>之后再在 vimrc 中加入以下内容，在选中 Base64 编码的情况下，按 F3 就能解码了。</p>
+
+<pre><code>vnoremap &lt;F3&gt; c&lt;c-r&gt;=system('openssl.exe base64 -d', @&quot;)&lt;cr&gt;
+</code></pre></li>
+</ul>
+
+<h4>备注</h4>
+
+<ul>
+<li>这个做法有明显的缺点，Vim 不支持图片，所以对于内容中涉及到图片的邮件，还是需要使用 Office 来处理。</li>
+</ul>
+
+<p><img data-src="/images/Vim-OpenSSL-Base64-1.gif" src="data:image/gif;base64,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" alt="Vim 转换实例" data-src="/images/Vim-OpenSSL-Base64-1.gif" /></p>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    <div class="intro">懒人一个</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">◀ 上一篇</div>
+                        <a class="link" href="/vim-quickfix.html">自定义 Vim 中 QuickFix 列表的格式</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下一篇 ▶</div>
+                        <a class="link" href="/syncthing-portable.html">Syncthing 设置便携化</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
+    </body>
+</html>

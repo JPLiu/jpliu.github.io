@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Aria2 BT 下载的一些小细节">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://jpliu.github.io">
+<meta property="og:title" content="Aria2 BT 下载的一些小细节">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Aria2 BT 下载的一些小细节">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+        <meta name="keywords" content="Aria2,BT,DHT,BT Tracker,命令行,">
+        <meta name="description" content="Aria2 BT 下载的一些小细节">
+        <meta name="author" content="JP-Liu">
+        <title>Aria2 BT 下载的一些小细节</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">Aria2 BT 下载的一些小细节</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    
+                    <span class="date" data-time="1533954600"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Aria2/index.html">Aria2</a><a class="tag" href="/tag/BT/index.html">BT</a><a class="tag" href="/tag/DHT/index.html">DHT</a><a class="tag" href="/tag/BT%20Tracker/index.html">BT Tracker</a><a class="tag" href="/tag/%e5%91%bd%e4%bb%a4%e8%a1%8c/index.html">命令行</a></span>
+                </section>
+                <article class="content"><h3>Aria2 BT 下载的一些小细节</h3>
+
+<p>Aria2 是一个很不错的命令行下载工具，支持 HTTP / FTP / BT 等，本文来说说一些使用 Aria2 下载 BT 的小细节，基本上都是我的个人感受，由于个人并非专业，此处所提到的内容不一定准确，仅供参考。</p>
+
+<h4>1. BT-Tracker</h4>
+
+<p>添加Tracker服务器往往对BT下载有提高作用，更多的Tracker意味着可能找到更多下载统一种子的Client，Tracker并不好找，但是现在在<a href="https://github.com/ngosang/trackerslist">Github上有一个项目</a>提供自动更新的Tracker列表，我们需要将Tracker加入到Aria2的配置中，格式如下，我个人是加了前20的Tracker。</p>
+
+<pre><code>bt-tracker=udp://tracker.coppersurfer.tk:6969/announce,udp://tracker.open-internet.nl:6969/announce
+</code></pre>
+
+<h4>2. DHT网络</h4>
+
+<p>Aria2有DHT的功能，且默认Aria2是打开DHT功能的，第一次使用Aria2下载需要选择热门的种子，后续Aria2会对DHT的数据进行缓存，记录在一个dht.dat的文件中，后续下载较为冷门的种子，由于有DHT的缓存数据，速度也会有所提升。</p>
+
+<p>需要注意的是，Aria2并不是每次完成BT下载后立即就会保存dht数据，如果你使用的Ariang前端，可以在Aria2状态页，点击保存会话后在点击管理Aria2，这样就会立即保存，但是之后需要手工重新启动Aria2。我个人由于Aria2常驻后台且常年不关机，一般都是由Aria2自动保存的。</p>
+
+<h4>3. 强制加密</h4>
+
+<p>我一般会在Aria2对BT设置强制加密来防止迅雷……</p>
+
+<pre><code>bt-force-encryption
+</code></pre>
+
+<h4>4. 添加时不下载</h4>
+
+<p>在通过网页前端（如Ariang，YAAW）添加BT任务是，选择<code>只添加不下载</code>的选项后，可以在任务也对 BT 种子中需要下载的文件进行勾选。</p>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    <div class="intro">懒人一个</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">◀ 上一篇</div>
+                        <a class="link" href="/doublecmdvim.html">在 Double Commander 中使用 Vim 作为文本比较和重命名编辑工具</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下一篇 ▶</div>
+                        <a class="link" href="/ariang.html">AriaNg 网页参数切换 RPC 的参数</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
+    </body>
+</html>

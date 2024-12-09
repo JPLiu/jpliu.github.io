@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Firefox WebExtension 扩展与油猴">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://jpliu.github.io">
+<meta property="og:title" content="Firefox WebExtension 扩展与油猴">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="Firefox WebExtension 扩展与油猴">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+        <meta name="keywords" content="Firefox,WebExtension,Addon,油猴脚本,">
+        <meta name="description" content="Firefox WebExtension 扩展与油猴">
+        <meta name="author" content="JP-Liu">
+        <title>Firefox WebExtension 扩展与油猴</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">Firefox WebExtension 扩展与油猴</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    
+                    <span class="date" data-time="1506230400"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/Firefox/index.html">Firefox</a><a class="tag" href="/tag/WebExtension/index.html">WebExtension</a><a class="tag" href="/tag/Addon/index.html">Addon</a><a class="tag" href="/tag/%e6%b2%b9%e7%8c%b4%e8%84%9a%e6%9c%ac/index.html">油猴脚本</a></span>
+                </section>
+                <article class="content"><h3>Firefox WebExtension 扩展与油猴</h3>
+
+<p>Firefox 计划在今年年底发布 Firefox57 中取消对旧的扩展的支持，只支持 WebExtension 的扩展，趁着最近有空提前尝试替换目前使用的扩展为 WebExtension 的扩展。总体上来说，对使用习惯有一定影响，如 WebExtension 的鼠标手势不能像之前的UC脚本一样在<code>about:addons</code>上生效，但总体还在可以接收的范围内。以下将会以 旧扩展→新扩展 的形式简单说一下替换的扩展，顺带记一下目前在使用的油猴脚本。</p>
+
+<h4>FlashGot → ???</h4>
+
+<p>目前没有替代品，虽然之前提到过 WebExtension 的版本正在开发，目前看不见踪影，近期改用 Internet Download Manager 作为下载工具，IDM 的扩展支持 Firefox57。</p>
+
+<h4>Greasemonkey → Tampermonkey</h4>
+
+<p>Tampermonkey 用起来已经很不错了，貌似无法直接导入在Greasemonkey中的脚本，我的几个油猴脚本都重新安装了一遍，发现Tampermonkey的配置可以备份到Google Drive，估计就算Greasemonkey的WebExtension版本出来了我也不会退回去了。</p>
+
+<ul>
+<li><a href="https://github.com/gooyie/userscript-iqiyi-player-switch">iqiyi-player-switch</a>：爱奇艺强制使用HTML5播放器</li>
+<li><a href="https://greasyfork.org/zh-CN/scripts/23635-%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD%E5%8A%A9%E6%89%8B">百度网盘直接下载助手</a>：百度网盘增加一个下载功能</li>
+<li><a href="http://bbs.kafan.cn/thread-2093014-1-1.html">视频站启用html5播放器</a>
+
+<ul>
+<li>优酷，腾讯等视频网站强制使用HTML5播放器，不切换UA的话，土豆会提示未安装Flash。</li>
+</ul></li>
+<li><a href="https://lkytal.github.io/">Text To link</a>
+
+<ul>
+<li>将网页内的文本链接转换成可点击的链接，用来替代之前的TextLink，但是效果不如UC的TextLink效果好。</li>
+</ul></li>
+</ul>
+
+<h4>VimFX → Saka Key</h4>
+
+<p>之前这里写的是Vimium-FF的，发现Saka Key的更新更活跃，配置支持导入导出，在新标签页中打开的功能需要关闭Firefox的禁止弹出窗口功能才能正常工作。</p>
+
+<h4>UserChromeJS</h4>
+
+<p>之前我一直使用的UC脚本其实只有几个：</p>
+
+<ul>
+<li><p>鼠标手势脚本，鼠标拖拽脚本→smartUp手势</p></li>
+
+<li><p>标签页右键关闭→乖乖改用中键</p></li>
+
+<li><p>TextLink→用油猴脚本替代</p></li>
+</ul>
+
+<hr>
+
+<p>所有替换后的扩展就可在<a href="https://addons.mozilla.org">Firefox附加组件</a>上找到。</p>
+
+<p>中途再试了一次，还是没能转去用Chrome。</p>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    <div class="intro">懒人一个</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">◀ 上一篇</div>
+                        <a class="link" href="/vimplugin-popup.vim.html">Vim 插件 popup.vim</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下一篇 ▶</div>
+                        <a class="link" href="/mediadown.html">Youtube-DL与You-Get（2019.01.01 部分内容已过时）</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
+    </body>
+</html>

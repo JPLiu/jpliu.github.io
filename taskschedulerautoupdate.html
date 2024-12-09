@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用任务计划程序定时运行程序">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://jpliu.github.io">
+<meta property="og:title" content="使用任务计划程序定时运行程序">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="使用任务计划程序定时运行程序">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+        <meta name="keywords" content="任务计划程序,AutoHotkey,Clash,">
+        <meta name="description" content="使用任务计划程序定时运行程序">
+        <meta name="author" content="JP-Liu">
+        <title>使用任务计划程序定时运行程序</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">使用任务计划程序定时运行程序</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    
+                    <span class="date" data-time="1584858000"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e4%bb%bb%e5%8a%a1%e8%ae%a1%e5%88%92%e7%a8%8b%e5%ba%8f/index.html">任务计划程序</a><a class="tag" href="/tag/AutoHotkey/index.html">AutoHotkey</a><a class="tag" href="/tag/Clash/index.html">Clash</a></span>
+                </section>
+                <article class="content"><h3>使用任务计划程序定时运行程序</h3>
+
+<blockquote>
+<p>本文写于 2020-03-21，文中的提到的 ClashWeb 和 Clash for Windows 均不提供链接。</p>
+
+<p>2020-03-22 更新，今天遇上一次更新失败，补充一个备份功能，更新失败时自动调用备份。</p>
+</blockquote>
+
+<p>近期从 Clash for Windows 切换到 ClashWeb 的过程中遇到了一个问题，在 Clash for Windows 中的订阅可以配置定时更新，但在 ClashWeb 中貌似无法实现，近期服务商频繁更换线路，所以只好把 Windows 中的任务计划程序拉出来实现定时更新了。</p>
+
+<p>在 ClashWeb.ahk 中看到涉及到订阅更新的就是两行：</p>
+
+<pre><code>RunWait, ahkupdateconfig.bat,,Hide
+RunWait, ahkrestartclash.bat,,Hide
+</code></pre>
+
+<p>于是新建一个 AutoUpdate.ahk （运行时需要 Autohotkey <a href="https://github.com/Lexikos/AutoHotkey_L/releases">Github</a>）内容如下：</p>
+
+<pre><code>; ClashWeb 的路径
+ClashWebPath=D:\1-Program\CrossWall\ClashWeb\
+; 需要更新的配置文件的名称
+ProfileName=CordCloud
+; 配置文件的大小限制，单位是 K（用于判断是否更新是否失败，小于此大小判定为更新失败，继续使用更新前的备份）
+ProfileSizeLimit=100
+
+ClashWebProfile=%ClashWebPath%\Profile
+FileCopy, %ClashWebProfile%\%ProfileName%.yaml, %ClashWebProfile%\%ProfileName%.yaml.bak, 1
+
+SetWorkingDir, %ClashWebPath%
+RunWait, ahkupdateconfig.bat,,Hide
+
+FileGetSize, YAMLSize , %ClashWebProfile%\%ProfileName%.yaml, K
+IF (YAMLSize &lt; ProfileSizeLimit)
+FileCopy, %ClashWebProfile%\%ProfileName%.yaml.bak, %ClashWebProfile%\%ProfileName%.yaml, 1
+
+RunWait, ahkrestartclash.bat,,Hide
+Exitapp
+</code></pre>
+
+<p>然后打开任务计划程序，选择右方的创建任务，在弹出的窗口中对计划任务进行编辑：</p>
+
+<p><img data-src="/images/TaskSchedulerAutoUpdate.png" src="data:image/gif;base64,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" alt="TaskSchedulerAutoUpdate" data-src="/images/TaskSchedulerAutoUpdate.png" /></p>
+
+<hr>
+
+<h4>常规</h4>
+
+<ul>
+<li>名称随意填，其他项可以都不动。</li>
+</ul>
+
+<h4>触发器</h4>
+
+<ul>
+<li>我配置的是每天12点，每隔1天发生一次，重复任务间隔5小时，持续时间无限期，其他项不动。</li>
+</ul>
+
+<h4>操作</h4>
+
+<ul>
+<li>启动程序，程序路径填写 Autohotkey.exe 的路径，如：<code>D:\1-Program\AutoHotkey\AutoHotkeyA32.exe</code></li>
+<li>参数填写 上面新建的 AutoUpdate.ahk 的路径，如：<code>D:\1-Program\CrossWall\ClashWeb\Profile\AutoUpdate.ahk</code>。</li>
+</ul>
+
+<h4>条件</h4>
+
+<ul>
+<li>我勾选了 <strong>只有在以下网络连接可用时才启动</strong> ，连接选的是任何连接。</li>
+</ul>
+
+<h4>设置</h4>
+
+<ul>
+<li>我勾选了 <strong>允许按需运行任务</strong>，<strong>如果过了计划开始时间，立即启动任务</strong>，<strong>如果请求后任务还在运行，强行将其停止</strong> 三项。</li>
+</ul>
+
+<p>之后保存即可，选中新建的任务，点击右方的 <strong>运行</strong> 即可，如有需要，也可以 <strong>导出</strong>。</p>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    <div class="intro">懒人一个</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">◀ 上一篇</div>
+                        <a class="link" href="/irfanviewpdf2pic.html">使用 IrfanView 将 PDF 的各个页面保存为单独的图片</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下一篇 ▶</div>
+                        <a class="link" href="/headereditortiebaredirect.html">用 Header Editor 重定向奇形怪状的百度贴吧链接</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
+    </body>
+</html>

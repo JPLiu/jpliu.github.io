@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FFmpeg 调用脚本">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://jpliu.github.io">
+<meta property="og:title" content="FFmpeg 调用脚本">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="FFmpeg 调用脚本">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+        <meta name="keywords" content="格式转换,FFmpeg,">
+        <meta name="description" content="FFmpeg 调用脚本">
+        <meta name="author" content="JP-Liu">
+        <title>FFmpeg 调用脚本</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">FFmpeg 调用脚本</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    
+                    <span class="date" data-time="1480763700"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e6%a0%bc%e5%bc%8f%e8%bd%ac%e6%8d%a2/index.html">格式转换</a><a class="tag" href="/tag/FFmpeg/index.html">FFmpeg</a></span>
+                </section>
+                <article class="content"><h2>FFmpeg 调用脚本</h2>
+
+<p>FFmpeg 是一个通用的视频音频转换工具，自由度比较高，因为之前处理视频的时候使用的是格式工厂（其实安装格式工厂之后在安装的文件夹中也有 FFmpeg），但是格式工厂转换出来的文件画质变化较大，后来改用 FFmpeg 感觉不错，于是写了个脚本来调用。</p>
+
+<pre><code>:: FFmpeg转换脚本
+@echo off
+
+:: 音频参数 {{{1
+set aformat=mp3
+set acodec=mp3
+set ar=44100
+set ab=128K
+set ac=2
+set vol=
+
+set AO=-c:a %acodec% -ar %ar% -ac %ac% -ab %ab% -y
+set AOM=-vn -f %aformat% -ss 00:00:10 -t 00:00:50 -vol %vol% -strict -2
+set AOM=-vn
+
+:: 视频参数 {{{1
+set vformat=mp4
+set vcodec=h264
+set crf=24
+set resize=
+set aspect=
+set bv=
+
+set VO=-c:v %vcodec% -c:a aac -strict -2 -ar %ar% -ac %ac% -ab %ab% -f %vformat% -crf %crf% -y
+set VOM=-threads 0 -ss 00:00:10 -t 00:00:5 -s %resize% -aspect %aspect% -vol %vol% -b:v %bv% -an
+set VOM=-threads 0
+set VOHP=-preset veryslow -refs 4 -bf 3 -g 360 -keyint_min 1 -sc_threshold 60 -deblock 1:1 -qcomp 0.5 -psy-rd 0.3:0 -aq-mode 2 -aq-strength 0.8 -me_method umh -me_range 24 -subq 10 -flags loop
+
+:: GIF参数 {{{1
+set videofir=fps=5,scale=iw*2/3:ih*2/3:flags=lanczos,palettegen
+set videogif=fps=5,scale=iw*2/3:ih*2/3:flags=lanczos[x];[x][1:v]paletteuse
+
+:: 路径设置 {{{1
+set ffmpeg=d:\1-Program\0-CommandLineTools\ImageMagick\ffmpeg.exe
+set input=d:\3-FastStone\InPut
+set output=d:\3-FastStone\OutPut
+set outputpath=%output%\
+md %outputpath%
+
+:: 显示选项 {{{1
+:Menu
+echo 1.音频 - 转换
+echo 2.视频 - 转换
+echo 3.视频 - 转换 HP
+echo 4.视频 - 复制 源
+echo 5.视频 - GIF
+echo.&amp;echo.
+set /p choose=输入数字回车：
+if &quot;%choose%&quot;==&quot;1&quot; set AU=%AO% %AOM%&amp;Goto Audio
+if &quot;%choose%&quot;==&quot;2&quot; set VU=%VO% %VOM%&amp;Goto Video
+if &quot;%choose%&quot;==&quot;3&quot; set VU=%VO% %VOM% %VOHP%&amp;Goto Video
+if &quot;%choose%&quot;==&quot;4&quot; set VU=-c:v copy -c:a copy&amp;Goto Video
+if &quot;%choose%&quot;==&quot;5&quot; Goto VideoGIF
+
+:: 具体命令 {{{1
+:Audio
+for /r %input% %%a in (*.*) do (%ffmpeg% -i &quot;%%a&quot; %AU% &quot;%outputpath%%%~na%ab%.%aformat%&quot;)
+pause
+Exit
+
+:Video
+for /r %input% %%a in (*.*) do (%ffmpeg% -i &quot;%%a&quot; %VU% &quot;%outputpath%%%~na.%vformat%&quot;)
+pause
+Exit
+
+:VideoGIF
+for /r %input% %%a in (*.*) do (
+    %ffmpeg% -y -i &quot;%%a&quot; -vf %videofir% %temp%palette.png
+    %ffmpeg% -y -i &quot;%%a&quot; -i %temp%palette.png -filter_complex &quot;%videogif%&quot; &quot;%outputpath%%%~na.gif&quot;)
+pause
+Exit
+</code></pre>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    <div class="intro">懒人一个</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">◀ 上一篇</div>
+                        <a class="link" href="/excel1.html">一个 Excel 函数实例</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下一篇 ▶</div>
+                        <a class="link" href="/ahk-candy.html">Candy 简介</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
+    </body>
+</html>

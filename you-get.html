@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=1">
+<meta name="renderer" content="webkit">
+<meta name="google" value="notranslate">
+<meta name="robots" content="index,follow">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="You-Get 在线视频下载工具（部分内容已过时）">
+<meta name="twitter:description" content="这只是个无人小站">
+<meta name="twitter:image:src" content="https://jpliu.github.io/images/avatar.png">
+
+<meta property="og:url" content="https://jpliu.github.io">
+<meta property="og:title" content="You-Get 在线视频下载工具（部分内容已过时）">
+<meta property="og:description" content="这只是个无人小站">
+<meta property="og:site_name" content="无人小站">
+<meta property="og:image" content="https://jpliu.github.io/images/avatar.png">
+<meta property="og:type" content="website">
+<meta name="robots" content="noodp">
+
+<meta itemprop="name" content="You-Get 在线视频下载工具（部分内容已过时）">
+<meta itemprop="description" content="这只是个无人小站">
+<meta itemprop="image" content="https://jpliu.github.io/images/avatar.png">
+
+<link rel="canonical" href="https://jpliu.github.io">
+
+<link rel="shortcut icon" href="/favicon.png">
+<link rel="apple-itouch-icon" href="/favicon.png">
+<link rel="stylesheet" href="/bundle/index.css">
+<script type="text/javascript">
+    var timeSinceLang = {
+        year: '年前',
+        month: '个月前',
+        day: '天前',
+        hour: '小时前',
+        minute: '分钟前',
+        second: '秒前'
+    };
+    var root = '';
+</script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+        <meta name="keywords" content="命令行,下载工具,在线视频,网易云,You-Get,">
+        <meta name="description" content="You-Get 在线视频下载工具（部分内容已过时）">
+        <meta name="author" content="JP-Liu">
+        <title>You-Get 在线视频下载工具（部分内容已过时）</title>
+    </head>
+    <body>
+        <article class="container">
+            <header class="header-wrap">
+  <a class="index" href="/">
+    <img class="logo" src="/images/avatar.png" />
+    无人小站
+  </a>
+  <ul class="menu">
+      <li class="menu-item"><a href="/archive.html">归档</a></li>
+      <li class="menu-item"><a href="/tag.html">标签</a></li>
+      <li class="menu-item"><a href="/atom.xml">订阅</a></li>
+  </ul>
+</header>
+
+            <article class="main article">
+                <h1 class="title">You-Get 在线视频下载工具（部分内容已过时）</h1>
+                <section class="info">
+                    <span class="avatar" style="background-image: url(/images/avatar.png);"></span>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    
+                    <span class="date" data-time="1468929978"><span class="from"></span></span>
+                    
+                    <span class="tags"><a class="tag" href="/tag/%e5%91%bd%e4%bb%a4%e8%a1%8c/index.html">命令行</a><a class="tag" href="/tag/%e4%b8%8b%e8%bd%bd%e5%b7%a5%e5%85%b7/index.html">下载工具</a><a class="tag" href="/tag/%e5%9c%a8%e7%ba%bf%e8%a7%86%e9%a2%91/index.html">在线视频</a><a class="tag" href="/tag/%e7%bd%91%e6%98%93%e4%ba%91/index.html">网易云</a><a class="tag" href="/tag/You-Get/index.html">You-Get</a></span>
+                </section>
+                <article class="content"><h3>You-Get 在线视频下载工具</h3>
+
+<blockquote>
+<p>2016.07.19 更新：添加批处理脚本
+2019.04.13 补充：目前 You-Get 已长时间不更新 Windows 下的预编译版本，新的方式请参考 <a href="winpythonmediadown.html">WinPython 自动更新 You-Get 和 Youtube-dl</a>
+2020-09-29 更新 <a href="https://ffmpeg.org/download.html">FFmpeg</a> 链接。</p>
+</blockquote>
+
+<p><a href="https://github.com/soimort/you-get/">You-Get</a> 是一个命令行的在线视频下载工具，可以下载 Youtube，优酷，土豆，Bilibili，网易云等多个在线网站，完整的支持列表可以在 <a href="https://github.com/soimort/you-get/wiki/%E4%B8%AD%E6%96%87%E8%AF%B4%E6%98%8E#%E6%94%AF%E6%8C%81%E7%BD%91%E7%AB%99">Github</a>  上查看。对于 Windows 平台，You-Get 的 <a href="https://github.com/soimort/you-get/releases">Releases</a> 中可以直接使用的版本。本文只要是想将 You-Get 的几个参数进行一下整理。</p>
+
+<p>注意，You-Get 需要 <a href="https://ffmpeg.org/download.html">ffmpeg</a> 以下载优酷这类的流式视频和合并视频，如果不知道如何将 ffmpeg 添加到环境变量中的话，可以直接用 Releases 中的 Full 版。</p>
+
+<h4>用法及参数</h4>
+
+<ul>
+<li><p>用法</p>
+
+<p>You-Get [URL]</p>
+
+<p>下载到一半需要暂停时可以用<code>Ctrl-C</code>，下载文件夹中 .download 文件会保留，之后再用上面的方式调用同一 URL 时会自动继续下载。</p></li>
+
+<li><p>可用参数</p></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>--infol / -i</code></td>
+<td>查看所有可用画质与格式，可选项用 itag 参数区分</td>
+</tr>
+
+<tr>
+<td><code>-itag=[NUM]</code></td>
+<td>下载指定 itag 参数指定的对象</td>
+</tr>
+
+<tr>
+<td><code>--no-merge / -n</code></td>
+<td>不合并下载完成的视频</td>
+</tr>
+
+<tr>
+<td><code>--force/-f</code></td>
+<td>覆盖已经存在的文件以及 .download 文件的信息 <br> 强制重新下载</td>
+</tr>
+
+<tr>
+<td><code>--output-dir/-o</code></td>
+<td>指定下载路径</td>
+</tr>
+
+<tr>
+<td><code>--output-filename/-O</code></td>
+<td>指定输出的文件名</td>
+</tr>
+
+<tr>
+<td><code>--http-proxy/-x</code></td>
+<td>设置 http 的代理</td>
+</tr>
+
+<tr>
+<td><code>--player/-p</code></td>
+<td>直接使用播放器播放，而不是下载</td>
+</tr>
+
+<tr>
+<td><code>--cookies/-c</code></td>
+<td>调用 Cookies</td>
+</tr>
+
+<tr>
+<td><code>--url/-u</code></td>
+<td>获得页面所有可下载 URL 列表</td>
+</tr>
+</tbody>
+</table>
+
+<h4>批处理脚本</h4>
+
+<p>有需要的话可以使用下面这个批处理，将内容保存到 txt 文件中，改后缀为 bat 即可，另外 You-Get 的 Full 版本中也带有一个 bat 脚本。</p>
+
+<pre><code>@echo off
+:: 设定 You-Get.exe 的位置，如果在同一目录下不用设置
+set youget=You-Get.exe
+:: 设定下载目录
+set downloadpath=D:\ZeroDown
+:: 设定代理
+set proxy=127.0.0.1:8087
+set more=
+
+set /p URL=请输入要 URL 并回车:
+
+:YouGetMenu
+echo 1.下载，不使用代理
+echo 2.下载，使用代理
+echo 3.查看 URL 信息，可添加额外命令行
+echo.&amp;echo.
+set /p choose=请选择相应的处理方式：
+if &quot;%choose%&quot;==&quot;1&quot; Goto YouGet
+if &quot;%choose%&quot;==&quot;2&quot; Goto YouGetProxy
+if &quot;%choose%&quot;==&quot;3&quot; Goto YouGetInfo
+
+:YouGet
+%youget% -o %downloadpath% %more% %URL%
+exit
+
+:YouGetProxy
+%youget% --http-proxy %proxy% -o %downloadpath% %more% %URL%
+exit
+
+:YouGetInfo
+%youget% -i %URL%
+echo --itag [Num] 指定下载对象
+echo -n 不合并视频
+set /p more=请输入额外指令，不需要的话直接回车：
+Goto YouGetMenu
+</code></pre>
+
+<p>下载速度还是相当不错的：</p>
+
+<p><img data-src="/images/You-Get1.png" src="data:image/gif;base64,R0lGODlhGAAYAPQAAP///wAAAM7Ozvr6+uDg4LCwsOjo6I6OjsjIyJycnNjY2KioqMDAwPLy8nd3d4aGhri4uGlpaQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAkHAAAAIf4aQ3JlYXRlZCB3aXRoIGFqYXhsb2FkLmluZm8AIf8LTkVUU0NBUEUyLjADAQAAACwAAAAAGAAYAAAFriAgjiQAQWVaDgr5POSgkoTDjFE0NoQ8iw8HQZQTDQjDn4jhSABhAAOhoTqSDg7qSUQwxEaEwwFhXHhHgzOA1xshxAnfTzotGRaHglJqkJcaVEqCgyoCBQkJBQKDDXQGDYaIioyOgYSXA36XIgYMBWRzXZoKBQUMmil0lgalLSIClgBpO0g+s26nUWddXyoEDIsACq5SsTMMDIECwUdJPw0Mzsu0qHYkw72bBmozIQAh+QQJBwAAACwAAAAAGAAYAAAFsCAgjiTAMGVaDgR5HKQwqKNxIKPjjFCk0KNXC6ATKSI7oAhxWIhezwhENTCQEoeGCdWIPEgzESGxEIgGBWstEW4QCGGAIJEoxGmGt5ZkgCRQQHkGd2CESoeIIwoMBQUMP4cNeQQGDYuNj4iSb5WJnmeGng0CDGaBlIQEJziHk3sABidDAHBgagButSKvAAoyuHuUYHgCkAZqebw0AgLBQyyzNKO3byNuoSS8x8OfwIchACH5BAkHAAAALAAAAAAYABgAAAW4ICCOJIAgZVoOBJkkpDKoo5EI43GMjNPSokXCINKJCI4HcCRIQEQvqIOhGhBHhUTDhGo4diOZyFAoKEQDxra2mAEgjghOpCgz3LTBIxJ5kgwMBShACREHZ1V4Kg1rS44pBAgMDAg/Sw0GBAQGDZGTlY+YmpyPpSQDiqYiDQoCliqZBqkGAgKIS5kEjQ21VwCyp76dBHiNvz+MR74AqSOdVwbQuo+abppo10ssjdkAnc0rf8vgl8YqIQAh+QQJBwAAACwAAAAAGAAYAAAFrCAgjiQgCGVaDgZZFCQxqKNRKGOSjMjR0qLXTyciHA7AkaLACMIAiwOC1iAxCrMToHHYjWQiA4NBEA0Q1RpWxHg4cMXxNDk4OBxNUkPAQAEXDgllKgMzQA1pSYopBgonCj9JEA8REQ8QjY+RQJOVl4ugoYssBJuMpYYjDQSliwasiQOwNakALKqsqbWvIohFm7V6rQAGP6+JQLlFg7KDQLKJrLjBKbvAor3IKiEAIfkECQcAAAAsAAAAABgAGAAABbUgII4koChlmhokw5DEoI4NQ4xFMQoJO4uuhignMiQWvxGBIQC+AJBEUyUcIRiyE6CR0CllW4HABxBURTUw4nC4FcWo5CDBRpQaCoF7VjgsyCUDYDMNZ0mHdwYEBAaGMwwHDg4HDA2KjI4qkJKUiJ6faJkiA4qAKQkRB3E0i6YpAw8RERAjA4tnBoMApCMQDhFTuySKoSKMJAq6rD4GzASiJYtgi6PUcs9Kew0xh7rNJMqIhYchACH5BAkHAAAALAAAAAAYABgAAAW0ICCOJEAQZZo2JIKQxqCOjWCMDDMqxT2LAgELkBMZCoXfyCBQiFwiRsGpku0EshNgUNAtrYPT0GQVNRBWwSKBMp98P24iISgNDAS4ipGA6JUpA2WAhDR4eWM/CAkHBwkIDYcGiTOLjY+FmZkNlCN3eUoLDmwlDW+AAwcODl5bYl8wCVYMDw5UWzBtnAANEQ8kBIM0oAAGPgcREIQnVloAChEOqARjzgAQEbczg8YkWJq8nSUhACH5BAkHAAAALAAAAAAYABgAAAWtICCOJGAYZZoOpKKQqDoORDMKwkgwtiwSBBYAJ2owGL5RgxBziQQMgkwoMkhNqAEDARPSaiMDFdDIiRSFQowMXE8Z6RdpYHWnEAWGPVkajPmARVZMPUkCBQkJBQINgwaFPoeJi4GVlQ2Qc3VJBQcLV0ptfAMJBwdcIl+FYjALQgimoGNWIhAQZA4HXSpLMQ8PIgkOSHxAQhERPw7ASTSFyCMMDqBTJL8tf3y2fCEAIfkECQcAAAAsAAAAABgAGAAABa8gII4k0DRlmg6kYZCoOg5EDBDEaAi2jLO3nEkgkMEIL4BLpBAkVy3hCTAQKGAznM0AFNFGBAbj2cA9jQixcGZAGgECBu/9HnTp+FGjjezJFAwFBQwKe2Z+KoCChHmNjVMqA21nKQwJEJRlbnUFCQlFXlpeCWcGBUACCwlrdw8RKGImBwktdyMQEQciB7oACwcIeA4RVwAODiIGvHQKERAjxyMIB5QlVSTLYLZ0sW8hACH5BAkHAAAALAAAAAAYABgAAAW0ICCOJNA0ZZoOpGGQrDoOBCoSxNgQsQzgMZyIlvOJdi+AS2SoyXrK4umWPM5wNiV0UDUIBNkdoepTfMkA7thIECiyRtUAGq8fm2O4jIBgMBA1eAZ6Knx+gHaJR4QwdCMKBxEJRggFDGgQEREPjjAMBQUKIwIRDhBDC2QNDDEKoEkDoiMHDigICGkJBS2dDA6TAAnAEAkCdQ8ORQcHTAkLcQQODLPMIgIJaCWxJMIkPIoAt3EhACH5BAkHAAAALAAAAAAYABgAAAWtICCOJNA0ZZoOpGGQrDoOBCoSxNgQsQzgMZyIlvOJdi+AS2SoyXrK4umWHM5wNiV0UN3xdLiqr+mENcWpM9TIbrsBkEck8oC0DQqBQGGIz+t3eXtob0ZTPgNrIwQJDgtGAgwCWSIMDg4HiiUIDAxFAAoODwxDBWINCEGdSTQkCQcoegADBaQ6MggHjwAFBZUFCm0HB0kJCUy9bAYHCCPGIwqmRq0jySMGmj6yRiEAIfkECQcAAAAsAAAAABgAGAAABbIgII4k0DRlmg6kYZCsOg4EKhLE2BCxDOAxnIiW84l2L4BLZKipBopW8XRLDkeCiAMyMvQAA+uON4JEIo+vqukkKQ6RhLHplVGN+LyKcXA4Dgx5DWwGDXx+gIKENnqNdzIDaiMECwcFRgQCCowiCAcHCZIlCgICVgSfCEMMnA0CXaU2YSQFoQAKUQMMqjoyAglcAAyBAAIMRUYLCUkFlybDeAYJryLNk6xGNCTQXY0juHghACH5BAkHAAAALAAAAAAYABgAAAWzICCOJNA0ZVoOAmkY5KCSSgSNBDE2hDyLjohClBMNij8RJHIQvZwEVOpIekRQJyJs5AMoHA+GMbE1lnm9EcPhOHRnhpwUl3AsknHDm5RN+v8qCAkHBwkIfw1xBAYNgoSGiIqMgJQifZUjBhAJYj95ewIJCQV7KYpzBAkLLQADCHOtOpY5PgNlAAykAEUsQ1wzCgWdCIdeArczBQVbDJ0NAqyeBb64nQAGArBTt8R8mLuyPyEAOw==" alt="You-Get" data-src="/images/You-Get1.png" /></p>
+</article>
+                <section class="author">
+                    <div class="avatar" style="background-image: url(/images/avatar.png);"></div>
+                    <a class="name" href="/about.me.html">JP-Liu</a>
+                    <div class="intro">懒人一个</div>
+                </section>
+                <section class="recommend">
+                    
+                    <section class="nav prev more">
+                        <div class="head">◀ 上一篇</div>
+                        <a class="link" href="/imagemagickprocesspic.html">ImageMagick 批量处理图片 （2016.10.30更新）</a>
+                    </section>
+                    
+                    
+                    <section class="nav next more">
+                        <div class="head">下一篇 ▶</div>
+                        <a class="link" href="/vimplugin-tagbar.html">Vim 插件 tagbar（2016.4.16更新）</a>
+                    </section>
+                    
+                </section>
+                
+    <section id="disqus_thread"></section>
+    <script type="text/javascript">
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//jpliugithubio.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+
+
+            </article>
+        </article>
+        <footer class="footer">
+    <span class="copyright">
+        无人小站 ©
+        <script type="text/javascript">
+            document.write(new Date().getFullYear());
+        </script>
+    </span>
+    <span class="publish">Powered by <a href="https://github.com/InkProject/ink" target="_blank">Ink</a></span>
+</footer>
+
+        <script src="/bundle/index.js"></script>
+        <div id="go_top" style="position:fixed; LEFT:85%; bottom:50px">
+            <svg width="30" height="30" viewBox="0 0 878 1024">
+                <path fill="#8a8a8a" d="M733.714 511.429c0-9.714-3.429-18.857-10.286-25.714l-258.857-258.857c-6.857-6.857-16-10.286-25.714-10.286s-18.857 3.429-25.714 10.286l-258.857 258.857c-6.857 6.857-10.286 16-10.286 25.714s3.429 18.857 10.286 25.714l52 52c6.857 6.857 16 10.286 25.714 10.286s18.857-3.429 25.714-10.286l108-108v286.857c0 20 16.571 36.571 36.571 36.571h73.143c20 0 36.571-16.571 36.571-36.571v-286.857l108 108c6.857 6.857 16 10.857 25.714 10.857s18.857-4 25.714-10.857l52-52c6.857-6.857 10.286-16 10.286-25.714zM877.714 512c0 242.286-196.571 438.857-438.857 438.857s-438.857-196.571-438.857-438.857 196.571-438.857 438.857-438.857 438.857 196.571 438.857 438.857z"></path>
+            </svg>
+        </div>
+    </body>
+</html>
