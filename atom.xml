@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><feed xmlns="http://www.w3.org/2005/Atom">
   <title>无人小站</title>
   <id>https://jpliu.github.io</id>
-  <updated>2024-12-09T22:38:04+08:00</updated>
+  <updated>2025-03-05T20:49:53+08:00</updated>
   <subtitle>这只是个无人小站</subtitle>
   <link href="https://jpliu.github.io"></link>
   <author>
@@ -23,6 +23,16 @@
     <id>tag:jpliu.github.io,2024-12-09:/mylist.html</id>
     <link href="https://jpliu.github.io/mylist.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;个人推荐的 Windows 软件列表，作记录用，更新不定时。&lt;/p&gt;&#xA;</summary>
+    <author>
+      <name>JP-Liu</name>
+    </author>
+  </entry>
+  <entry>
+    <title>Firefox 扩展 Auto Reload on Error</title>
+    <updated>2025-03-05T20:45:00+08:00</updated>
+    <id>tag:jpliu.github.io,2025-03-05:/firefoxaddon-autoreloadonerror.html</id>
+    <link href="https://jpliu.github.io/firefoxaddon-autoreloadonerror.html" rel="alternate"></link>
+    <summary type="html">&lt;p&gt;简单介绍一下 Auto Reload on Error 这个 Firefox 扩展。&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>
@@ -93,16 +103,6 @@
     <id>tag:jpliu.github.io,2023-10-15:/huorongremovewpscmenu.html</id>
     <link href="https://jpliu.github.io/huorongremovewpscmenu.html" rel="alternate"></link>
     <summary type="html">&lt;p&gt;说一下用火绒移除 WPS 的 释放C盘空间 菜单。&lt;/p&gt;&#xA;</summary>
-    <author>
-      <name>JP-Liu</name>
-    </author>
-  </entry>
-  <entry>
-    <title>Vim 定时调整色彩配置</title>
-    <updated>2023-09-06T21:30:00+08:00</updated>
-    <id>tag:jpliu.github.io,2023-09-06:/vim-colorscheme-lightdark.html</id>
-    <link href="https://jpliu.github.io/vim-colorscheme-lightdark.html" rel="alternate"></link>
-    <summary type="html">&lt;p&gt;在 vimrc 中配置定时调整 Vim 的色彩配置（colorscheme）&lt;/p&gt;&#xA;</summary>
     <author>
       <name>JP-Liu</name>
     </author>

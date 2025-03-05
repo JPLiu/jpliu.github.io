@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jpliu.github.io</loc>
-    <lastmod>2024-12-09T22:38:04.2644056+08:00</lastmod>
+    <lastmod>2025-03-05T20:49:53.1476997+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
@@ -13,6 +13,11 @@
   <url>
     <loc>https://jpliu.github.io/mylist.html</loc>
     <lastmod>2024-12-09T22:30:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://jpliu.github.io/firefoxaddon-autoreloadonerror.html</loc>
+    <lastmod>2025-03-05T20:45:00+08:00</lastmod>
     <changefreq>weekly</changefreq>
   </url>
   <url>
