@@ -41,11 +41,16 @@
             color: var(--text-color);
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
+            display: flex;           /* 添加flex布局 */
+            flex-direction: column;  /* 设置子元素垂直排列 */
+            min-height: 100vh;       /* 确保body至少和视口一样高 */
+            justify-content: center; /* 垂直居中 */
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;             /* 确保容器宽度撑满 */
         }
         
         header {
@@ -59,7 +64,7 @@
         }
         
         .search-container {
-            margin-bottom: 30px;
+            margin-bottom: 50px; /* 增大搜索栏和网站网格之间的间距 */
             text-align: center;
         }
         
@@ -68,11 +73,11 @@
             max-width: 600px;
             padding: 12px 20px;
             border: 1px solid var(--search-border);
-            border-radius: 24px;
-            font很长: 1rem;
+            border-radius: 8px; /* 修改圆角大小，从24px减小到8px，使搜索框更接近长方形 */
+            font-size: 1rem;
             outline: none;
             background-color: var(--card-bg);
-            color: var(--text-color);
+            color: var(--text-color);  /* 添加了缺少的分号 */
             transition: border-color 0.3s;
         }
         
@@ -82,7 +87,7 @@
         
         .sites-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);  /* 修改为每行4个 */
+            grid-template-columns: repeat(4, 1fr);  /* 默认四列 */
             gap: 20px;
         }
         
@@ -104,7 +109,7 @@
             width: 70px;  /* 从50px增加到70px */
             height: 70px;  /* 从50px增加到70px */
             border-radius: 10px;
-            background-color: var(--icon-bg);
+            background-color: var(--icon-bg);  /* 添加了缺少的分号 */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -120,31 +125,20 @@
             word-break: break-word;
         }
         
-        @media (max-width: 1000px) {  /* 调整断点以适应4列布局 */
+        @media (max-width: 800px) {  /* 800px以下显示3列 */
             .sites-grid {
-                grid-template-columns: repeat(3, 1fr);  /* 在较小屏幕上显示3列 */
-            }
-        }
-        
-        @media (max-width: 700px) {  /* 进一步调整断点 */
-            .sites-grid {
-                grid-template-columns: repeat(2, 1fr);  /* 在更小屏幕上显示2列 */
-            }
-        }
-        
-        @media (max-width: 300px) {  /* 最小屏幕尺寸 */
-            .sites-grid {
-                grid-template-columns: repeat(1, 1fr);  /* 在最小屏幕上显示1列 */
+                grid-template-columns: repeat(3, 1fr);
             }
             
+            /* 将原来300px断点的样式移到这里 */
             .site-icon {
-                width: 55px;  /* 从40px增加到55px */
-                height: 55px;  /* 从40px增加到55px */
-                font-size: 1.6rem;  /* 从1.2rem增加到1.6rem */
+                width: 55px;  /* 减小图标大小以适应小屏幕 */
+                height: 55px;
+                font-size: 1.6rem;  /* 减小字体大小 */
             }
             
             .site-name {
-                font-size: 0.8rem;
+                font-size: 0.8rem;  /* 减小文字大小 */
             }
         }
     </style>
@@ -189,10 +183,7 @@
                 <div class="site-name">Bilibili</div>
             </a>
             
-            <a href="https://workflowy.com/" target="_blank" class="site-item">
-                <div class="site-icon">Wk</div>
-                <div class="site-name">Workflowy</div>
-            </a>
+            <!-- 已删除第六项 Workflowy 的代码 -->
             
             <a href="https://www.wenku8.net/modules/article/toplist.php?sort=lastupdate" target="_blank" class="site-item">
                 <div class="site-icon">We</div>
